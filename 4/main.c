@@ -2,10 +2,10 @@
 int line_no = 1;
 int main(void) {
     if(yyparse() == 0) {
-        printf("Parsing completed!!!");
+        printf("Parsing completed!!!\n");
     }
     else {
-        printf("Parsing fail...");
+        printf("Parsing fail...\n");
     }
 }
 
