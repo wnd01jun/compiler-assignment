@@ -23,7 +23,7 @@ A_SPECIFIER *updateSpecifier(A_SPECIFIER *, A_TYPE *, S_KIND);
 void checkForwardReference();
 void setDefaultSpecifier(A_SPECIFIER *, A_TYPE *, S_KIND);
 
-ALID *linkDeclaratorList(A_ID *,A_ID *) :
+A_ID *linkDeclaratorList(A_ID *,A_ID *);
 A_ID *getIdentifierDeclared (char *);
 A_TYPE *getTypeOfStructOrEnumRefidentifier(T_KIND,char *,ID_KIND);
 A_ID *setDeclaratorInit(A_ID *,A_NODE *);
@@ -383,12 +383,12 @@ A_ID *setDeclaratorListSpecifier(A_ID *id, A_SPECIFIER *p) {
     return id;
 }
 
-A_ID *setParameterDeclaratorSpecifier(A_ID *id, A_SPECIIER *p) {
+A_ID *setParameterDeclaratorSpecifier(A_ID *id, A_SPECIFIER *p) {
     if (searchIdentifierAtCurrentLevel(id -> name, id -> prev)) {
         syntax_error(12, id -> name);
     }
     if (p -> stor || p -> type == void_type) { // void는 declarator가 있으면 안되므로...
-        syntax_error(14);
+        syntax_error(14, id -> name);
     }
     setDefaultSpecifier(p);
     id = setDeclaratorElementType(id, p -> type);
