@@ -363,3 +363,113 @@ A_ID *setDeclaratorListSpecifier(A_ID *id, A_SPECIFIER *p) {
     A_ID *a;
     setDefaultSpecifier(p);
 }
+
+
+
+void initialize() {
+    int_type = setTypeAndKindOfDeclarator(
+        makeType(T_ENUM), ID_TYPE, makeIdentifier("int")
+    );
+    float_type = setTypeAndKindOfDeclarator(
+        makeType(T_ENUM), ID_TYPE, makeIdentifier("float")
+    );
+    char_type = setTypeAndKindOfDeclarator(
+        makeType(T_ENUM), ID_TYPE, makeIdentifier("char")
+    );
+    void_type = setTypeAndKindOfDeclarator(
+        makeType(T_ENUM), ID_TYPE, makeIdentifier("void")
+    );
+    string_type = setTypeElementType(makeType(T_POINTER), char_type);
+    int_type -> size = 4; int_type -> check = TRUE;
+    float_type -> size = 4; float_type -> check = TRUE;
+    char_type -> size = 1; char_type -> check = TRUE;
+    void_type -> size = 0; void_type -> check = TRUE;
+    string_type -> size = 4; string_type -> check = TRUE;
+
+    setDeclaratorTypeAndKind( // printf Identifier랑 type 만들고, kind 설정까지 한 번에
+        makeIdentifier("printf"),
+        setTypeField(
+            setTypeElementType(makeType(T_FUNC), void_type),
+            linkDeclaratorList(
+                setDeclaratorTypeAndKind(makeDummpyIdentifier(), string_type, ID_PARM),
+                    setDeclaratorKind(makeDummpyIdentifier(), ID_PARM)
+            )
+        ), ID_FUNC
+    );
+
+    setDeclaratorTypeAndKind( // printf Identifier랑 type 만들고, kind 설정까지 한 번에
+        makeIdentifier("scanf"),
+        setTypeField(
+            setTypeElementType(makeType(T_FUNC), void_type),
+            linkDeclaratorList(
+                setDeclaratorTypeAndKind(makeDummpyIdentifier(), string_type, ID_PARM),
+                    setDeclaratorKind(makeDummpyIdentifier(), ID_PARM)
+            )
+        ), ID_FUNC
+    );
+
+    setDeclaratorTypeAndKind( // printf Identifier랑 type 만들고, kind 설정까지 한 번에
+        makeIdentifier("malloc"),
+        setTypeField(
+            setTypeElementType(makeType(T_FUNC), string_type),
+            setDeclaratorTypeAndKind(makeDummpyIdentifier(), int_type, ID_PARM)
+        ), ID_FUNC
+    );
+}
+
+void syntax_error(int i, char *s) {
+    syntax_err++;
+    printf("line %d: syntax error: ", line_no);
+
+    switch (i) {
+        case 11 : 
+            printf("illgal referencing struct or union identifier %s", s);
+            break;
+        case 12 : 
+            printf("redeclaration of identifier %s", s);
+            break;
+        case 13 : 
+            printf("undefine identifier %s", s);
+            break;
+        case 14 : 
+            printf("illegal type specifier in formal parameter %s", s);
+            break;
+        case 20 : 
+            printf("illegal stroage class in type specifiers %s", s);
+            break;
+        case 21 : 
+            printf("illegal function declarator %s", s);
+            break;
+        case 22 : 
+            printf("conflicting parm type in prototype function %s", s);
+            break;
+        case 23 : 
+            printf("empty parameter name %s", s);
+            break;
+        case 24 : 
+            printf("illgal declaration specifiers %s", s);
+            break;
+        case 25 : 
+            printf("illgal function sepcifiers %s", s);
+            break;
+        case 26 : 
+            printf("illgal or conflicting return type in function %s", s);
+            break;
+        case 31 : 
+            printf("undefined type for identifier %s", s);
+            break;
+        case 32 : 
+            printf("incomplete forward reference for identifier %s", s);
+            break;
+        default : 
+            printf("unknown %s", s);
+            break;  
+    }
+    printf("\n");
+
+    if (strlen(yytext) == 0) {
+        printf(" at end\n");
+    } else {
+        printf(" near %s\n", yytext);
+    }
+}
