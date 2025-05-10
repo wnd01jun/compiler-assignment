@@ -362,10 +362,146 @@ A_ID *setFunctionDeclaratorBody(A_ID *id, A_NODE *n) {
 A_ID *setDeclaratorListSpecifier(A_ID *id, A_SPECIFIER *p) {
     A_ID *a;
     setDefaultSpecifier(p);
+    a = id;
+    while (a) {
+        if (strlen(a -> name) && searchIdentifierAtCurrentLevel(a -> name, a -> prev)) {
+            syntax_error(12, a -> name);
+        }
+        if (p -> stor == S_TYPEDEF) {
+            a -> kind = ID_TYPE;
+        } else if (a -> type -> kind == T_FUNC) {
+            a -> kind = ID_FUNC;
+        } else {
+            a -> kind = ID_VAR;
+        }
+        a -> specifier = p -> stor;
+        if (a -> specifier == S_NULL) {
+            a -> specifier = S_AUTO;
+        }
+        a = a -> link;
+    }
+    return id;
 }
 
+A_ID *setParameterDeclaratorSpecifier(A_ID *id, A_SPECIIER *p) {
+    if (searchIdentifierAtCurrentLevel(id -> name, id -> prev)) {
+        syntax_error(12, id -> name);
+    }
+    if (p -> stor || p -> type == void_type) { // void는 declarator가 있으면 안되므로...
+        syntax_error(14);
+    }
+    setDefaultSpecifier(p);
+    id = setDeclaratorElementType(id, p -> type);
+    id -> kind = ID_PARM;
+    return id;
+}
 
+A_ID *setStructDeclaratorListSpecifier(A_ID *id, A_TYPE *t) {
+    A_ID *a;
+    a = id;
+    while (a) {
+        if (searchIdentifierAtCurrentLevel(a -> name, a -> prev)) {
+            syntax_error(12, a -> name);
+        }
+        a = setDefaultSpecifier(a, t);
+        a -> kind = ID_FIELD;
+        a = a -> link;
+    }
+    return id;
+}
 
+// specifier에 type mapping
+A_TYPE *setTypeNameSpecifier(A_TYPE *t, A_SPECIFIER *p) {
+    if (p -> stor) {
+        syntax_error(20); // type name mapping하는데 storage class 비허용
+    }
+    setDefaultSpecifier(p);
+    t = setTypeElementType(t, p -> type);
+    return t;
+}
+
+A_TYPE *setTypeElementType(A_TYPE *t, A_TYPE *s) {
+    A_TYPE *q;
+    if (t == NIL) {
+        return s;
+    }
+    q = t;
+    while (q -> element_type) {
+        q = q -> element_type;
+    }
+    q -> element_type = s;
+    return t;
+}
+
+A_TYPE *setTypeField(A_TYPE *t, A_ID *n) {
+    t -> field = n;
+    return t;
+}
+
+A_TYPE *setTypeExpr(A_TYPE *t, A_NODE *n) {
+    t -> expr = n;
+    return t;
+}
+
+A_TYPE *setTypeStructOrEnumIdentifier(T_KIND k, char *s, ID_KIND kk) {
+    A_TYPE *t;
+    A_ID *id, *a;
+
+    a = searchIdentifierAtCurrentLevel(s, current_id);
+    if (a) {
+        if (a -> kind == kk && a -> type -> kind == k) {
+            if (a -> type -> field) { // field가 정의되어있으면 앞에 정의부가 이미 나온거 이므로 에러!
+                syntax_error(12, s);
+            } else { // 여기는 왜 리턴이지? 선언이 한번 더 나온걸로 치는듯? identifier는 있으니까
+                return a -> type;
+            }
+        } else { // 같은 이름의 다른 용도로 사용 중 이므로
+            syntax_error(12, s);
+        }
+    }
+    id = makeIdentifier(s);
+    t = makeType(k);
+    id -> type = t;
+    id -> kind = kk;
+    return t;
+}
+
+A_TYPE *setTypeAndKindOfDeclarator(A_TYPE *t, ID_KIND k, A_ID *id) {
+    if (searchIdentifierAtCurrentLevel(id -> name, id -> prev)) {
+        syntax_error(12, id -> name);
+    }
+    id -> type = t;
+    id -> kind = k;
+    return t;
+}
+
+// 파라미터 다른지 같은지 비교
+BOOLEAN isNotSameFormalParameters(A_ID *a, A_ID *b) {
+    if (a == NIL) { // 프로토 타입에 파라미터가 없다!
+        return FALSE;
+    }
+    while (a) {
+        if (b == NIL || isNotSameType(a -> type, b -> type)) {
+            return TRUE;
+        }
+        a = a -> link;
+        b = b -> link;
+    }
+    if (b) {
+        return TRUE;
+    }
+    return FALSE;
+}
+
+BOOLEAN isNotSameType(A_TYPE *t1, A_TYPE *t2) {
+    if (isPointerOrArrayType(t1) || isPointerOrArrayType(t2)) {
+        return isNotSameType(t1 -> element_type, t2 -> element_type); // 둘다 pointer면 재귀적으로 탐사
+    } else {
+        return t1 != t2;
+    }
+}
+
+// 초기화 과정, 기본 type이랑, printf, scanf, malloc 기본 함수로 등록
 void initialize() {
     int_type = setTypeAndKindOfDeclarator(
         makeType(T_ENUM), ID_TYPE, makeIdentifier("int")
