@@ -186,7 +186,7 @@ void checkForwardReference() {
         if(id -> kind == ID_NULL) {
             syntax_error(31, id -> name);
         } else if ((id -> kind == ID_STRUCT || id -> kind == ID_ENUM)
-                 && t -> field == NIL){
+                && t -> field == NIL){
             syntax_error(32, id -> name);
         }
         id = id -> prev;
@@ -197,10 +197,10 @@ void checkForwardReference() {
 void setDefaultSpecifier(A_SPECIFIER *p) {
     A_TYPE *t;
     if (p -> type == NIL) {
-        syntax_error() // type_specifier는 반드시 있어야한다.
+        syntax_error(10, "type_specifier is necessary"); // type_specifier는 반드시 있어야한다.
     }
     if (p -> stor == S_NULL) {
-        p -> stor = S_AUTO // 없으면 자동으로 AUTO
+        p -> stor = S_AUTO; // 없으면 자동으로 AUTO
     }
 }
 
