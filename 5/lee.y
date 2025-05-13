@@ -196,7 +196,7 @@ initializer
     | LR initializer_list RR {$$ = $2;}
     ;
 initializer_list
-    : initializer {$$ = makeNode(N_INIT_LIST, $1, NIL, makeNode(N_INIT_LIST_NIL, NIL, NIL, NIL)); // 오른쪽 끝은 NIL}
+    : initializer {$$ = makeNode(N_INIT_LIST, $1, NIL, makeNode(N_INIT_LIST_NIL, NIL, NIL, NIL));}
     | initializer_list COMMA initializer {$$ = makeNodeList(N_INIT_LIST, $1, $3);}
     ;
 statement_list_opt
