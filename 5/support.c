@@ -197,7 +197,7 @@ void checkForwardReference() {
 void setDefaultSpecifier(A_SPECIFIER *p) {
     A_TYPE *t;
     if (p -> type == NIL) {
-        syntax_error(10, "type_specifier is necessary"); // type_specifier는 반드시 있어야한다.
+        p -> type = int_type;
     }
     if (p -> stor == S_NULL) {
         p -> stor = S_AUTO; // 없으면 자동으로 AUTO
