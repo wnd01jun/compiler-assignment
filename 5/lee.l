@@ -6,8 +6,10 @@ ws  {delim}+
 %{
     #include "y.tab.h"
     #include "string.h"
+    #include "type.h"
     extern int yyval;
     extern int line_no;
+    extern A_ID *current_id;
     char    *makeString();
     int     checkIdentifier();  
 %}
@@ -92,7 +94,7 @@ int checkIdentifier(char *s) {
         return IDENTIFIER;
     } else if (id -> kind == ID_TYPE) {
         yylval = id -> type;
-        return TYPE_IDENTIFIER
+        return TYPE_IDENTIFIER;
     } else {
         yylval = id -> name;
         return IDENTIFIER;

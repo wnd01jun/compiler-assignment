@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "type.h"
 #include "y.tab.h"
 
@@ -8,7 +9,7 @@ A_TYPE *int_type, *char_type, *void_type, *float_type, *string_type;
 A_NODE *root;
 A_ID *current_id = NIL;
 int syntax_err = 0;
-int line_no = 1;
+extern int line_no;
 int current_level = 0;
 
 A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
@@ -21,11 +22,11 @@ A_ID *searchIdentifier(char *, A_ID *);
 A_ID *searchIdentifierAtCurrentLevel(char *, A_ID *);
 A_SPECIFIER *updateSpecifier(A_SPECIFIER *, A_TYPE *, S_KIND);
 void checkForwardReference();
-void setDefaultSpecifier(A_SPECIFIER *, A_TYPE *, S_KIND);
+void setDefaultSpecifier(A_SPECIFIER *);
 
 A_ID *linkDeclaratorList(A_ID *,A_ID *);
 A_ID *getIdentifierDeclared (char *);
-A_TYPE *getTypeOfStructOrEnumRefidentifier(T_KIND,char *,ID_KIND);
+A_TYPE *getTypeOfStructOrEnumRefIdentifier(T_KIND,char *,ID_KIND);
 A_ID *setDeclaratorInit(A_ID *,A_NODE *);
 A_ID *setDeclaratorKind(A_ID *, ID_KIND);
 A_ID *setDeclaratorType(A_ID *, A_TYPE *);
@@ -252,7 +253,7 @@ A_ID *getIdentifierDeclared(char *s) {
     return id;
 }
 
-A_TYPE *getTypeOfStructOrEnumRefidentifier(T_KIND k, char *s, ID_KIND kk) {
+A_TYPE *getTypeOfStructOrEnumRefIdentifier(T_KIND k, char *s, ID_KIND kk) {
     A_TYPE *t;
     A_ID *id;
     id = searchIdentifier(s, current_id); // 이름으로부터 Identifier 찾아서
@@ -499,6 +500,13 @@ BOOLEAN isNotSameType(A_TYPE *t1, A_TYPE *t2) {
     } else {
         return t1 != t2;
     }
+}
+
+BOOLEAN isPointerOrArrayType(A_TYPE *t) {
+    if (t -> kind == T_POINTER || t -> kind == T_ARRAY) {
+        return TRUE;
+    }
+    return FALSE;
 }
 
 // 초기화 과정, 기본 type이랑, printf, scanf, malloc 기본 함수로 등록

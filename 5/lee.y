@@ -42,7 +42,7 @@ declaration_list
     | declaration_list declaration {$$ = linkDeclaratorList($1,$2);}
     ;
 declaration
-    : declaration_specifiers init_declarator_list_opt SEMICOLON {$$ = setDeclarationListSpecifier($2, $1);}
+    : declaration_specifiers init_declarator_list_opt SEMICOLON {$$ = setDeclaratorListSpecifier($2, $1);}
     ;
 declaration_specifiers
     : type_specifier {$$ = makeSpecifier($1, 0);}
@@ -104,7 +104,7 @@ struct_declaration
 
 struct_declarator_list
     : struct_declarator {$$ = $1;}
-    | struct_declarator_list COMMA struct_declarator {$$ = linkDeclaratorList($1, $3)}
+    | struct_declarator_list COMMA struct_declarator {$$ = linkDeclaratorList($1, $3);}
     ;
 struct_declarator
     : declarator {$$ = $1;}
@@ -114,7 +114,7 @@ enum_specifier
     : ENUM_SYM IDENTIFIER
       {$$ = setTypeStructOrEnumIdentifier(T_ENUM, $2, ID_ENUM);}
      LR enumerator_list RR {$$ = setTypeField($3, $5);}
-    | ENUM_SYM {$$ = makeType(T_ENUM)}
+    | ENUM_SYM {$$ = makeType(T_ENUM);}
     LR enumerator_list RR {$$ = setTypeField($2, $4);}
     | ENUM_SYM IDENTIFIER
     {$$ = getTypeOfStructOrEnumRefIdentifier(T_ENUM, $2, ID_ENUM);}
@@ -192,7 +192,7 @@ direct_abstract_declarator
      {$$ = setTypeElementType($1, setTypeExpr(makeType(T_FUNC), $3));}
     ;
 initializer
-    : constant_expression {$$ = makeNode(N_INIT_LIST_ONE, NIL, $1, NIL)}
+    : constant_expression {$$ = makeNode(N_INIT_LIST_ONE, NIL, $1, NIL);}
     | LR initializer_list RR {$$ = $2;}
     ;
 initializer_list
@@ -376,10 +376,10 @@ equality_expression
      {$$ = makeNode(N_EXP_NEQ, $1, NIL, $3);}
     ;
 
-AND_expression
-    : equality_expression
-    | AND_expression AMP equality_expression
-    ;
+
+
+
+
 
 bitwise_and_expression
     : equality_expression {$$ = $1;}
