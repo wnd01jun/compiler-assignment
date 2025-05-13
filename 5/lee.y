@@ -279,15 +279,15 @@ postfix_expression
     | postfix_expression LB expression RB
      {$$ = makeNode(N_EXP_ARRAY, $1, NIL, $3);}
     | postfix_expression LP arg_expression_list_opt RP
-     {$$ = makeNode(N_EXP_FUNCTION, $1, NIL, $3);}
+     {$$ = makeNode(N_EXP_FUNCTION_CALL, $1, NIL, $3);}
     | postfix_expression PERIOD IDENTIFIER
      {$$ = makeNode(N_EXP_STRUCT, $1, NIL, $3);}
     | postfix_expression ARROW IDENTIFIER
      {$$ = makeNode(N_EXP_ARROW, $1, NIL, $3);}
     | postfix_expression PLUSPLUS
-     {$$ = makeNode(N_EXP_POST_INC, $1, NIL, $3);}
+     {$$ = makeNode(N_EXP_POST_INC, NIL, $1, NIL);}
     | postfix_expression MINUSMINUS
-     {$$ = makeNode(N_EXP_POST_DEC, $1, NIL, $3);}
+     {$$ = makeNode(N_EXP_POST_DEC, NIL, $1, NIL);}
     ;
 arg_expression_list_opt
     : /* empty */ {$$ = makeNode(N_ARG_LIST, NIL, NIL, NIL);}
@@ -350,6 +350,7 @@ additive_expression
      {$$ = makeNode(N_EXP_ADD, $1, NIL, $3);}
     | additive_expression MINUS multiplicative_expression
      {$$ = makeNode(N_EXP_SUB, $1, NIL, $3);}
+     ;
 
 shift_expression
     : additive_expression {$$ = $1;}
@@ -362,7 +363,7 @@ relational_expression
     | relational_expression GTR shift_expression
      {$$ = makeNode(N_EXP_GTR, $1, NIL, $3);}
     | relational_expression LEQ shift_expression
-     {$$ = makeNOde(N_EXP_LEQ, $1, NIL, $3);}
+     {$$ = makeNode(N_EXP_LEQ, $1, NIL, $3);}
     | relational_expression GEQ shift_expression
      {$$ = makeNode(N_EXP_GEQ, $1, NIL, $3);}
     ;
@@ -419,7 +420,7 @@ expression
     ;
 
 constant_expression
-    : expression {$$ = $1;};
+    : expression {$$ = $1;}
     ;
     
     
