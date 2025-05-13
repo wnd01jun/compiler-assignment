@@ -52,7 +52,7 @@ void initialize();
 A_NODE *makeNode(NODE_NAME n, A_NODE *a, A_NODE *b, A_NODE *c) {
     A_NODE *m; // A_NODE는 자식 3개를 가질 수 있는 node 보통 가운데는 identifier
     // right, left는 expression이나 statement 연결
-    m = (A_NODE*)malloc(sizeof(A_NODE)); // A_NODE 동적 할ㅏ
+    m = malloc(sizeof(A_NODE)); // A_NODE 동적 할ㅏ
     m -> name = n; // 이름 설정
     m -> llink = a;
     m -> clink = b;
@@ -87,7 +87,7 @@ A_NODE *makeNodeList(NODE_NAME n, A_NODE *a, A_NODE *b) {
 // 걍 기본적인 Identifier 하나 생성, current_id 변경시킴
 A_ID *makeIdentifier(char *s) {
     A_ID *id;
-    id = (A_ID *)malloc(sizeof(A_ID));
+    id = malloc(sizeof(A_ID));
     id -> name = s;
     id -> kind = 0; 
     id -> specifier = 0;
@@ -106,7 +106,7 @@ A_ID *makeIdentifier(char *s) {
 // 아마 이름 없는 얘 만들 때 사용하는듯 하다.
 A_ID *makeDummyIdentifier() {
     A_ID *id;
-    id = (A_ID *)malloc(sizeof(A_ID));
+    id = malloc(sizeof(A_ID));
     id -> name = "";
     id -> kind = 0; 
     id -> specifier = 0;
@@ -118,7 +118,6 @@ A_ID *makeDummyIdentifier() {
     id -> line = line_no;
     id -> value = 0;
     id -> prev = 0;
-    current_id = id;
     return (id);
 }
 
@@ -126,7 +125,7 @@ A_ID *makeDummyIdentifier() {
 // A_TYPE 생성, 배열, 포인터 이런 얘들도 들어와야 하므로 field가 다양한듯
 A_TYPE *makeType(T_KIND k) {
     A_TYPE *t;
-    t = (A_TYPE *)malloc(sizeof(A_TYPE));
+    t = malloc(sizeof(A_TYPE));
     t -> kind = k;
     t -> size = 0;
     t -> local_var_size = 0;
@@ -142,7 +141,7 @@ A_TYPE *makeType(T_KIND k) {
 // storage_class랑, type 가리키는 specifier 생성
 A_SPECIFIER *makeSpecifier(A_TYPE *t, S_KIND s) {
     A_SPECIFIER *p;
-    p = (A_SPECIFIER*)malloc(sizeof(A_SPECIFIER));
+    p = malloc(sizeof(A_SPECIFIER));
     p -> type = t;
     p -> stor = s;
     p -> line = line_no;

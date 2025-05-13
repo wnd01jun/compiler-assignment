@@ -3,6 +3,7 @@
 int line_no = 1;
 extern A_NODE *root;
 int main(void) {
+    initialize();
     if(yyparse() == 0) {
         printf("Parsing completed!!!\n");
         print_ast(root);

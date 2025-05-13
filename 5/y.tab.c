@@ -64,7 +64,9 @@
 #define YYPULL 1
 
 
+#define YYSTYPE_IS_DECLARED  1
 
+typedef long long YYSTYPE; 
 
 /* First part of user prologue.  */
 #line 1 "lee.y"

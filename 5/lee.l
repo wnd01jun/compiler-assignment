@@ -7,11 +7,13 @@ ws  {delim}+
     #include "y.tab.h"
     #include "string.h"
     #include "type.h"
+    #include <stdlib.h>
+
     extern int yyval;
     extern int line_no;
     extern A_ID *current_id;
-    char    *makeString();
-    int     checkIdentifier();  
+    char    *makeString(char *s);
+    int     checkIdentifier(char *s);  
 %}
 
 %%
@@ -74,7 +76,7 @@ const   { return(CONST_SYM); }
 "\~"    { return(TILDE); }
 {digit}+    { return(INTEGER_CONSTANT); }
 {digit}+\.{digit}+  { return(FLOAT_CONSTANT); }
-{letter}({letter}|{digit})* { return(checkIdentifier(yytext)); }
+{letter}({letter}|{digit})* {return(checkIdentifier(yytext)); }
 \"([^"\n]|\\["\n])*\"   { return(STRING_LITERAL); }
 \'([^'\n]|\'\')\'   { return(CHARACTER_CONSTANT); }
 %%
@@ -103,7 +105,10 @@ int checkIdentifier(char *s) {
 
 char *makeString(char *s) {
     char *t;
-    t = malloc(strlen(s)+1);
+    t = (char *)malloc(strlen(s)+1);
+    if (t == 0) {
+        exit(1);
+    }
     strcpy(t, s);
     return t;
 }
