@@ -14,7 +14,7 @@ int current_level = 0;
 A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
 A_NODE *makeNodeList(NODE_NAME, A_NODE *, A_NODE *);
 A_ID *makeIdentifier(char *);
-A_ID *makeDumppyIdentifier();
+A_ID *makeDummyIdentifier();
 A_TYPE *makeType(T_KIND);
 A_SPECIFIER *makeSpecifier(A_TYPE *, S_KIND);
 A_ID *searchIdentifier(char *, A_ID *);
@@ -103,10 +103,10 @@ A_ID *makeIdentifier(char *s) {
 }
 
 // 아마 이름 없는 얘 만들 때 사용하는듯 하다.
-A_ID *makeDummpyIdentifier() {
+A_ID *makeDummyIdentifier() {
     A_ID *id;
     id = (A_ID *)malloc(sizeof(A_ID));
-    id -> name = s;
+    id -> name = "";
     id -> kind = 0; 
     id -> specifier = 0;
     id -> level = current_level;
@@ -210,7 +210,7 @@ A_SPECIFIER *updateSpecifier(A_SPECIFIER *p, A_TYPE *t, S_KIND s) {
             if (p -> type == t) {
                 ;
             } else {
-                syntax_error(24); // type은 바꿀 수 없다.
+                syntax_error(24, ""); // type은 바꿀 수 없다.
             }
         } else {
             p -> type = t; // NIL일 때만 바꿀 수 있음
@@ -221,7 +221,7 @@ A_SPECIFIER *updateSpecifier(A_SPECIFIER *p, A_TYPE *t, S_KIND s) {
             if (s == p -> stor) {
                 ;
             } else {
-                syntax_error(24); // 얘도 정해진게 있으면 못바꾸낟.
+                syntax_error(24, ""); // 얘도 정해진게 있으면 못바꾸낟.
             }
         } else {
             p -> stor = s;
@@ -257,7 +257,7 @@ A_TYPE *getTypeOfStructOrEnumRefidentifier(T_KIND k, char *s, ID_KIND kk) {
     A_ID *id;
     id = searchIdentifier(s, current_id); // 이름으로부터 Identifier 찾아서
     if (id) { // id가 있을 경우에
-        if (id -> kind == kk && id => type -> kind == k) {
+        if (id -> kind == kk && id -> type -> kind == k) {
             return id -> type; // 얘네 id_kind랑 type->kind가 kk, k가 맞는지 검사
         } else {
             syntax_error(11, s); // 다른 이름, type으로 이미 선언된 것이므로 syntax error
@@ -278,7 +278,7 @@ A_ID *setDeclaratorInit(A_ID *id, A_NODE *n) {
 
 A_ID *setDeclaratorKind(A_ID *id, ID_KIND k) {
     A_ID *a;
-    a = searchIdentifierAtCurrentLevel(id -> name, id -> prev) // 중복검사
+    a = searchIdentifierAtCurrentLevel(id -> name, id -> prev); // 중복검사
     if (a) {
         syntax_error(12, id -> name);
     }
@@ -293,7 +293,7 @@ A_ID *setDeclaratorType(A_ID *id, A_TYPE *t) {
 
 // 타입이 여러개로 막 pointer array 이루어진 얘들 끝의 type을 설정해주기 위해 하는듯
 A_ID *setDeclaratorElementType(A_ID *id, A_TYPE *t) {
-    A_TYPE *t;
+    A_TYPE *tt;
     if (id -> type == NIL) {
         id -> type = t;
     } else {
@@ -317,12 +317,12 @@ A_ID *setFunctionDeclaratorSpecifier(A_ID *id, A_SPECIFIER *p) {
     A_ID *a;
 
     if (p -> stor) {
-        syntax_error(25); // 함수는 stroage class를 가지면 안된다.
+        syntax_error(25, ""); // 함수는 stroage class를 가지면 안된다.
     }
     setDefaultSpecifier(p); 
 
     if (id -> type -> kind != T_FUNC) { // 뭔가 여기서 에러뜰거같은데??
-        syntax_error(21);
+        syntax_error(21, "");
         return id;
     } else {
         id = setDeclaratorElementType(id, p -> type); // 끝에 연결
@@ -347,7 +347,7 @@ A_ID *setFunctionDeclaratorSpecifier(A_ID *id, A_SPECIFIER *p) {
         if (strlen(a -> name)) {
             current_id = a;
         } else if (a -> type) { // type이 있는데, 이름이 없으면 에러
-            syntax_error(syntax_error(23)); 
+            syntax_error(23, ""); 
         }
         a = a -> link;
     }
@@ -403,7 +403,7 @@ A_ID *setStructDeclaratorListSpecifier(A_ID *id, A_TYPE *t) {
         if (searchIdentifierAtCurrentLevel(a -> name, a -> prev)) {
             syntax_error(12, a -> name);
         }
-        a = setDefaultSpecifier(a, t);
+        a = setDeclaratorElementType(a, t);
         a -> kind = ID_FIELD;
         a = a -> link;
     }
@@ -413,7 +413,7 @@ A_ID *setStructDeclaratorListSpecifier(A_ID *id, A_TYPE *t) {
 // specifier에 type mapping
 A_TYPE *setTypeNameSpecifier(A_TYPE *t, A_SPECIFIER *p) {
     if (p -> stor) {
-        syntax_error(20); // type name mapping하는데 storage class 비허용
+        syntax_error(20, ""); // type name mapping하는데 storage class 비허용
     }
     setDefaultSpecifier(p);
     t = setTypeElementType(t, p -> type);
@@ -527,8 +527,8 @@ void initialize() {
         setTypeField(
             setTypeElementType(makeType(T_FUNC), void_type),
             linkDeclaratorList(
-                setDeclaratorTypeAndKind(makeDummpyIdentifier(), string_type, ID_PARM),
-                    setDeclaratorKind(makeDummpyIdentifier(), ID_PARM)
+                setDeclaratorTypeAndKind(makeDummyIdentifier(), string_type, ID_PARM),
+                    setDeclaratorKind(makeDummyIdentifier(), ID_PARM)
             )
         ), ID_FUNC
     );
@@ -538,8 +538,8 @@ void initialize() {
         setTypeField(
             setTypeElementType(makeType(T_FUNC), void_type),
             linkDeclaratorList(
-                setDeclaratorTypeAndKind(makeDummpyIdentifier(), string_type, ID_PARM),
-                    setDeclaratorKind(makeDummpyIdentifier(), ID_PARM)
+                setDeclaratorTypeAndKind(makeDummyIdentifier(), string_type, ID_PARM),
+                    setDeclaratorKind(makeDummyIdentifier(), ID_PARM)
             )
         ), ID_FUNC
     );
@@ -548,7 +548,7 @@ void initialize() {
         makeIdentifier("malloc"),
         setTypeField(
             setTypeElementType(makeType(T_FUNC), string_type),
-            setDeclaratorTypeAndKind(makeDummpyIdentifier(), int_type, ID_PARM)
+            setDeclaratorTypeAndKind(makeDummyIdentifier(), int_type, ID_PARM)
         ), ID_FUNC
     );
 }
@@ -559,25 +559,25 @@ void syntax_error(int i, char *s) {
 
     switch (i) {
         case 11 : 
-            printf("illgal referencing struct or union identifier %s", s);
+            printf("illegal referencing struct or union identifier %s", s);
             break;
         case 12 : 
             printf("redeclaration of identifier %s", s);
             break;
         case 13 : 
-            printf("undefine identifier %s", s);
+            printf("undefined identifier %s", s);
             break;
         case 14 : 
             printf("illegal type specifier in formal parameter %s", s);
             break;
         case 20 : 
-            printf("illegal stroage class in type specifiers %s", s);
+            printf("illegal storage class in type specifiers %s", s);
             break;
         case 21 : 
             printf("illegal function declarator %s", s);
             break;
         case 22 : 
-            printf("conflicting parm type in prototype function %s", s);
+            printf("conflicting param type in prototype function %s", s);
             break;
         case 23 : 
             printf("empty parameter name %s", s);
@@ -586,7 +586,7 @@ void syntax_error(int i, char *s) {
             printf("illgal declaration specifiers %s", s);
             break;
         case 25 : 
-            printf("illgal function sepcifiers %s", s);
+            printf("illgal function specifiers %s", s);
             break;
         case 26 : 
             printf("illgal or conflicting return type in function %s", s);
