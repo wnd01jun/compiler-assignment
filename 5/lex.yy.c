@@ -12,7 +12,9 @@
 #if YY_FLEX_SUBMINOR_VERSION > 0
 #define FLEX_BETA
 #endif
+#define YYSTYPE_IS_DECLARED  1
 
+typedef  long YYSTYPE; 
 /* First, we deal with  platform-specific or compiler-specific issues. */
 
 /* begin standard C headers. */
@@ -539,7 +541,7 @@ char *yytext;
     #include "type.h"
     #include <stdlib.h>
 
-    extern int yyval;
+    extern YYSTYPE yylval;
     extern int line_no;
     extern A_ID *current_id;
     char    *makeString(char *s);

@@ -187,9 +187,6 @@ extern int yydebug;
 #define LSHIFT 318
 #define RSHIFT 319
 
-#define YYSTYPE_IS_DECLARED  1
-
-typedef long long YYSTYPE; 
 /* Value type.  */
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
 typedef int YYSTYPE;

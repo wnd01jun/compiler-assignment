@@ -9,7 +9,7 @@ ws  {delim}+
     #include "type.h"
     #include <stdlib.h>
 
-    extern int yyval;
+    extern YYSTYPE yylval;
     extern int line_no;
     extern A_ID *current_id;
     char    *makeString(char *s);
