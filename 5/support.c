@@ -315,7 +315,7 @@ A_ID *setDeclaratorTypeAndKind(A_ID *id, A_TYPE *t, ID_KIND k) {
 
 A_ID *setFunctionDeclaratorSpecifier(A_ID *id, A_SPECIFIER *p) {
     A_ID *a;
-
+    A_ID *prev = 0;
     if (p -> stor) {
         syntax_error(25, ""); // 함수는 stroage class를 가지면 안된다.
     }
@@ -346,9 +346,13 @@ A_ID *setFunctionDeclaratorSpecifier(A_ID *id, A_SPECIFIER *p) {
     while (a) { // 스코프가 벗어나 있으므로, 파라미터가 다시 들어갈 수 있도록 해야한다.
         if (strlen(a -> name)) {
             current_id = a;
-        } else if (a -> type) { // type이 있는데, 이름이 없으면 에러
+        } else if (a -> type && a -> type != void_type) { // type이 있는데, 이름이 없으면 에러
             syntax_error(23, ""); 
         }
+        if (a -> type == void_type && (prev || a -> link)) {
+            syntax_error(10, "void parameter can be used alone\n");
+        }
+        prev = a;
         a = a -> link;
     }
     return id;
@@ -369,7 +373,7 @@ A_ID *setDeclaratorListSpecifier(A_ID *id, A_SPECIFIER *p) {
         }
         if (p -> stor == S_TYPEDEF) {
             a -> kind = ID_TYPE;
-        } else if (a -> type -> kind == T_FUNC) {
+        } else if (a -> type && a -> type -> kind == T_FUNC) {
             a -> kind = ID_FUNC;
         } else {
             a -> kind = ID_VAR;
@@ -387,7 +391,7 @@ A_ID *setParameterDeclaratorSpecifier(A_ID *id, A_SPECIFIER *p) {
     if (searchIdentifierAtCurrentLevel(id -> name, id -> prev)) {
         syntax_error(12, id -> name);
     }
-    if (p -> stor || p -> type == void_type) { // void는 declarator가 있으면 안되므로...
+    if (strlen(id -> name) > 0 && (p -> stor || p -> type == void_type)) { // void는 declarator가 있으면 안되므로...
         syntax_error(14, id -> name);
     }
     setDefaultSpecifier(p);
