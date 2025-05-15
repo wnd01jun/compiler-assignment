@@ -207,8 +207,8 @@ statement_list_opt
     | statement_list {$$ = $1;}
     ;
 statement_list
-    : statement
-    | statement_list statement
+    : statement {$$ = makeNode(N_STMT_LIST, $1, NIL, makeNode(N_STMT_LIST_NIL, NIL ,NIL, NIL));}
+    | statement_list statement {$$ = makeNodeList(N_STMT_LIST, $1, $2);}
     ;
 statement
     : labeled_statement {$$ = $1;}
@@ -227,8 +227,8 @@ labeled_statement
     ;
 
 compound_statement
-    : LR declaration_list_opt statement_list_opt RR
-     {checkForwardReference(); $$ = makeNode(N_STMT_COMPOUND, $3, NIL, $4); current_id = $2;}
+    : LR {$$=current_id; current_level++;} declaration_list_opt statement_list_opt RR
+     {checkForwardReference(); $$ = makeNode(N_STMT_COMPOUND, $3, NIL, $4); current_id = $2; current_level--;}
     ;
 
 expression_statement
