@@ -2324,7 +2324,7 @@ yyreduce:
 
   case 115: /* for_expression: expression_opt SEMICOLON expression_opt SEMICOLON expression_opt  */
 #line 257 "lee.y"
-     {yyval = makeNode(N_FOR_EXP, yyvsp[-4], yyvsp[-3], yyvsp[-2]);}
+     {yyval = makeNode(N_FOR_EXP, yyvsp[-4], yyvsp[-2], yyvsp[0]);}
 #line 2329 "y.tab.c"
     break;
 

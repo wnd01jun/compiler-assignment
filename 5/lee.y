@@ -254,7 +254,7 @@ iteration_statement
     ;
 for_expression
     : expression_opt SEMICOLON expression_opt SEMICOLON expression_opt
-     {$$ = makeNode(N_FOR_EXP, $1, $2, $3);}
+     {$$ = makeNode(N_FOR_EXP, $1, $3, $5);}
     ;
 expression_opt
     : /* empty */ {$$ = NIL;}
