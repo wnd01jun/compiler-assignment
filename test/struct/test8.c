@@ -9,7 +9,7 @@ int main(void){
     struct e {
         int g;
         int e;
-    }
+    };
 
     return 0;
 }

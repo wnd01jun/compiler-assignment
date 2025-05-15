@@ -371,6 +371,7 @@ A_ID *setDeclaratorListSpecifier(A_ID *id, A_SPECIFIER *p) {
         if (strlen(a -> name) && searchIdentifierAtCurrentLevel(a -> name, a -> prev)) {
             syntax_error(12, a -> name);
         }
+        a = setDeclaratorElementType(a, p->type);
         if (p -> stor == S_TYPEDEF) {
             a -> kind = ID_TYPE;
         } else if (a -> type && a -> type -> kind == T_FUNC) {
