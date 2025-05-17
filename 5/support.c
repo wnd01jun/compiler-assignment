@@ -2,7 +2,6 @@
 #include <stdlib.h>
 #include <string.h>
 #include "type.h"
-#include "y.tab.h"
 
 extern char *yytext;
 A_TYPE *int_type, *char_type, *void_type, *float_type, *string_type;
@@ -387,12 +386,14 @@ A_ID *setDeclaratorListSpecifier(A_ID *id, A_SPECIFIER *p) {
     }
     return id;
 }
-
+/*
+fix point
+*/
 A_ID *setParameterDeclaratorSpecifier(A_ID *id, A_SPECIFIER *p) {
     if (searchIdentifierAtCurrentLevel(id -> name, id -> prev)) {
         syntax_error(12, id -> name);
     }
-    if (strlen(id -> name) > 0 && (p -> stor || p -> type == void_type)) { // void는 declarator가 있으면 안되므로...
+    if (strlen(id -> name) > 0 && (p -> stor || p -> type == void_type)) { // void는 declarator가 있으면 안되므로... 
         syntax_error(14, id -> name);
     }
     setDefaultSpecifier(p);

@@ -7,8 +7,8 @@ struct k {
 int main(void){
     
     struct e {
-        int g;
-        int e;
+        int u;
+        int f;
     };
 
     return 0;

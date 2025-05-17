@@ -74,11 +74,12 @@ const   { return(CONST_SYM); }
 "\|"    { return(BAR); }
 "\?"    { return(QUESTION); }
 "\~"    { return(TILDE); }
-{digit}+    { return(INTEGER_CONSTANT); }
-{digit}+\.{digit}+  { return(FLOAT_CONSTANT); }
+{digit}+    { yylval = atoi(yytext); return(INTEGER_CONSTANT); }
+{digit}+\.{digit}+  { yylval = makeString(yytext); return(FLOAT_CONSTANT); }
 {letter}({letter}|{digit})* {return(checkIdentifier(yytext)); }
-\"([^"\n]|\\["\n])*\"   { return(STRING_LITERAL); }
-\'([^'\n]|\'\')\'   { return(CHARACTER_CONSTANT); }
+\"([^"\n]|\\["\n])*\"   { yylval = makeString(yytext); return(STRING_LITERAL); }
+\'([^'\n]|\'\')\'   { yylval = *(yytext+1); return(CHARACTER_CONSTANT); }
+"//"[^\n]*          {}
 %%
 
 int checkIdentifier(char *s) {

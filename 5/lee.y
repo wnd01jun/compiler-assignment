@@ -1,8 +1,8 @@
 %{
-#include "type.h"
-#include "support.h"
 #define YYSTYPE_IS_DECLARED  1
 typedef  long YYSTYPE; 
+#include "type.h"
+#include "support.h"
 extern int line_no, syntax_err;
 extern A_NODE *root;
 extern A_ID *current_id;
