@@ -4,6 +4,8 @@ delim   [ \t]
 line    [\n]
 ws  {delim}+
 %{
+    #define YYSTYPE_IS_DECLARED 1
+    typedef  long YYSTYPE;
     #include "y.tab.h"
     #include "string.h"
     #include "type.h"

@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "support.h"
 #include "type.h"
+#include "support.h"
 
 extern char *yytext;
 A_TYPE *int_type, *char_type, *void_type, *float_type, *string_type;
@@ -464,6 +464,7 @@ BOOLEAN isNotSameFormalParameters(A_ID *a, A_ID *b) {
     }
     return FALSE;
 }
+
 
 BOOLEAN isNotSameType(A_TYPE *t1, A_TYPE *t2) {
     if (isPointerOrArrayType(t1) || isPointerOrArrayType(t2)) {

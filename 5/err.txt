@@ -1,3 +1,930 @@
+In file included from support.h:1,
+                 from lee.y:3:
+type.h:2:15: error: redeclaration of enumerator ‘FALSE’
+    2 | typedef enum {FALSE,TRUE} BOOLEAN;
+      |               ^~~~~
+In file included from lee.y:2:
+type.h:2:15: note: previous definition of ‘FALSE’ with type ‘enum <anonymous>’
+    2 | typedef enum {FALSE,TRUE} BOOLEAN;
+      |               ^~~~~
+In file included from support.h:1,
+                 from lee.y:3:
+type.h:2:21: error: redeclaration of enumerator ‘TRUE’
+    2 | typedef enum {FALSE,TRUE} BOOLEAN;
+      |                     ^~~~
+In file included from lee.y:2:
+type.h:2:21: note: previous definition of ‘TRUE’ with type ‘enum <anonymous>’
+    2 | typedef enum {FALSE,TRUE} BOOLEAN;
+      |                     ^~~~
+In file included from support.h:1,
+                 from lee.y:3:
+type.h:2:27: error: conflicting types for ‘BOOLEAN’; have ‘enum <anonymous>’
+    2 | typedef enum {FALSE,TRUE} BOOLEAN;
+      |                           ^~~~~~~
+In file included from lee.y:2:
+type.h:2:27: note: previous declaration of ‘BOOLEAN’ with type ‘BOOLEAN’
+    2 | typedef enum {FALSE,TRUE} BOOLEAN;
+      |                           ^~~~~~~
+In file included from support.h:1,
+                 from lee.y:3:
+type.h:3:14: error: redeclaration of ‘enum e_node_name’
+    3 | typedef enum e_node_name {
+      |              ^~~~~~~~~~~
+In file included from lee.y:2:
+type.h:3:14: note: originally defined here
+    3 | typedef enum e_node_name {
+      |              ^~~~~~~~~~~
+In file included from support.h:1,
+                 from lee.y:3:
+type.h:4:9: error: redeclaration of enumerator ‘N_NULL’
+    4 |         N_NULL,
+      |         ^~~~~~
+In file included from lee.y:2:
+type.h:4:9: note: previous definition of ‘N_NULL’ with type ‘enum e_node_name’
+    4 |         N_NULL,
+      |         ^~~~~~
+In file included from support.h:1,
+                 from lee.y:3:
+type.h:5:9: error: redeclaration of enumerator ‘N_PROGRAM’
+    5 |         N_PROGRAM,
+      |         ^~~~~~~~~
+In file included from lee.y:2:
+type.h:5:9: note: previous definition of ‘N_PROGRAM’ with type ‘enum e_node_name’
+    5 |         N_PROGRAM,
+      |         ^~~~~~~~~
+In file included from support.h:1,
+                 from lee.y:3:
+type.h:6:9: error: redeclaration of enumerator ‘N_EXP_IDENT’
+    6 |         N_EXP_IDENT,
+      |         ^~~~~~~~~~~
+In file included from lee.y:2:
+type.h:6:9: note: previous definition of ‘N_EXP_IDENT’ with type ‘enum e_node_name’
+    6 |         N_EXP_IDENT,
+      |         ^~~~~~~~~~~
+In file included from support.h:1,
+                 from lee.y:3:
+type.h:7:9: error: redeclaration of enumerator ‘N_EXP_INT_CONST’
+    7 |         N_EXP_INT_CONST,
+      |         ^~~~~~~~~~~~~~~
+In file included from lee.y:2:
+type.h:7:9: note: previous definition of ‘N_EXP_INT_CONST’ with type ‘enum e_node_name’
+    7 |         N_EXP_INT_CONST,
+      |         ^~~~~~~~~~~~~~~
+In file included from support.h:1,
+                 from lee.y:3:
+type.h:8:9: error: redeclaration of enumerator ‘N_EXP_FLOAT_CONST’
+    8 |         N_EXP_FLOAT_CONST,
+      |         ^~~~~~~~~~~~~~~~~
+In file included from lee.y:2:
+type.h:8:9: note: previous definition of ‘N_EXP_FLOAT_CONST’ with type ‘enum e_node_name’
+    8 |         N_EXP_FLOAT_CONST,
+      |         ^~~~~~~~~~~~~~~~~
+In file included from support.h:1,
+                 from lee.y:3:
+type.h:9:9: error: redeclaration of enumerator ‘N_EXP_CHAR_CONST’
+    9 |         N_EXP_CHAR_CONST,
+      |         ^~~~~~~~~~~~~~~~
+In file included from lee.y:2:
+type.h:9:9: note: previous definition of ‘N_EXP_CHAR_CONST’ with type ‘enum e_node_name’
+    9 |         N_EXP_CHAR_CONST,
+      |         ^~~~~~~~~~~~~~~~
+In file included from support.h:1,
+                 from lee.y:3:
+type.h:10:9: error: redeclaration of enumerator ‘N_EXP_STRING_LITERAL’
+   10 |         N_EXP_STRING_LITERAL,
+      |         ^~~~~~~~~~~~~~~~~~~~
+In file included from lee.y:2:
+type.h:10:9: note: previous definition of ‘N_EXP_STRING_LITERAL’ with type ‘enum e_node_name’
+   10 |         N_EXP_STRING_LITERAL,
+      |         ^~~~~~~~~~~~~~~~~~~~
+In file included from support.h:1,
+                 from lee.y:3:
+type.h:11:9: error: redeclaration of enumerator ‘N_EXP_ARRAY’
+   11 |         N_EXP_ARRAY,
+      |         ^~~~~~~~~~~
+In file included from lee.y:2:
+type.h:11:9: note: previous definition of ‘N_EXP_ARRAY’ with type ‘enum e_node_name’
+   11 |         N_EXP_ARRAY,
+      |         ^~~~~~~~~~~
+In file included from support.h:1,
+                 from lee.y:3:
+type.h:12:9: error: redeclaration of enumerator ‘N_EXP_FUNCTION_CALL’
+   12 |         N_EXP_FUNCTION_CALL,
+      |         ^~~~~~~~~~~~~~~~~~~
+In file included from lee.y:2:
+type.h:12:9: note: previous definition of ‘N_EXP_FUNCTION_CALL’ with type ‘enum e_node_name’
+   12 |         N_EXP_FUNCTION_CALL,
+      |         ^~~~~~~~~~~~~~~~~~~
+In file included from support.h:1,
+                 from lee.y:3:
+type.h:13:9: error: redeclaration of enumerator ‘N_EXP_STRUCT’
+   13 |         N_EXP_STRUCT,
+      |         ^~~~~~~~~~~~
+In file included from lee.y:2:
+type.h:13:9: note: previous definition of ‘N_EXP_STRUCT’ with type ‘enum e_node_name’
+   13 |         N_EXP_STRUCT,
+      |         ^~~~~~~~~~~~
+In file included from support.h:1,
+                 from lee.y:3:
+type.h:14:9: error: redeclaration of enumerator ‘N_EXP_ARROW’
+   14 |         N_EXP_ARROW,
+      |         ^~~~~~~~~~~
+In file included from lee.y:2:
+type.h:14:9: note: previous definition of ‘N_EXP_ARROW’ with type ‘enum e_node_name’
+   14 |         N_EXP_ARROW,
+      |         ^~~~~~~~~~~
+In file included from support.h:1,
+                 from lee.y:3:
+type.h:15:9: error: redeclaration of enumerator ‘N_EXP_POST_INC’
+   15 |         N_EXP_POST_INC,
+      |         ^~~~~~~~~~~~~~
+In file included from lee.y:2:
+type.h:15:9: note: previous definition of ‘N_EXP_POST_INC’ with type ‘enum e_node_name’
+   15 |         N_EXP_POST_INC,
+      |         ^~~~~~~~~~~~~~
+In file included from support.h:1,
+                 from lee.y:3:
+type.h:16:9: error: redeclaration of enumerator ‘N_EXP_POST_DEC’
+   16 |         N_EXP_POST_DEC,
+      |         ^~~~~~~~~~~~~~
+In file included from lee.y:2:
+type.h:16:9: note: previous definition of ‘N_EXP_POST_DEC’ with type ‘enum e_node_name’
+   16 |         N_EXP_POST_DEC,
+      |         ^~~~~~~~~~~~~~
+In file included from support.h:1,
+                 from lee.y:3:
+type.h:17:9: error: redeclaration of enumerator ‘N_EXP_PRE_INC’
+   17 |         N_EXP_PRE_INC,
+      |         ^~~~~~~~~~~~~
+In file included from lee.y:2:
+type.h:17:9: note: previous definition of ‘N_EXP_PRE_INC’ with type ‘enum e_node_name’
+   17 |         N_EXP_PRE_INC,
+      |         ^~~~~~~~~~~~~
+In file included from support.h:1,
+                 from lee.y:3:
+type.h:18:9: error: redeclaration of enumerator ‘N_EXP_PRE_DEC’
+   18 |         N_EXP_PRE_DEC,
+      |         ^~~~~~~~~~~~~
+In file included from lee.y:2:
+type.h:18:9: note: previous definition of ‘N_EXP_PRE_DEC’ with type ‘enum e_node_name’
+   18 |         N_EXP_PRE_DEC,
+      |         ^~~~~~~~~~~~~
+In file included from support.h:1,
+                 from lee.y:3:
+type.h:19:9: error: redeclaration of enumerator ‘N_EXP_AMP’
+   19 |         N_EXP_AMP,
+      |         ^~~~~~~~~
+In file included from lee.y:2:
+type.h:19:9: note: previous definition of ‘N_EXP_AMP’ with type ‘enum e_node_name’
+   19 |         N_EXP_AMP,
+      |         ^~~~~~~~~
+In file included from support.h:1,
+                 from lee.y:3:
+type.h:20:9: error: redeclaration of enumerator ‘N_EXP_STAR’
+   20 |         N_EXP_STAR,
+      |         ^~~~~~~~~~
+In file included from lee.y:2:
+type.h:20:9: note: previous definition of ‘N_EXP_STAR’ with type ‘enum e_node_name’
+   20 |         N_EXP_STAR,
+      |         ^~~~~~~~~~
+In file included from support.h:1,
+                 from lee.y:3:
+type.h:21:9: error: redeclaration of enumerator ‘N_EXP_NOT’
+   21 |         N_EXP_NOT,
+      |         ^~~~~~~~~
+In file included from lee.y:2:
+type.h:21:9: note: previous definition of ‘N_EXP_NOT’ with type ‘enum e_node_name’
+   21 |         N_EXP_NOT,
+      |         ^~~~~~~~~
+In file included from support.h:1,
+                 from lee.y:3:
+type.h:22:9: error: redeclaration of enumerator ‘N_EXP_PLUS’
+   22 |         N_EXP_PLUS,
+      |         ^~~~~~~~~~
+In file included from lee.y:2:
+type.h:22:9: note: previous definition of ‘N_EXP_PLUS’ with type ‘enum e_node_name’
+   22 |         N_EXP_PLUS,
+      |         ^~~~~~~~~~
+In file included from support.h:1,
+                 from lee.y:3:
+type.h:23:9: error: redeclaration of enumerator ‘N_EXP_MINUS’
+   23 |         N_EXP_MINUS,
+      |         ^~~~~~~~~~~
+In file included from lee.y:2:
+type.h:23:9: note: previous definition of ‘N_EXP_MINUS’ with type ‘enum e_node_name’
+   23 |         N_EXP_MINUS,
+      |         ^~~~~~~~~~~
+In file included from support.h:1,
+                 from lee.y:3:
+type.h:24:9: error: redeclaration of enumerator ‘N_EXP_SIZE_EXP’
+   24 |         N_EXP_SIZE_EXP,
+      |         ^~~~~~~~~~~~~~
+In file included from lee.y:2:
+type.h:24:9: note: previous definition of ‘N_EXP_SIZE_EXP’ with type ‘enum e_node_name’
+   24 |         N_EXP_SIZE_EXP,
+      |         ^~~~~~~~~~~~~~
+In file included from support.h:1,
+                 from lee.y:3:
+type.h:25:9: error: redeclaration of enumerator ‘N_EXP_SIZE_TYPE’
+   25 |         N_EXP_SIZE_TYPE,
+      |         ^~~~~~~~~~~~~~~
+In file included from lee.y:2:
+type.h:25:9: note: previous definition of ‘N_EXP_SIZE_TYPE’ with type ‘enum e_node_name’
+   25 |         N_EXP_SIZE_TYPE,
+      |         ^~~~~~~~~~~~~~~
+In file included from support.h:1,
+                 from lee.y:3:
+type.h:26:9: error: redeclaration of enumerator ‘N_EXP_CAST’
+   26 |         N_EXP_CAST,
+      |         ^~~~~~~~~~
+In file included from lee.y:2:
+type.h:26:9: note: previous definition of ‘N_EXP_CAST’ with type ‘enum e_node_name’
+   26 |         N_EXP_CAST,
+      |         ^~~~~~~~~~
+In file included from support.h:1,
+                 from lee.y:3:
+type.h:27:9: error: redeclaration of enumerator ‘N_EXP_MUL’
+   27 |         N_EXP_MUL,
+      |         ^~~~~~~~~
+In file included from lee.y:2:
+type.h:27:9: note: previous definition of ‘N_EXP_MUL’ with type ‘enum e_node_name’
+   27 |         N_EXP_MUL,
+      |         ^~~~~~~~~
+In file included from support.h:1,
+                 from lee.y:3:
+type.h:28:9: error: redeclaration of enumerator ‘N_EXP_DIV’
+   28 |         N_EXP_DIV,
+      |         ^~~~~~~~~
+In file included from lee.y:2:
+type.h:28:9: note: previous definition of ‘N_EXP_DIV’ with type ‘enum e_node_name’
+   28 |         N_EXP_DIV,
+      |         ^~~~~~~~~
+In file included from support.h:1,
+                 from lee.y:3:
+type.h:29:9: error: redeclaration of enumerator ‘N_EXP_MOD’
+   29 |         N_EXP_MOD,
+      |         ^~~~~~~~~
+In file included from lee.y:2:
+type.h:29:9: note: previous definition of ‘N_EXP_MOD’ with type ‘enum e_node_name’
+   29 |         N_EXP_MOD,
+      |         ^~~~~~~~~
+In file included from support.h:1,
+                 from lee.y:3:
+type.h:30:9: error: redeclaration of enumerator ‘N_EXP_ADD’
+   30 |         N_EXP_ADD,
+      |         ^~~~~~~~~
+In file included from lee.y:2:
+type.h:30:9: note: previous definition of ‘N_EXP_ADD’ with type ‘enum e_node_name’
+   30 |         N_EXP_ADD,
+      |         ^~~~~~~~~
+In file included from support.h:1,
+                 from lee.y:3:
+type.h:31:9: error: redeclaration of enumerator ‘N_EXP_SUB’
+   31 |         N_EXP_SUB,
+      |         ^~~~~~~~~
+In file included from lee.y:2:
+type.h:31:9: note: previous definition of ‘N_EXP_SUB’ with type ‘enum e_node_name’
+   31 |         N_EXP_SUB,
+      |         ^~~~~~~~~
+In file included from support.h:1,
+                 from lee.y:3:
+type.h:32:9: error: redeclaration of enumerator ‘N_EXP_LSS’
+   32 |         N_EXP_LSS,
+      |         ^~~~~~~~~
+In file included from lee.y:2:
+type.h:32:9: note: previous definition of ‘N_EXP_LSS’ with type ‘enum e_node_name’
+   32 |         N_EXP_LSS,
+      |         ^~~~~~~~~
+In file included from support.h:1,
+                 from lee.y:3:
+type.h:33:9: error: redeclaration of enumerator ‘N_EXP_GTR’
+   33 |         N_EXP_GTR,
+      |         ^~~~~~~~~
+In file included from lee.y:2:
+type.h:33:9: note: previous definition of ‘N_EXP_GTR’ with type ‘enum e_node_name’
+   33 |         N_EXP_GTR,
+      |         ^~~~~~~~~
+In file included from support.h:1,
+                 from lee.y:3:
+type.h:34:9: error: redeclaration of enumerator ‘N_EXP_LEQ’
+   34 |         N_EXP_LEQ,
+      |         ^~~~~~~~~
+In file included from lee.y:2:
+type.h:34:9: note: previous definition of ‘N_EXP_LEQ’ with type ‘enum e_node_name’
+   34 |         N_EXP_LEQ,
+      |         ^~~~~~~~~
+In file included from support.h:1,
+                 from lee.y:3:
+type.h:35:9: error: redeclaration of enumerator ‘N_EXP_GEQ’
+   35 |         N_EXP_GEQ,
+      |         ^~~~~~~~~
+In file included from lee.y:2:
+type.h:35:9: note: previous definition of ‘N_EXP_GEQ’ with type ‘enum e_node_name’
+   35 |         N_EXP_GEQ,
+      |         ^~~~~~~~~
+In file included from support.h:1,
+                 from lee.y:3:
+type.h:36:9: error: redeclaration of enumerator ‘N_EXP_NEQ’
+   36 |         N_EXP_NEQ,
+      |         ^~~~~~~~~
+In file included from lee.y:2:
+type.h:36:9: note: previous definition of ‘N_EXP_NEQ’ with type ‘enum e_node_name’
+   36 |         N_EXP_NEQ,
+      |         ^~~~~~~~~
+In file included from support.h:1,
+                 from lee.y:3:
+type.h:37:9: error: redeclaration of enumerator ‘N_EXP_EQL’
+   37 |         N_EXP_EQL,
+      |         ^~~~~~~~~
+In file included from lee.y:2:
+type.h:37:9: note: previous definition of ‘N_EXP_EQL’ with type ‘enum e_node_name’
+   37 |         N_EXP_EQL,
+      |         ^~~~~~~~~
+In file included from support.h:1,
+                 from lee.y:3:
+type.h:38:9: error: redeclaration of enumerator ‘N_EXP_AND’
+   38 |         N_EXP_AND,
+      |         ^~~~~~~~~
+In file included from lee.y:2:
+type.h:38:9: note: previous definition of ‘N_EXP_AND’ with type ‘enum e_node_name’
+   38 |         N_EXP_AND,
+      |         ^~~~~~~~~
+In file included from support.h:1,
+                 from lee.y:3:
+type.h:39:9: error: redeclaration of enumerator ‘N_EXP_OR’
+   39 |         N_EXP_OR,
+      |         ^~~~~~~~
+In file included from lee.y:2:
+type.h:39:9: note: previous definition of ‘N_EXP_OR’ with type ‘enum e_node_name’
+   39 |         N_EXP_OR,
+      |         ^~~~~~~~
+In file included from support.h:1,
+                 from lee.y:3:
+type.h:40:9: error: redeclaration of enumerator ‘N_EXP_ASSIGN’
+   40 |         N_EXP_ASSIGN,
+      |         ^~~~~~~~~~~~
+In file included from lee.y:2:
+type.h:40:9: note: previous definition of ‘N_EXP_ASSIGN’ with type ‘enum e_node_name’
+   40 |         N_EXP_ASSIGN,
+      |         ^~~~~~~~~~~~
+In file included from support.h:1,
+                 from lee.y:3:
+type.h:41:9: error: redeclaration of enumerator ‘N_ARG_LIST’
+   41 |         N_ARG_LIST,
+      |         ^~~~~~~~~~
+In file included from lee.y:2:
+type.h:41:9: note: previous definition of ‘N_ARG_LIST’ with type ‘enum e_node_name’
+   41 |         N_ARG_LIST,
+      |         ^~~~~~~~~~
+In file included from support.h:1,
+                 from lee.y:3:
+type.h:42:9: error: redeclaration of enumerator ‘N_ARG_LIST_NIL’
+   42 |         N_ARG_LIST_NIL,
+      |         ^~~~~~~~~~~~~~
+In file included from lee.y:2:
+type.h:42:9: note: previous definition of ‘N_ARG_LIST_NIL’ with type ‘enum e_node_name’
+   42 |         N_ARG_LIST_NIL,
+      |         ^~~~~~~~~~~~~~
+In file included from support.h:1,
+                 from lee.y:3:
+type.h:43:9: error: redeclaration of enumerator ‘N_STMT_LABEL_CASE’
+   43 |         N_STMT_LABEL_CASE,
+      |         ^~~~~~~~~~~~~~~~~
+In file included from lee.y:2:
+type.h:43:9: note: previous definition of ‘N_STMT_LABEL_CASE’ with type ‘enum e_node_name’
+   43 |         N_STMT_LABEL_CASE,
+      |         ^~~~~~~~~~~~~~~~~
+In file included from support.h:1,
+                 from lee.y:3:
+type.h:44:9: error: redeclaration of enumerator ‘N_STMT_LABEL_DEFAULT’
+   44 |         N_STMT_LABEL_DEFAULT,
+      |         ^~~~~~~~~~~~~~~~~~~~
+In file included from lee.y:2:
+type.h:44:9: note: previous definition of ‘N_STMT_LABEL_DEFAULT’ with type ‘enum e_node_name’
+   44 |         N_STMT_LABEL_DEFAULT,
+      |         ^~~~~~~~~~~~~~~~~~~~
+In file included from support.h:1,
+                 from lee.y:3:
+type.h:45:9: error: redeclaration of enumerator ‘N_STMT_COMPOUND’
+   45 |         N_STMT_COMPOUND,
+      |         ^~~~~~~~~~~~~~~
+In file included from lee.y:2:
+type.h:45:9: note: previous definition of ‘N_STMT_COMPOUND’ with type ‘enum e_node_name’
+   45 |         N_STMT_COMPOUND,
+      |         ^~~~~~~~~~~~~~~
+In file included from support.h:1,
+                 from lee.y:3:
+type.h:46:9: error: redeclaration of enumerator ‘N_STMT_EMPTY’
+   46 |         N_STMT_EMPTY,
+      |         ^~~~~~~~~~~~
+In file included from lee.y:2:
+type.h:46:9: note: previous definition of ‘N_STMT_EMPTY’ with type ‘enum e_node_name’
+   46 |         N_STMT_EMPTY,
+      |         ^~~~~~~~~~~~
+In file included from support.h:1,
+                 from lee.y:3:
+type.h:47:9: error: redeclaration of enumerator ‘N_STMT_EXPRESSION’
+   47 |         N_STMT_EXPRESSION,
+      |         ^~~~~~~~~~~~~~~~~
+In file included from lee.y:2:
+type.h:47:9: note: previous definition of ‘N_STMT_EXPRESSION’ with type ‘enum e_node_name’
+   47 |         N_STMT_EXPRESSION,
+      |         ^~~~~~~~~~~~~~~~~
+In file included from support.h:1,
+                 from lee.y:3:
+type.h:48:9: error: redeclaration of enumerator ‘N_STMT_IF’
+   48 |         N_STMT_IF,
+      |         ^~~~~~~~~
+In file included from lee.y:2:
+type.h:48:9: note: previous definition of ‘N_STMT_IF’ with type ‘enum e_node_name’
+   48 |         N_STMT_IF,
+      |         ^~~~~~~~~
+In file included from support.h:1,
+                 from lee.y:3:
+type.h:49:9: error: redeclaration of enumerator ‘N_STMT_IF_ELSE’
+   49 |         N_STMT_IF_ELSE,
+      |         ^~~~~~~~~~~~~~
+In file included from lee.y:2:
+type.h:49:9: note: previous definition of ‘N_STMT_IF_ELSE’ with type ‘enum e_node_name’
+   49 |         N_STMT_IF_ELSE,
+      |         ^~~~~~~~~~~~~~
+In file included from support.h:1,
+                 from lee.y:3:
+type.h:50:9: error: redeclaration of enumerator ‘N_STMT_SWITCH’
+   50 |         N_STMT_SWITCH,
+      |         ^~~~~~~~~~~~~
+In file included from lee.y:2:
+type.h:50:9: note: previous definition of ‘N_STMT_SWITCH’ with type ‘enum e_node_name’
+   50 |         N_STMT_SWITCH,
+      |         ^~~~~~~~~~~~~
+In file included from support.h:1,
+                 from lee.y:3:
+type.h:51:9: error: redeclaration of enumerator ‘N_STMT_WHILE’
+   51 |         N_STMT_WHILE,
+      |         ^~~~~~~~~~~~
+In file included from lee.y:2:
+type.h:51:9: note: previous definition of ‘N_STMT_WHILE’ with type ‘enum e_node_name’
+   51 |         N_STMT_WHILE,
+      |         ^~~~~~~~~~~~
+In file included from support.h:1,
+                 from lee.y:3:
+type.h:52:9: error: redeclaration of enumerator ‘N_STMT_DO’
+   52 |         N_STMT_DO,
+      |         ^~~~~~~~~
+In file included from lee.y:2:
+type.h:52:9: note: previous definition of ‘N_STMT_DO’ with type ‘enum e_node_name’
+   52 |         N_STMT_DO,
+      |         ^~~~~~~~~
+In file included from support.h:1,
+                 from lee.y:3:
+type.h:53:9: error: redeclaration of enumerator ‘N_STMT_FOR’
+   53 |         N_STMT_FOR,
+      |         ^~~~~~~~~~
+In file included from lee.y:2:
+type.h:53:9: note: previous definition of ‘N_STMT_FOR’ with type ‘enum e_node_name’
+   53 |         N_STMT_FOR,
+      |         ^~~~~~~~~~
+In file included from support.h:1,
+                 from lee.y:3:
+type.h:54:9: error: redeclaration of enumerator ‘N_STMT_RETURN’
+   54 |         N_STMT_RETURN,
+      |         ^~~~~~~~~~~~~
+In file included from lee.y:2:
+type.h:54:9: note: previous definition of ‘N_STMT_RETURN’ with type ‘enum e_node_name’
+   54 |         N_STMT_RETURN,
+      |         ^~~~~~~~~~~~~
+In file included from support.h:1,
+                 from lee.y:3:
+type.h:55:9: error: redeclaration of enumerator ‘N_STMT_CONTINUE’
+   55 |         N_STMT_CONTINUE,
+      |         ^~~~~~~~~~~~~~~
+In file included from lee.y:2:
+type.h:55:9: note: previous definition of ‘N_STMT_CONTINUE’ with type ‘enum e_node_name’
+   55 |         N_STMT_CONTINUE,
+      |         ^~~~~~~~~~~~~~~
+In file included from support.h:1,
+                 from lee.y:3:
+type.h:56:9: error: redeclaration of enumerator ‘N_STMT_BREAK’
+   56 |         N_STMT_BREAK,
+      |         ^~~~~~~~~~~~
+In file included from lee.y:2:
+type.h:56:9: note: previous definition of ‘N_STMT_BREAK’ with type ‘enum e_node_name’
+   56 |         N_STMT_BREAK,
+      |         ^~~~~~~~~~~~
+In file included from support.h:1,
+                 from lee.y:3:
+type.h:57:9: error: redeclaration of enumerator ‘N_FOR_EXP’
+   57 |         N_FOR_EXP,
+      |         ^~~~~~~~~
+In file included from lee.y:2:
+type.h:57:9: note: previous definition of ‘N_FOR_EXP’ with type ‘enum e_node_name’
+   57 |         N_FOR_EXP,
+      |         ^~~~~~~~~
+In file included from support.h:1,
+                 from lee.y:3:
+type.h:58:9: error: redeclaration of enumerator ‘N_STMT_LIST’
+   58 |         N_STMT_LIST,
+      |         ^~~~~~~~~~~
+In file included from lee.y:2:
+type.h:58:9: note: previous definition of ‘N_STMT_LIST’ with type ‘enum e_node_name’
+   58 |         N_STMT_LIST,
+      |         ^~~~~~~~~~~
+In file included from support.h:1,
+                 from lee.y:3:
+type.h:59:9: error: redeclaration of enumerator ‘N_STMT_LIST_NIL’
+   59 |         N_STMT_LIST_NIL,
+      |         ^~~~~~~~~~~~~~~
+In file included from lee.y:2:
+type.h:59:9: note: previous definition of ‘N_STMT_LIST_NIL’ with type ‘enum e_node_name’
+   59 |         N_STMT_LIST_NIL,
+      |         ^~~~~~~~~~~~~~~
+In file included from support.h:1,
+                 from lee.y:3:
+type.h:60:9: error: redeclaration of enumerator ‘N_INIT_LIST’
+   60 |         N_INIT_LIST,
+      |         ^~~~~~~~~~~
+In file included from lee.y:2:
+type.h:60:9: note: previous definition of ‘N_INIT_LIST’ with type ‘enum e_node_name’
+   60 |         N_INIT_LIST,
+      |         ^~~~~~~~~~~
+In file included from support.h:1,
+                 from lee.y:3:
+type.h:61:9: error: redeclaration of enumerator ‘N_INIT_LIST_ONE’
+   61 |         N_INIT_LIST_ONE,
+      |         ^~~~~~~~~~~~~~~
+In file included from lee.y:2:
+type.h:61:9: note: previous definition of ‘N_INIT_LIST_ONE’ with type ‘enum e_node_name’
+   61 |         N_INIT_LIST_ONE,
+      |         ^~~~~~~~~~~~~~~
+In file included from support.h:1,
+                 from lee.y:3:
+type.h:62:9: error: redeclaration of enumerator ‘N_INIT_LIST_NIL’
+   62 |         N_INIT_LIST_NIL} NODE_NAME;
+      |         ^~~~~~~~~~~~~~~
+In file included from lee.y:2:
+type.h:62:9: note: previous definition of ‘N_INIT_LIST_NIL’ with type ‘enum e_node_name’
+   62 |         N_INIT_LIST_NIL} NODE_NAME;
+      |         ^~~~~~~~~~~~~~~
+In file included from support.h:1,
+                 from lee.y:3:
+type.h:63:15: error: redeclaration of enumerator ‘T_NULL’
+   63 | typedef enum {T_NULL,T_ENUM,T_ARRAY,T_STRUCT,T_UNION,T_FUNC,T_POINTER,
+      |               ^~~~~~
+In file included from lee.y:2:
+type.h:63:15: note: previous definition of ‘T_NULL’ with type ‘enum <anonymous>’
+   63 | typedef enum {T_NULL,T_ENUM,T_ARRAY,T_STRUCT,T_UNION,T_FUNC,T_POINTER,
+      |               ^~~~~~
+In file included from support.h:1,
+                 from lee.y:3:
+type.h:63:22: error: redeclaration of enumerator ‘T_ENUM’
+   63 | typedef enum {T_NULL,T_ENUM,T_ARRAY,T_STRUCT,T_UNION,T_FUNC,T_POINTER,
+      |                      ^~~~~~
+In file included from lee.y:2:
+type.h:63:22: note: previous definition of ‘T_ENUM’ with type ‘enum <anonymous>’
+   63 | typedef enum {T_NULL,T_ENUM,T_ARRAY,T_STRUCT,T_UNION,T_FUNC,T_POINTER,
+      |                      ^~~~~~
+In file included from support.h:1,
+                 from lee.y:3:
+type.h:63:29: error: redeclaration of enumerator ‘T_ARRAY’
+   63 | typedef enum {T_NULL,T_ENUM,T_ARRAY,T_STRUCT,T_UNION,T_FUNC,T_POINTER,
+      |                             ^~~~~~~
+In file included from lee.y:2:
+type.h:63:29: note: previous definition of ‘T_ARRAY’ with type ‘enum <anonymous>’
+   63 | typedef enum {T_NULL,T_ENUM,T_ARRAY,T_STRUCT,T_UNION,T_FUNC,T_POINTER,
+      |                             ^~~~~~~
+In file included from support.h:1,
+                 from lee.y:3:
+type.h:63:37: error: redeclaration of enumerator ‘T_STRUCT’
+   63 | typedef enum {T_NULL,T_ENUM,T_ARRAY,T_STRUCT,T_UNION,T_FUNC,T_POINTER,
+      |                                     ^~~~~~~~
+In file included from lee.y:2:
+type.h:63:37: note: previous definition of ‘T_STRUCT’ with type ‘enum <anonymous>’
+   63 | typedef enum {T_NULL,T_ENUM,T_ARRAY,T_STRUCT,T_UNION,T_FUNC,T_POINTER,
+      |                                     ^~~~~~~~
+In file included from support.h:1,
+                 from lee.y:3:
+type.h:63:46: error: redeclaration of enumerator ‘T_UNION’
+   63 | typedef enum {T_NULL,T_ENUM,T_ARRAY,T_STRUCT,T_UNION,T_FUNC,T_POINTER,
+      |                                              ^~~~~~~
+In file included from lee.y:2:
+type.h:63:46: note: previous definition of ‘T_UNION’ with type ‘enum <anonymous>’
+   63 | typedef enum {T_NULL,T_ENUM,T_ARRAY,T_STRUCT,T_UNION,T_FUNC,T_POINTER,
+      |                                              ^~~~~~~
+In file included from support.h:1,
+                 from lee.y:3:
+type.h:63:54: error: redeclaration of enumerator ‘T_FUNC’
+   63 | typedef enum {T_NULL,T_ENUM,T_ARRAY,T_STRUCT,T_UNION,T_FUNC,T_POINTER,
+      |                                                      ^~~~~~
+In file included from lee.y:2:
+type.h:63:54: note: previous definition of ‘T_FUNC’ with type ‘enum <anonymous>’
+   63 | typedef enum {T_NULL,T_ENUM,T_ARRAY,T_STRUCT,T_UNION,T_FUNC,T_POINTER,
+      |                                                      ^~~~~~
+In file included from support.h:1,
+                 from lee.y:3:
+type.h:63:61: error: redeclaration of enumerator ‘T_POINTER’
+   63 | typedef enum {T_NULL,T_ENUM,T_ARRAY,T_STRUCT,T_UNION,T_FUNC,T_POINTER,
+      |                                                             ^~~~~~~~~
+In file included from lee.y:2:
+type.h:63:61: note: previous definition of ‘T_POINTER’ with type ‘enum <anonymous>’
+   63 | typedef enum {T_NULL,T_ENUM,T_ARRAY,T_STRUCT,T_UNION,T_FUNC,T_POINTER,
+      |                                                             ^~~~~~~~~
+In file included from support.h:1,
+                 from lee.y:3:
+type.h:64:9: error: redeclaration of enumerator ‘T_VOID’
+   64 |         T_VOID} T_KIND;
+      |         ^~~~~~
+In file included from lee.y:2:
+type.h:64:9: note: previous definition of ‘T_VOID’ with type ‘enum <anonymous>’
+   64 |         T_VOID} T_KIND;
+      |         ^~~~~~
+In file included from support.h:1,
+                 from lee.y:3:
+type.h:64:17: error: conflicting types for ‘T_KIND’; have ‘enum <anonymous>’
+   64 |         T_VOID} T_KIND;
+      |                 ^~~~~~
+In file included from lee.y:2:
+type.h:64:17: note: previous declaration of ‘T_KIND’ with type ‘T_KIND’
+   64 |         T_VOID} T_KIND;
+      |                 ^~~~~~
+In file included from support.h:1,
+                 from lee.y:3:
+type.h:65:15: error: redeclaration of enumerator ‘Q_NULL’
+   65 | typedef enum {Q_NULL,Q_CONST,Q_VOLATILE} Q_KIND;
+      |               ^~~~~~
+In file included from lee.y:2:
+type.h:65:15: note: previous definition of ‘Q_NULL’ with type ‘enum <anonymous>’
+   65 | typedef enum {Q_NULL,Q_CONST,Q_VOLATILE} Q_KIND;
+      |               ^~~~~~
+In file included from support.h:1,
+                 from lee.y:3:
+type.h:65:22: error: redeclaration of enumerator ‘Q_CONST’
+   65 | typedef enum {Q_NULL,Q_CONST,Q_VOLATILE} Q_KIND;
+      |                      ^~~~~~~
+In file included from lee.y:2:
+type.h:65:22: note: previous definition of ‘Q_CONST’ with type ‘enum <anonymous>’
+   65 | typedef enum {Q_NULL,Q_CONST,Q_VOLATILE} Q_KIND;
+      |                      ^~~~~~~
+In file included from support.h:1,
+                 from lee.y:3:
+type.h:65:30: error: redeclaration of enumerator ‘Q_VOLATILE’
+   65 | typedef enum {Q_NULL,Q_CONST,Q_VOLATILE} Q_KIND;
+      |                              ^~~~~~~~~~
+In file included from lee.y:2:
+type.h:65:30: note: previous definition of ‘Q_VOLATILE’ with type ‘enum <anonymous>’
+   65 | typedef enum {Q_NULL,Q_CONST,Q_VOLATILE} Q_KIND;
+      |                              ^~~~~~~~~~
+In file included from support.h:1,
+                 from lee.y:3:
+type.h:65:42: error: conflicting types for ‘Q_KIND’; have ‘enum <anonymous>’
+   65 | typedef enum {Q_NULL,Q_CONST,Q_VOLATILE} Q_KIND;
+      |                                          ^~~~~~
+In file included from lee.y:2:
+type.h:65:42: note: previous declaration of ‘Q_KIND’ with type ‘Q_KIND’
+   65 | typedef enum {Q_NULL,Q_CONST,Q_VOLATILE} Q_KIND;
+      |                                          ^~~~~~
+In file included from support.h:1,
+                 from lee.y:3:
+type.h:66:15: error: redeclaration of enumerator ‘S_NULL’
+   66 | typedef enum {S_NULL,S_AUTO,S_STATIC,S_TYPEDEF,S_EXTERN,S_REGISTER} S_KIND;
+      |               ^~~~~~
+In file included from lee.y:2:
+type.h:66:15: note: previous definition of ‘S_NULL’ with type ‘enum <anonymous>’
+   66 | typedef enum {S_NULL,S_AUTO,S_STATIC,S_TYPEDEF,S_EXTERN,S_REGISTER} S_KIND;
+      |               ^~~~~~
+In file included from support.h:1,
+                 from lee.y:3:
+type.h:66:22: error: redeclaration of enumerator ‘S_AUTO’
+   66 | typedef enum {S_NULL,S_AUTO,S_STATIC,S_TYPEDEF,S_EXTERN,S_REGISTER} S_KIND;
+      |                      ^~~~~~
+In file included from lee.y:2:
+type.h:66:22: note: previous definition of ‘S_AUTO’ with type ‘enum <anonymous>’
+   66 | typedef enum {S_NULL,S_AUTO,S_STATIC,S_TYPEDEF,S_EXTERN,S_REGISTER} S_KIND;
+      |                      ^~~~~~
+In file included from support.h:1,
+                 from lee.y:3:
+type.h:66:29: error: redeclaration of enumerator ‘S_STATIC’
+   66 | typedef enum {S_NULL,S_AUTO,S_STATIC,S_TYPEDEF,S_EXTERN,S_REGISTER} S_KIND;
+      |                             ^~~~~~~~
+In file included from lee.y:2:
+type.h:66:29: note: previous definition of ‘S_STATIC’ with type ‘enum <anonymous>’
+   66 | typedef enum {S_NULL,S_AUTO,S_STATIC,S_TYPEDEF,S_EXTERN,S_REGISTER} S_KIND;
+      |                             ^~~~~~~~
+In file included from support.h:1,
+                 from lee.y:3:
+type.h:66:38: error: redeclaration of enumerator ‘S_TYPEDEF’
+   66 | typedef enum {S_NULL,S_AUTO,S_STATIC,S_TYPEDEF,S_EXTERN,S_REGISTER} S_KIND;
+      |                                      ^~~~~~~~~
+In file included from lee.y:2:
+type.h:66:38: note: previous definition of ‘S_TYPEDEF’ with type ‘enum <anonymous>’
+   66 | typedef enum {S_NULL,S_AUTO,S_STATIC,S_TYPEDEF,S_EXTERN,S_REGISTER} S_KIND;
+      |                                      ^~~~~~~~~
+In file included from support.h:1,
+                 from lee.y:3:
+type.h:66:48: error: redeclaration of enumerator ‘S_EXTERN’
+   66 | typedef enum {S_NULL,S_AUTO,S_STATIC,S_TYPEDEF,S_EXTERN,S_REGISTER} S_KIND;
+      |                                                ^~~~~~~~
+In file included from lee.y:2:
+type.h:66:48: note: previous definition of ‘S_EXTERN’ with type ‘enum <anonymous>’
+   66 | typedef enum {S_NULL,S_AUTO,S_STATIC,S_TYPEDEF,S_EXTERN,S_REGISTER} S_KIND;
+      |                                                ^~~~~~~~
+In file included from support.h:1,
+                 from lee.y:3:
+type.h:66:57: error: redeclaration of enumerator ‘S_REGISTER’
+   66 | typedef enum {S_NULL,S_AUTO,S_STATIC,S_TYPEDEF,S_EXTERN,S_REGISTER} S_KIND;
+      |                                                         ^~~~~~~~~~
+In file included from lee.y:2:
+type.h:66:57: note: previous definition of ‘S_REGISTER’ with type ‘enum <anonymous>’
+   66 | typedef enum {S_NULL,S_AUTO,S_STATIC,S_TYPEDEF,S_EXTERN,S_REGISTER} S_KIND;
+      |                                                         ^~~~~~~~~~
+In file included from support.h:1,
+                 from lee.y:3:
+type.h:66:69: error: conflicting types for ‘S_KIND’; have ‘enum <anonymous>’
+   66 | typedef enum {S_NULL,S_AUTO,S_STATIC,S_TYPEDEF,S_EXTERN,S_REGISTER} S_KIND;
+      |                                                                     ^~~~~~
+In file included from lee.y:2:
+type.h:66:69: note: previous declaration of ‘S_KIND’ with type ‘S_KIND’
+   66 | typedef enum {S_NULL,S_AUTO,S_STATIC,S_TYPEDEF,S_EXTERN,S_REGISTER} S_KIND;
+      |                                                                     ^~~~~~
+In file included from support.h:1,
+                 from lee.y:3:
+type.h:67:15: error: redeclaration of enumerator ‘ID_NULL’
+   67 | typedef enum {ID_NULL,ID_VAR,ID_FUNC,ID_PARM,ID_FIELD,ID_TYPE,ID_ENUM,
+      |               ^~~~~~~
+In file included from lee.y:2:
+type.h:67:15: note: previous definition of ‘ID_NULL’ with type ‘enum <anonymous>’
+   67 | typedef enum {ID_NULL,ID_VAR,ID_FUNC,ID_PARM,ID_FIELD,ID_TYPE,ID_ENUM,
+      |               ^~~~~~~
+In file included from support.h:1,
+                 from lee.y:3:
+type.h:67:23: error: redeclaration of enumerator ‘ID_VAR’
+   67 | typedef enum {ID_NULL,ID_VAR,ID_FUNC,ID_PARM,ID_FIELD,ID_TYPE,ID_ENUM,
+      |                       ^~~~~~
+In file included from lee.y:2:
+type.h:67:23: note: previous definition of ‘ID_VAR’ with type ‘enum <anonymous>’
+   67 | typedef enum {ID_NULL,ID_VAR,ID_FUNC,ID_PARM,ID_FIELD,ID_TYPE,ID_ENUM,
+      |                       ^~~~~~
+In file included from support.h:1,
+                 from lee.y:3:
+type.h:67:30: error: redeclaration of enumerator ‘ID_FUNC’
+   67 | typedef enum {ID_NULL,ID_VAR,ID_FUNC,ID_PARM,ID_FIELD,ID_TYPE,ID_ENUM,
+      |                              ^~~~~~~
+In file included from lee.y:2:
+type.h:67:30: note: previous definition of ‘ID_FUNC’ with type ‘enum <anonymous>’
+   67 | typedef enum {ID_NULL,ID_VAR,ID_FUNC,ID_PARM,ID_FIELD,ID_TYPE,ID_ENUM,
+      |                              ^~~~~~~
+In file included from support.h:1,
+                 from lee.y:3:
+type.h:67:38: error: redeclaration of enumerator ‘ID_PARM’
+   67 | typedef enum {ID_NULL,ID_VAR,ID_FUNC,ID_PARM,ID_FIELD,ID_TYPE,ID_ENUM,
+      |                                      ^~~~~~~
+In file included from lee.y:2:
+type.h:67:38: note: previous definition of ‘ID_PARM’ with type ‘enum <anonymous>’
+   67 | typedef enum {ID_NULL,ID_VAR,ID_FUNC,ID_PARM,ID_FIELD,ID_TYPE,ID_ENUM,
+      |                                      ^~~~~~~
+In file included from support.h:1,
+                 from lee.y:3:
+type.h:67:46: error: redeclaration of enumerator ‘ID_FIELD’
+   67 | typedef enum {ID_NULL,ID_VAR,ID_FUNC,ID_PARM,ID_FIELD,ID_TYPE,ID_ENUM,
+      |                                              ^~~~~~~~
+In file included from lee.y:2:
+type.h:67:46: note: previous definition of ‘ID_FIELD’ with type ‘enum <anonymous>’
+   67 | typedef enum {ID_NULL,ID_VAR,ID_FUNC,ID_PARM,ID_FIELD,ID_TYPE,ID_ENUM,
+      |                                              ^~~~~~~~
+In file included from support.h:1,
+                 from lee.y:3:
+type.h:67:55: error: redeclaration of enumerator ‘ID_TYPE’
+   67 | typedef enum {ID_NULL,ID_VAR,ID_FUNC,ID_PARM,ID_FIELD,ID_TYPE,ID_ENUM,
+      |                                                       ^~~~~~~
+In file included from lee.y:2:
+type.h:67:55: note: previous definition of ‘ID_TYPE’ with type ‘enum <anonymous>’
+   67 | typedef enum {ID_NULL,ID_VAR,ID_FUNC,ID_PARM,ID_FIELD,ID_TYPE,ID_ENUM,
+      |                                                       ^~~~~~~
+In file included from support.h:1,
+                 from lee.y:3:
+type.h:67:63: error: redeclaration of enumerator ‘ID_ENUM’
+   67 | typedef enum {ID_NULL,ID_VAR,ID_FUNC,ID_PARM,ID_FIELD,ID_TYPE,ID_ENUM,
+      |                                                               ^~~~~~~
+In file included from lee.y:2:
+type.h:67:63: note: previous definition of ‘ID_ENUM’ with type ‘enum <anonymous>’
+   67 | typedef enum {ID_NULL,ID_VAR,ID_FUNC,ID_PARM,ID_FIELD,ID_TYPE,ID_ENUM,
+      |                                                               ^~~~~~~
+In file included from support.h:1,
+                 from lee.y:3:
+type.h:68:9: error: redeclaration of enumerator ‘ID_STRUCT’
+   68 |         ID_STRUCT,ID_ENUM_LITERAL}  ID_KIND;
+      |         ^~~~~~~~~
+In file included from lee.y:2:
+type.h:68:9: note: previous definition of ‘ID_STRUCT’ with type ‘enum <anonymous>’
+   68 |         ID_STRUCT,ID_ENUM_LITERAL}  ID_KIND;
+      |         ^~~~~~~~~
+In file included from support.h:1,
+                 from lee.y:3:
+type.h:68:19: error: redeclaration of enumerator ‘ID_ENUM_LITERAL’
+   68 |         ID_STRUCT,ID_ENUM_LITERAL}  ID_KIND;
+      |                   ^~~~~~~~~~~~~~~
+In file included from lee.y:2:
+type.h:68:19: note: previous definition of ‘ID_ENUM_LITERAL’ with type ‘enum <anonymous>’
+   68 |         ID_STRUCT,ID_ENUM_LITERAL}  ID_KIND;
+      |                   ^~~~~~~~~~~~~~~
+In file included from support.h:1,
+                 from lee.y:3:
+type.h:68:37: error: conflicting types for ‘ID_KIND’; have ‘enum <anonymous>’
+   68 |         ID_STRUCT,ID_ENUM_LITERAL}  ID_KIND;
+      |                                     ^~~~~~~
+In file included from lee.y:2:
+type.h:68:37: note: previous declaration of ‘ID_KIND’ with type ‘ID_KIND’
+   68 |         ID_STRUCT,ID_ENUM_LITERAL}  ID_KIND;
+      |                                     ^~~~~~~
+In file included from support.h:1,
+                 from lee.y:3:
+type.h:69:16: error: redefinition of ‘struct s_node’
+   69 | typedef struct s_node {
+      |                ^~~~~~
+In file included from lee.y:2:
+type.h:69:16: note: originally defined here
+   69 | typedef struct s_node {
+      |                ^~~~~~
+In file included from support.h:1,
+                 from lee.y:3:
+type.h:76:32: error: conflicting types for ‘A_NODE’; have ‘struct s_node’
+   76 |         struct s_node *rlink;} A_NODE;
+      |                                ^~~~~~
+In file included from lee.y:2:
+type.h:76:32: note: previous declaration of ‘A_NODE’ with type ‘A_NODE’ {aka ‘struct s_node’}
+   76 |         struct s_node *rlink;} A_NODE;
+      |                                ^~~~~~
+In file included from support.h:1,
+                 from lee.y:3:
+type.h:77:16: error: redefinition of ‘struct s_type’
+   77 | typedef struct s_type {
+      |                ^~~~~~
+In file included from lee.y:2:
+type.h:77:16: note: originally defined here
+   77 | typedef struct s_type {
+      |                ^~~~~~
+In file included from support.h:1,
+                 from lee.y:3:
+type.h:86:24: error: conflicting types for ‘A_TYPE’; have ‘struct s_type’
+   86 |         BOOLEAN prt; } A_TYPE;
+      |                        ^~~~~~
+In file included from lee.y:2:
+type.h:86:24: note: previous declaration of ‘A_TYPE’ with type ‘A_TYPE’ {aka ‘struct s_type’}
+   86 |         BOOLEAN prt; } A_TYPE;
+      |                        ^~~~~~
+In file included from support.h:1,
+                 from lee.y:3:
+type.h:87:16: error: redefinition of ‘struct s_id’
+   87 | typedef struct s_id {
+      |                ^~~~
+In file included from lee.y:2:
+type.h:87:16: note: originally defined here
+   87 | typedef struct s_id {
+      |                ^~~~
+In file included from support.h:1,
+                 from lee.y:3:
+type.h:98:29: error: conflicting types for ‘A_ID’; have ‘struct s_id’
+   98 |         struct s_id *link;} A_ID;
+      |                             ^~~~
+In file included from lee.y:2:
+type.h:98:29: note: previous declaration of ‘A_ID’ with type ‘A_ID’ {aka ‘struct s_id’}
+   98 |         struct s_id *link;} A_ID;
+      |                             ^~~~
+In file included from support.h:1,
+                 from lee.y:3:
+type.h:99:50: error: conflicting types for ‘LIT_VALUE’; have ‘union <anonymous>’
+   99 | typedef union {int i; float f; char c; char *s;} LIT_VALUE;
+      |                                                  ^~~~~~~~~
+In file included from lee.y:2:
+type.h:99:50: note: previous declaration of ‘LIT_VALUE’ with type ‘LIT_VALUE’
+   99 | typedef union {int i; float f; char c; char *s;} LIT_VALUE;
+      |                                                  ^~~~~~~~~
+In file included from support.h:1,
+                 from lee.y:3:
+type.h:100:16: error: redefinition of ‘struct lit’
+  100 | typedef struct lit {int addr; A_TYPE *type; LIT_VALUE value;} A_LITERAL;
+      |                ^~~
+In file included from lee.y:2:
+type.h:100:16: note: originally defined here
+  100 | typedef struct lit {int addr; A_TYPE *type; LIT_VALUE value;} A_LITERAL;
+      |                ^~~
+In file included from support.h:1,
+                 from lee.y:3:
+type.h:100:63: error: conflicting types for ‘A_LITERAL’; have ‘struct lit’
+  100 | typedef struct lit {int addr; A_TYPE *type; LIT_VALUE value;} A_LITERAL;
+      |                                                               ^~~~~~~~~
+In file included from lee.y:2:
+type.h:100:63: note: previous declaration of ‘A_LITERAL’ with type ‘A_LITERAL’ {aka ‘struct lit’}
+  100 | typedef struct lit {int addr; A_TYPE *type; LIT_VALUE value;} A_LITERAL;
+      |                                                               ^~~~~~~~~
+In file included from support.h:1,
+                 from lee.y:3:
+type.h:104:20: error: conflicting types for ‘A_SPECIFIER’; have ‘struct <anonymous>’
+  104 |         int line;} A_SPECIFIER;
+      |                    ^~~~~~~~~~~
+In file included from lee.y:2:
+type.h:104:20: note: previous declaration of ‘A_SPECIFIER’ with type ‘A_SPECIFIER’
+  104 |         int line;} A_SPECIFIER;
+      |                    ^~~~~~~~~~~
 y.tab.c: In function ‘yyparse’:
 y.tab.c:1576:16: warning: implicit declaration of function ‘yylex’ [-Wimplicit-function-declaration]
  1576 |       yychar = yylex ();
@@ -8,8 +935,8 @@ lee.y:23:47: warning: passing argument 3 of ‘makeNode’ makes pointer from in
       |                                               |
       |                                               YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:1:39: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-    1 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
+support.h:3:39: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+    3 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
       |                                       ^~~~~~~~
 lee.y:27:78: warning: passing argument 1 of ‘linkDeclaratorList’ makes pointer from integer without a cast [-Wint-conversion]
    27 |     | translation_unit external_declaration {$$ = linkDeclaratorList($1, $2);}
@@ -17,8 +944,8 @@ lee.y:27:78: warning: passing argument 1 of ‘linkDeclaratorList’ makes point
       |                                                                              |
       |                                                                              YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:13:26: note: expected ‘A_ID *’ {aka ‘struct s_id *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-   13 | A_ID *linkDeclaratorList(A_ID *,A_ID *);
+support.h:15:26: note: expected ‘A_ID *’ {aka ‘struct s_id *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+   15 | A_ID *linkDeclaratorList(A_ID *,A_ID *);
       |                          ^~~~~~
 lee.y:27:89: warning: passing argument 2 of ‘linkDeclaratorList’ makes pointer from integer without a cast [-Wint-conversion]
    27 |     | translation_unit external_declaration {$$ = linkDeclaratorList($1, $2);}
@@ -26,8 +953,8 @@ lee.y:27:89: warning: passing argument 2 of ‘linkDeclaratorList’ makes point
       |                                                                                         |
       |                                                                                         YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:13:33: note: expected ‘A_ID *’ {aka ‘struct s_id *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-   13 | A_ID *linkDeclaratorList(A_ID *,A_ID *);
+support.h:15:33: note: expected ‘A_ID *’ {aka ‘struct s_id *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+   15 | A_ID *linkDeclaratorList(A_ID *,A_ID *);
       |                                 ^~~~~~
 lee.y:27:52: warning: assignment to ‘YYSTYPE’ {aka ‘long int’} from ‘A_ID *’ {aka ‘struct s_id *’} makes integer from pointer without a cast [-Wint-conversion]
    27 |     | translation_unit external_declaration {$$ = linkDeclaratorList($1, $2);}
@@ -38,8 +965,8 @@ lee.y:34:86: warning: passing argument 1 of ‘setFunctionDeclaratorSpecifier’
       |                                                                                      |
       |                                                                                      YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:22:38: note: expected ‘A_ID *’ {aka ‘struct s_id *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-   22 | A_ID *setFunctionDeclaratorSpecifier(A_ID *, A_SPECIFIER *);
+support.h:24:38: note: expected ‘A_ID *’ {aka ‘struct s_id *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+   24 | A_ID *setFunctionDeclaratorSpecifier(A_ID *, A_SPECIFIER *);
       |                                      ^~~~~~
 lee.y:34:96: warning: passing argument 2 of ‘setFunctionDeclaratorSpecifier’ makes pointer from integer without a cast [-Wint-conversion]
    34 |     : declaration_specifiers declarator {$$ = setFunctionDeclaratorSpecifier($2, $1);}
@@ -47,8 +974,8 @@ lee.y:34:96: warning: passing argument 2 of ‘setFunctionDeclaratorSpecifier’
       |                                                                                                |
       |                                                                                                YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:22:46: note: expected ‘A_SPECIFIER *’ but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-   22 | A_ID *setFunctionDeclaratorSpecifier(A_ID *, A_SPECIFIER *);
+support.h:24:46: note: expected ‘A_SPECIFIER *’ but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+   24 | A_ID *setFunctionDeclaratorSpecifier(A_ID *, A_SPECIFIER *);
       |                                              ^~~~~~~~~~~~~
 lee.y:34:48: warning: assignment to ‘YYSTYPE’ {aka ‘long int’} from ‘A_ID *’ {aka ‘struct s_id *’} makes integer from pointer without a cast [-Wint-conversion]
    34 |     : declaration_specifiers declarator {$$ = setFunctionDeclaratorSpecifier($2, $1);}
@@ -59,8 +986,8 @@ lee.y:35:65: warning: passing argument 1 of ‘setFunctionDeclaratorBody’ make
       |                                                                 |
       |                                                                 YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:23:33: note: expected ‘A_ID *’ {aka ‘struct s_id *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-   23 | A_ID *setFunctionDeclaratorBody(A_ID *, A_NODE *);
+support.h:25:33: note: expected ‘A_ID *’ {aka ‘struct s_id *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+   25 | A_ID *setFunctionDeclaratorBody(A_ID *, A_NODE *);
       |                                 ^~~~~~
 lee.y:35:76: warning: passing argument 2 of ‘setFunctionDeclaratorBody’ makes pointer from integer without a cast [-Wint-conversion]
    35 |      compound_statement {$$ = setFunctionDeclaratorBody($3, $4);}
@@ -68,8 +995,8 @@ lee.y:35:76: warning: passing argument 2 of ‘setFunctionDeclaratorBody’ make
       |                                                                            |
       |                                                                            YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:23:41: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-   23 | A_ID *setFunctionDeclaratorBody(A_ID *, A_NODE *);
+support.h:25:41: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+   25 | A_ID *setFunctionDeclaratorBody(A_ID *, A_NODE *);
       |                                         ^~~~~~~~
 lee.y:35:32: warning: assignment to ‘YYSTYPE’ {aka ‘long int’} from ‘A_ID *’ {aka ‘struct s_id *’} makes integer from pointer without a cast [-Wint-conversion]
    35 |      compound_statement {$$ = setFunctionDeclaratorBody($3, $4);}
@@ -80,8 +1007,8 @@ lee.y:36:63: warning: passing argument 1 of ‘setFunctionDeclaratorSpecifier’
       |                                                               |
       |                                                               YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:22:38: note: expected ‘A_ID *’ {aka ‘struct s_id *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-   22 | A_ID *setFunctionDeclaratorSpecifier(A_ID *, A_SPECIFIER *);
+support.h:24:38: note: expected ‘A_ID *’ {aka ‘struct s_id *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+   24 | A_ID *setFunctionDeclaratorSpecifier(A_ID *, A_SPECIFIER *);
       |                                      ^~~~~~
 lee.y:36:25: warning: assignment to ‘YYSTYPE’ {aka ‘long int’} from ‘A_ID *’ {aka ‘struct s_id *’} makes integer from pointer without a cast [-Wint-conversion]
    36 |     | declarator {$$ = setFunctionDeclaratorSpecifier($1, makeSpecifier(int_type, 0));}
@@ -92,8 +1019,8 @@ lee.y:37:65: warning: passing argument 1 of ‘setFunctionDeclaratorBody’ make
       |                                                                 |
       |                                                                 YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:23:33: note: expected ‘A_ID *’ {aka ‘struct s_id *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-   23 | A_ID *setFunctionDeclaratorBody(A_ID *, A_NODE *);
+support.h:25:33: note: expected ‘A_ID *’ {aka ‘struct s_id *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+   25 | A_ID *setFunctionDeclaratorBody(A_ID *, A_NODE *);
       |                                 ^~~~~~
 lee.y:37:76: warning: passing argument 2 of ‘setFunctionDeclaratorBody’ makes pointer from integer without a cast [-Wint-conversion]
    37 |      compound_statement {$$ = setFunctionDeclaratorBody($2, $3);}
@@ -101,8 +1028,8 @@ lee.y:37:76: warning: passing argument 2 of ‘setFunctionDeclaratorBody’ make
       |                                                                            |
       |                                                                            YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:23:41: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-   23 | A_ID *setFunctionDeclaratorBody(A_ID *, A_NODE *);
+support.h:25:41: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+   25 | A_ID *setFunctionDeclaratorBody(A_ID *, A_NODE *);
       |                                         ^~~~~~~~
 lee.y:37:32: warning: assignment to ‘YYSTYPE’ {aka ‘long int’} from ‘A_ID *’ {aka ‘struct s_id *’} makes integer from pointer without a cast [-Wint-conversion]
    37 |      compound_statement {$$ = setFunctionDeclaratorBody($2, $3);}
@@ -113,8 +1040,8 @@ lee.y:45:69: warning: passing argument 1 of ‘linkDeclaratorList’ makes point
       |                                                                     |
       |                                                                     YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:13:26: note: expected ‘A_ID *’ {aka ‘struct s_id *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-   13 | A_ID *linkDeclaratorList(A_ID *,A_ID *);
+support.h:15:26: note: expected ‘A_ID *’ {aka ‘struct s_id *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+   15 | A_ID *linkDeclaratorList(A_ID *,A_ID *);
       |                          ^~~~~~
 lee.y:45:79: warning: passing argument 2 of ‘linkDeclaratorList’ makes pointer from integer without a cast [-Wint-conversion]
    45 |     | declaration_list declaration {$$ = linkDeclaratorList($1,$2);}
@@ -122,8 +1049,8 @@ lee.y:45:79: warning: passing argument 2 of ‘linkDeclaratorList’ makes point
       |                                                                               |
       |                                                                               YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:13:33: note: expected ‘A_ID *’ {aka ‘struct s_id *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-   13 | A_ID *linkDeclaratorList(A_ID *,A_ID *);
+support.h:15:33: note: expected ‘A_ID *’ {aka ‘struct s_id *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+   15 | A_ID *linkDeclaratorList(A_ID *,A_ID *);
       |                                 ^~~~~~
 lee.y:45:43: warning: assignment to ‘YYSTYPE’ {aka ‘long int’} from ‘A_ID *’ {aka ‘struct s_id *’} makes integer from pointer without a cast [-Wint-conversion]
    45 |     | declaration_list declaration {$$ = linkDeclaratorList($1,$2);}
@@ -134,8 +1061,8 @@ lee.y:48:106: warning: passing argument 1 of ‘setDeclaratorListSpecifier’ ma
       |                                                                                                          |
       |                                                                                                          YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:21:34: note: expected ‘A_ID *’ {aka ‘struct s_id *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-   21 | A_ID *setDeclaratorListSpecifier(A_ID *,A_SPECIFIER *);
+support.h:23:34: note: expected ‘A_ID *’ {aka ‘struct s_id *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+   23 | A_ID *setDeclaratorListSpecifier(A_ID *,A_SPECIFIER *);
       |                                  ^~~~~~
 lee.y:48:117: warning: passing argument 2 of ‘setDeclaratorListSpecifier’ makes pointer from integer without a cast [-Wint-conversion]
    48 |     : declaration_specifiers init_declarator_list_opt SEMICOLON {$$ = setDeclaratorListSpecifier($2, $1);}
@@ -143,8 +1070,8 @@ lee.y:48:117: warning: passing argument 2 of ‘setDeclaratorListSpecifier’ ma
       |                                                                                                                     |
       |                                                                                                                     YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:21:41: note: expected ‘A_SPECIFIER *’ but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-   21 | A_ID *setDeclaratorListSpecifier(A_ID *,A_SPECIFIER *);
+support.h:23:41: note: expected ‘A_SPECIFIER *’ but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+   23 | A_ID *setDeclaratorListSpecifier(A_ID *,A_SPECIFIER *);
       |                                         ^~~~~~~~~~~~~
 lee.y:48:72: warning: assignment to ‘YYSTYPE’ {aka ‘long int’} from ‘A_ID *’ {aka ‘struct s_id *’} makes integer from pointer without a cast [-Wint-conversion]
    48 |     : declaration_specifiers init_declarator_list_opt SEMICOLON {$$ = setDeclaratorListSpecifier($2, $1);}
@@ -155,8 +1082,8 @@ lee.y:51:50: warning: passing argument 1 of ‘makeSpecifier’ makes pointer fr
       |                                                  |
       |                                                  YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:6:28: note: expected ‘A_TYPE *’ {aka ‘struct s_type *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-    6 | A_SPECIFIER *makeSpecifier(A_TYPE *, S_KIND);
+support.h:8:28: note: expected ‘A_TYPE *’ {aka ‘struct s_type *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+    8 | A_SPECIFIER *makeSpecifier(A_TYPE *, S_KIND);
       |                            ^~~~~~~~
 lee.y:51:29: warning: assignment to ‘YYSTYPE’ {aka ‘long int’} from ‘A_SPECIFIER *’ makes integer from pointer without a cast [-Wint-conversion]
    51 |     : type_specifier {$$ = makeSpecifier($1, 0);}
@@ -170,8 +1097,8 @@ lee.y:53:75: warning: passing argument 1 of ‘updateSpecifier’ makes pointer 
       |                                                                           |
       |                                                                           YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:9:30: note: expected ‘A_SPECIFIER *’ but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-    9 | A_SPECIFIER *updateSpecifier(A_SPECIFIER *, A_TYPE *, S_KIND);
+support.h:11:30: note: expected ‘A_SPECIFIER *’ but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+   11 | A_SPECIFIER *updateSpecifier(A_SPECIFIER *, A_TYPE *, S_KIND);
       |                              ^~~~~~~~~~~~~
 lee.y:53:85: warning: passing argument 2 of ‘updateSpecifier’ makes pointer from integer without a cast [-Wint-conversion]
    53 |     | type_specifier declaration_specifiers {$$ = updateSpecifier($2, $1, 0);}
@@ -179,8 +1106,8 @@ lee.y:53:85: warning: passing argument 2 of ‘updateSpecifier’ makes pointer 
       |                                                                                     |
       |                                                                                     YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:9:45: note: expected ‘A_TYPE *’ {aka ‘struct s_type *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-    9 | A_SPECIFIER *updateSpecifier(A_SPECIFIER *, A_TYPE *, S_KIND);
+support.h:11:45: note: expected ‘A_TYPE *’ {aka ‘struct s_type *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+   11 | A_SPECIFIER *updateSpecifier(A_SPECIFIER *, A_TYPE *, S_KIND);
       |                                             ^~~~~~~~
 lee.y:53:52: warning: assignment to ‘YYSTYPE’ {aka ‘long int’} from ‘A_SPECIFIER *’ makes integer from pointer without a cast [-Wint-conversion]
    53 |     | type_specifier declaration_specifiers {$$ = updateSpecifier($2, $1, 0);}
@@ -191,8 +1118,8 @@ lee.y:54:84: warning: passing argument 1 of ‘updateSpecifier’ makes pointer 
       |                                                                                    |
       |                                                                                    YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:9:30: note: expected ‘A_SPECIFIER *’ but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-    9 | A_SPECIFIER *updateSpecifier(A_SPECIFIER *, A_TYPE *, S_KIND);
+support.h:11:30: note: expected ‘A_SPECIFIER *’ but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+   11 | A_SPECIFIER *updateSpecifier(A_SPECIFIER *, A_TYPE *, S_KIND);
       |                              ^~~~~~~~~~~~~
 lee.y:54:61: warning: assignment to ‘YYSTYPE’ {aka ‘long int’} from ‘A_SPECIFIER *’ makes integer from pointer without a cast [-Wint-conversion]
    54 |     | storage_class_specifier declaration_specifiers {$$ = updateSpecifier($2, 0, $1);}
@@ -206,8 +1133,8 @@ lee.y:72:83: warning: passing argument 1 of ‘linkDeclaratorList’ makes point
       |                                                                                   |
       |                                                                                   YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:13:26: note: expected ‘A_ID *’ {aka ‘struct s_id *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-   13 | A_ID *linkDeclaratorList(A_ID *,A_ID *);
+support.h:15:26: note: expected ‘A_ID *’ {aka ‘struct s_id *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+   15 | A_ID *linkDeclaratorList(A_ID *,A_ID *);
       |                          ^~~~~~
 lee.y:72:94: warning: passing argument 2 of ‘linkDeclaratorList’ makes pointer from integer without a cast [-Wint-conversion]
    72 |     | init_declarator_list COMMA init_declarator {$$ = linkDeclaratorList($1, $3);}
@@ -215,8 +1142,8 @@ lee.y:72:94: warning: passing argument 2 of ‘linkDeclaratorList’ makes point
       |                                                                                              |
       |                                                                                              YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:13:33: note: expected ‘A_ID *’ {aka ‘struct s_id *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-   13 | A_ID *linkDeclaratorList(A_ID *,A_ID *);
+support.h:15:33: note: expected ‘A_ID *’ {aka ‘struct s_id *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+   15 | A_ID *linkDeclaratorList(A_ID *,A_ID *);
       |                                 ^~~~~~
 lee.y:72:57: warning: assignment to ‘YYSTYPE’ {aka ‘long int’} from ‘A_ID *’ {aka ‘struct s_id *’} makes integer from pointer without a cast [-Wint-conversion]
    72 |     | init_declarator_list COMMA init_declarator {$$ = linkDeclaratorList($1, $3);}
@@ -227,8 +1154,8 @@ lee.y:76:69: warning: passing argument 1 of ‘setDeclaratorInit’ makes pointe
       |                                                                     |
       |                                                                     YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:16:25: note: expected ‘A_ID *’ {aka ‘struct s_id *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-   16 | A_ID *setDeclaratorInit(A_ID *,A_NODE *);
+support.h:18:25: note: expected ‘A_ID *’ {aka ‘struct s_id *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+   18 | A_ID *setDeclaratorInit(A_ID *,A_NODE *);
       |                         ^~~~~~
 lee.y:76:80: warning: passing argument 2 of ‘setDeclaratorInit’ makes pointer from integer without a cast [-Wint-conversion]
    76 |     | declarator ASSIGN initializer {$$ = setDeclaratorInit($1, $3);}
@@ -236,8 +1163,8 @@ lee.y:76:80: warning: passing argument 2 of ‘setDeclaratorInit’ makes pointe
       |                                                                                |
       |                                                                                YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:16:32: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-   16 | A_ID *setDeclaratorInit(A_ID *,A_NODE *);
+support.h:18:32: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+   18 | A_ID *setDeclaratorInit(A_ID *,A_NODE *);
       |                                ^~~~~~~~
 lee.y:76:44: warning: assignment to ‘YYSTYPE’ {aka ‘long int’} from ‘A_ID *’ {aka ‘struct s_id *’} makes integer from pointer without a cast [-Wint-conversion]
    76 |     | declarator ASSIGN initializer {$$ = setDeclaratorInit($1, $3);}
@@ -248,8 +1175,8 @@ lee.y:86:60: warning: passing argument 2 of ‘setTypeStructOrEnumIdentifier’ 
       |                                                            |
       |                                                            YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:31:47: note: expected ‘char *’ but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-   31 | A_TYPE *setTypeStructOrEnumIdentifier(T_KIND, char *, ID_KIND);
+support.h:33:47: note: expected ‘char *’ but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+   33 | A_TYPE *setTypeStructOrEnumIdentifier(T_KIND, char *, ID_KIND);
       |                                               ^~~~~~
 lee.y:86:12: warning: assignment to ‘YYSTYPE’ {aka ‘long int’} from ‘A_TYPE *’ {aka ‘struct s_type *’} makes integer from pointer without a cast [-Wint-conversion]
    86 |     {$$ = setTypeStructOrEnumIdentifier($1, $2, ID_STRUCT);}
@@ -263,8 +1190,8 @@ lee.y:88:57: warning: passing argument 1 of ‘setTypeField’ makes pointer fro
       |                                                         |
       |                                                         YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:28:22: note: expected ‘A_TYPE *’ {aka ‘struct s_type *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-   28 | A_TYPE *setTypeField(A_TYPE *,A_ID *);
+support.h:30:22: note: expected ‘A_TYPE *’ {aka ‘struct s_type *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+   30 | A_TYPE *setTypeField(A_TYPE *,A_ID *);
       |                      ^~~~~~~~
 lee.y:88:68: warning: passing argument 2 of ‘setTypeField’ makes pointer from integer without a cast [-Wint-conversion]
    88 |     {checkForwardReference(); $$ = setTypeField($3, $6); current_level--; current_id = $5;}
@@ -272,8 +1199,8 @@ lee.y:88:68: warning: passing argument 2 of ‘setTypeField’ makes pointer fro
       |                                                                    |
       |                                                                    YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:28:31: note: expected ‘A_ID *’ {aka ‘struct s_id *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-   28 | A_TYPE *setTypeField(A_TYPE *,A_ID *);
+support.h:30:31: note: expected ‘A_ID *’ {aka ‘struct s_id *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+   30 | A_TYPE *setTypeField(A_TYPE *,A_ID *);
       |                               ^~~~~~
 lee.y:88:37: warning: assignment to ‘YYSTYPE’ {aka ‘long int’} from ‘A_TYPE *’ {aka ‘struct s_type *’} makes integer from pointer without a cast [-Wint-conversion]
    88 |     {checkForwardReference(); $$ = setTypeField($3, $6); current_level--; current_id = $5;}
@@ -293,8 +1220,8 @@ lee.y:90:85: warning: passing argument 1 of ‘setTypeField’ makes pointer fro
       |                                                                                     |
       |                                                                                     YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:28:22: note: expected ‘A_TYPE *’ {aka ‘struct s_type *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-   28 | A_TYPE *setTypeField(A_TYPE *,A_ID *);
+support.h:30:22: note: expected ‘A_TYPE *’ {aka ‘struct s_type *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+   30 | A_TYPE *setTypeField(A_TYPE *,A_ID *);
       |                      ^~~~~~~~
 lee.y:90:96: warning: passing argument 2 of ‘setTypeField’ makes pointer from integer without a cast [-Wint-conversion]
    90 |      struct_declaration_list RR {checkForwardReference(); $$ = setTypeField($2, $5);
@@ -302,8 +1229,8 @@ lee.y:90:96: warning: passing argument 2 of ‘setTypeField’ makes pointer fro
       |                                                                                                |
       |                                                                                                YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:28:31: note: expected ‘A_ID *’ {aka ‘struct s_id *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-   28 | A_TYPE *setTypeField(A_TYPE *,A_ID *);
+support.h:30:31: note: expected ‘A_ID *’ {aka ‘struct s_id *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+   30 | A_TYPE *setTypeField(A_TYPE *,A_ID *);
       |                               ^~~~~~
 lee.y:90:65: warning: assignment to ‘YYSTYPE’ {aka ‘long int’} from ‘A_TYPE *’ {aka ‘struct s_type *’} makes integer from pointer without a cast [-Wint-conversion]
    90 |      struct_declaration_list RR {checkForwardReference(); $$ = setTypeField($2, $5);
@@ -317,8 +1244,8 @@ lee.y:93:65: warning: passing argument 2 of ‘getTypeOfStructOrEnumRefIdentifie
       |                                                                 |
       |                                                                 YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:15:51: note: expected ‘char *’ but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-   15 | A_TYPE *getTypeOfStructOrEnumRefIdentifier(T_KIND,char *,ID_KIND);
+support.h:17:51: note: expected ‘char *’ but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+   17 | A_TYPE *getTypeOfStructOrEnumRefIdentifier(T_KIND,char *,ID_KIND);
       |                                                   ^~~~~~
 lee.y:93:12: warning: assignment to ‘YYSTYPE’ {aka ‘long int’} from ‘A_TYPE *’ {aka ‘struct s_type *’} makes integer from pointer without a cast [-Wint-conversion]
    93 |     {$$ = getTypeOfStructOrEnumRefIdentifier($1, $2, ID_STRUCT);}
@@ -329,8 +1256,8 @@ lee.y:101:83: warning: passing argument 1 of ‘linkDeclaratorList’ makes poin
       |                                                                                   |
       |                                                                                   YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:13:26: note: expected ‘A_ID *’ {aka ‘struct s_id *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-   13 | A_ID *linkDeclaratorList(A_ID *,A_ID *);
+support.h:15:26: note: expected ‘A_ID *’ {aka ‘struct s_id *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+   15 | A_ID *linkDeclaratorList(A_ID *,A_ID *);
       |                          ^~~~~~
 lee.y:101:94: warning: passing argument 2 of ‘linkDeclaratorList’ makes pointer from integer without a cast [-Wint-conversion]
   101 |     | struct_declaration_list struct_declaration {$$ = linkDeclaratorList($1, $2);}
@@ -338,8 +1265,8 @@ lee.y:101:94: warning: passing argument 2 of ‘linkDeclaratorList’ makes poin
       |                                                                                              |
       |                                                                                              YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:13:33: note: expected ‘A_ID *’ {aka ‘struct s_id *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-   13 | A_ID *linkDeclaratorList(A_ID *,A_ID *);
+support.h:15:33: note: expected ‘A_ID *’ {aka ‘struct s_id *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+   15 | A_ID *linkDeclaratorList(A_ID *,A_ID *);
       |                                 ^~~~~~
 lee.y:101:57: warning: assignment to ‘YYSTYPE’ {aka ‘long int’} from ‘A_ID *’ {aka ‘struct s_id *’} makes integer from pointer without a cast [-Wint-conversion]
   101 |     | struct_declaration_list struct_declaration {$$ = linkDeclaratorList($1, $2);}
@@ -350,8 +1277,8 @@ lee.y:105:52: warning: passing argument 1 of ‘setStructDeclaratorListSpecifier
       |                                                    |
       |                                                    YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:25:40: note: expected ‘A_ID *’ {aka ‘struct s_id *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-   25 | A_ID *setStructDeclaratorListSpecifier(A_ID *, A_TYPE *);
+support.h:27:40: note: expected ‘A_ID *’ {aka ‘struct s_id *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+   27 | A_ID *setStructDeclaratorListSpecifier(A_ID *, A_TYPE *);
       |                                        ^~~~~~
 lee.y:105:63: warning: passing argument 2 of ‘setStructDeclaratorListSpecifier’ makes pointer from integer without a cast [-Wint-conversion]
   105 |     {$$ = setStructDeclaratorListSpecifier($2, $1);}
@@ -359,8 +1286,8 @@ lee.y:105:63: warning: passing argument 2 of ‘setStructDeclaratorListSpecifier
       |                                                               |
       |                                                               YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:25:48: note: expected ‘A_TYPE *’ {aka ‘struct s_type *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-   25 | A_ID *setStructDeclaratorListSpecifier(A_ID *, A_TYPE *);
+support.h:27:48: note: expected ‘A_TYPE *’ {aka ‘struct s_type *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+   27 | A_ID *setStructDeclaratorListSpecifier(A_ID *, A_TYPE *);
       |                                                ^~~~~~~~
 lee.y:105:12: warning: assignment to ‘YYSTYPE’ {aka ‘long int’} from ‘A_ID *’ {aka ‘struct s_id *’} makes integer from pointer without a cast [-Wint-conversion]
   105 |     {$$ = setStructDeclaratorListSpecifier($2, $1);}
@@ -371,8 +1298,8 @@ lee.y:110:87: warning: passing argument 1 of ‘linkDeclaratorList’ makes poin
       |                                                                                       |
       |                                                                                       YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:13:26: note: expected ‘A_ID *’ {aka ‘struct s_id *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-   13 | A_ID *linkDeclaratorList(A_ID *,A_ID *);
+support.h:15:26: note: expected ‘A_ID *’ {aka ‘struct s_id *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+   15 | A_ID *linkDeclaratorList(A_ID *,A_ID *);
       |                          ^~~~~~
 lee.y:110:98: warning: passing argument 2 of ‘linkDeclaratorList’ makes pointer from integer without a cast [-Wint-conversion]
   110 |     | struct_declarator_list COMMA struct_declarator {$$ = linkDeclaratorList($1, $3);}
@@ -380,8 +1307,8 @@ lee.y:110:98: warning: passing argument 2 of ‘linkDeclaratorList’ makes poin
       |                                                                                                  |
       |                                                                                                  YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:13:33: note: expected ‘A_ID *’ {aka ‘struct s_id *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-   13 | A_ID *linkDeclaratorList(A_ID *,A_ID *);
+support.h:15:33: note: expected ‘A_ID *’ {aka ‘struct s_id *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+   15 | A_ID *linkDeclaratorList(A_ID *,A_ID *);
       |                                 ^~~~~~
 lee.y:110:61: warning: assignment to ‘YYSTYPE’ {aka ‘long int’} from ‘A_ID *’ {aka ‘struct s_id *’} makes integer from pointer without a cast [-Wint-conversion]
   110 |     | struct_declarator_list COMMA struct_declarator {$$ = linkDeclaratorList($1, $3);}
@@ -392,8 +1319,8 @@ lee.y:118:59: warning: passing argument 2 of ‘setTypeStructOrEnumIdentifier’
       |                                                           |
       |                                                           YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:31:47: note: expected ‘char *’ but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-   31 | A_TYPE *setTypeStructOrEnumIdentifier(T_KIND, char *, ID_KIND);
+support.h:33:47: note: expected ‘char *’ but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+   33 | A_TYPE *setTypeStructOrEnumIdentifier(T_KIND, char *, ID_KIND);
       |                                               ^~~~~~
 lee.y:118:14: warning: assignment to ‘YYSTYPE’ {aka ‘long int’} from ‘A_TYPE *’ {aka ‘struct s_type *’} makes integer from pointer without a cast [-Wint-conversion]
   118 |       {$$ = setTypeStructOrEnumIdentifier(T_ENUM, $2, ID_ENUM);}
@@ -404,8 +1331,8 @@ lee.y:119:55: warning: passing argument 1 of ‘setTypeField’ makes pointer fr
       |                                                       |
       |                                                       YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:28:22: note: expected ‘A_TYPE *’ {aka ‘struct s_type *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-   28 | A_TYPE *setTypeField(A_TYPE *,A_ID *);
+support.h:30:22: note: expected ‘A_TYPE *’ {aka ‘struct s_type *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+   30 | A_TYPE *setTypeField(A_TYPE *,A_ID *);
       |                      ^~~~~~~~
 lee.y:119:66: warning: passing argument 2 of ‘setTypeField’ makes pointer from integer without a cast [-Wint-conversion]
   119 |      LR enumerator_list RR {$$ = setTypeField($3, $5);}
@@ -413,8 +1340,8 @@ lee.y:119:66: warning: passing argument 2 of ‘setTypeField’ makes pointer fr
       |                                                                  |
       |                                                                  YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:28:31: note: expected ‘A_ID *’ {aka ‘struct s_id *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-   28 | A_TYPE *setTypeField(A_TYPE *,A_ID *);
+support.h:30:31: note: expected ‘A_ID *’ {aka ‘struct s_id *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+   30 | A_TYPE *setTypeField(A_TYPE *,A_ID *);
       |                               ^~~~~~
 lee.y:119:35: warning: assignment to ‘YYSTYPE’ {aka ‘long int’} from ‘A_TYPE *’ {aka ‘struct s_type *’} makes integer from pointer without a cast [-Wint-conversion]
   119 |      LR enumerator_list RR {$$ = setTypeField($3, $5);}
@@ -428,8 +1355,8 @@ lee.y:121:54: warning: passing argument 1 of ‘setTypeField’ makes pointer fr
       |                                                      |
       |                                                      YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:28:22: note: expected ‘A_TYPE *’ {aka ‘struct s_type *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-   28 | A_TYPE *setTypeField(A_TYPE *,A_ID *);
+support.h:30:22: note: expected ‘A_TYPE *’ {aka ‘struct s_type *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+   30 | A_TYPE *setTypeField(A_TYPE *,A_ID *);
       |                      ^~~~~~~~
 lee.y:121:65: warning: passing argument 2 of ‘setTypeField’ makes pointer from integer without a cast [-Wint-conversion]
   121 |     LR enumerator_list RR {$$ = setTypeField($2, $4);}
@@ -437,8 +1364,8 @@ lee.y:121:65: warning: passing argument 2 of ‘setTypeField’ makes pointer fr
       |                                                                 |
       |                                                                 YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:28:31: note: expected ‘A_ID *’ {aka ‘struct s_id *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-   28 | A_TYPE *setTypeField(A_TYPE *,A_ID *);
+support.h:30:31: note: expected ‘A_ID *’ {aka ‘struct s_id *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+   30 | A_TYPE *setTypeField(A_TYPE *,A_ID *);
       |                               ^~~~~~
 lee.y:121:34: warning: assignment to ‘YYSTYPE’ {aka ‘long int’} from ‘A_TYPE *’ {aka ‘struct s_type *’} makes integer from pointer without a cast [-Wint-conversion]
   121 |     LR enumerator_list RR {$$ = setTypeField($2, $4);}
@@ -449,8 +1376,8 @@ lee.y:123:62: warning: passing argument 2 of ‘getTypeOfStructOrEnumRefIdentifi
       |                                                              |
       |                                                              YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:15:51: note: expected ‘char *’ but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-   15 | A_TYPE *getTypeOfStructOrEnumRefIdentifier(T_KIND,char *,ID_KIND);
+support.h:17:51: note: expected ‘char *’ but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+   17 | A_TYPE *getTypeOfStructOrEnumRefIdentifier(T_KIND,char *,ID_KIND);
       |                                                   ^~~~~~
 lee.y:123:12: warning: assignment to ‘YYSTYPE’ {aka ‘long int’} from ‘A_TYPE *’ {aka ‘struct s_type *’} makes integer from pointer without a cast [-Wint-conversion]
   123 |     {$$ = getTypeOfStructOrEnumRefIdentifier(T_ENUM, $2, ID_ENUM);}
@@ -461,8 +1388,8 @@ lee.y:127:73: warning: passing argument 1 of ‘linkDeclaratorList’ makes poin
       |                                                                         |
       |                                                                         YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:13:26: note: expected ‘A_ID *’ {aka ‘struct s_id *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-   13 | A_ID *linkDeclaratorList(A_ID *,A_ID *);
+support.h:15:26: note: expected ‘A_ID *’ {aka ‘struct s_id *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+   15 | A_ID *linkDeclaratorList(A_ID *,A_ID *);
       |                          ^~~~~~
 lee.y:127:84: warning: passing argument 2 of ‘linkDeclaratorList’ makes pointer from integer without a cast [-Wint-conversion]
   127 |     | enumerator_list COMMA enumerator {$$ = linkDeclaratorList($1, $3);}
@@ -470,8 +1397,8 @@ lee.y:127:84: warning: passing argument 2 of ‘linkDeclaratorList’ makes poin
       |                                                                                    |
       |                                                                                    YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:13:33: note: expected ‘A_ID *’ {aka ‘struct s_id *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-   13 | A_ID *linkDeclaratorList(A_ID *,A_ID *);
+support.h:15:33: note: expected ‘A_ID *’ {aka ‘struct s_id *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+   15 | A_ID *linkDeclaratorList(A_ID *,A_ID *);
       |                                 ^~~~~~
 lee.y:127:47: warning: assignment to ‘YYSTYPE’ {aka ‘long int’} from ‘A_ID *’ {aka ‘struct s_id *’} makes integer from pointer without a cast [-Wint-conversion]
   127 |     | enumerator_list COMMA enumerator {$$ = linkDeclaratorList($1, $3);}
@@ -482,8 +1409,8 @@ lee.y:131:52: warning: passing argument 1 of ‘makeIdentifier’ makes pointer 
       |                                                    |
       |                                                    YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:3:22: note: expected ‘char *’ but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-    3 | A_ID *makeIdentifier(char *);
+support.h:5:22: note: expected ‘char *’ but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+    5 | A_ID *makeIdentifier(char *);
       |                      ^~~~~~
 lee.y:131:12: warning: assignment to ‘YYSTYPE’ {aka ‘long int’} from ‘A_ID *’ {aka ‘struct s_id *’} makes integer from pointer without a cast [-Wint-conversion]
   131 |     {$$ = setDeclaratorKind(makeIdentifier($1), ID_ENUM_LITERAL);}
@@ -494,8 +1421,8 @@ lee.y:133:53: warning: passing argument 1 of ‘makeIdentifier’ makes pointer 
       |                                                     |
       |                                                     YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:3:22: note: expected ‘char *’ but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-    3 | A_ID *makeIdentifier(char *);
+support.h:5:22: note: expected ‘char *’ but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+    5 | A_ID *makeIdentifier(char *);
       |                      ^~~~~~
 lee.y:133:13: warning: assignment to ‘YYSTYPE’ {aka ‘long int’} from ‘A_ID *’ {aka ‘struct s_id *’} makes integer from pointer without a cast [-Wint-conversion]
   133 |      {$$ = setDeclaratorKind(makeIdentifier($1), ID_ENUM_LITERAL);}
@@ -506,8 +1433,8 @@ lee.y:134:63: warning: passing argument 1 of ‘setDeclaratorInit’ makes point
       |                                                               |
       |                                                               YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:16:25: note: expected ‘A_ID *’ {aka ‘struct s_id *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-   16 | A_ID *setDeclaratorInit(A_ID *,A_NODE *);
+support.h:18:25: note: expected ‘A_ID *’ {aka ‘struct s_id *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+   18 | A_ID *setDeclaratorInit(A_ID *,A_NODE *);
       |                         ^~~~~~
 lee.y:134:74: warning: passing argument 2 of ‘setDeclaratorInit’ makes pointer from integer without a cast [-Wint-conversion]
   134 |      ASSIGN constant_expression {$$=setDeclaratorInit($2, $4);}
@@ -515,8 +1442,8 @@ lee.y:134:74: warning: passing argument 2 of ‘setDeclaratorInit’ makes point
       |                                                                          |
       |                                                                          YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:16:32: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-   16 | A_ID *setDeclaratorInit(A_ID *,A_NODE *);
+support.h:18:32: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+   18 | A_ID *setDeclaratorInit(A_ID *,A_NODE *);
       |                                ^~~~~~~~
 lee.y:134:39: warning: assignment to ‘YYSTYPE’ {aka ‘long int’} from ‘A_ID *’ {aka ‘struct s_id *’} makes integer from pointer without a cast [-Wint-conversion]
   134 |      ASSIGN constant_expression {$$=setDeclaratorInit($2, $4);}
@@ -527,8 +1454,8 @@ lee.y:137:72: warning: passing argument 1 of ‘setDeclaratorElementType’ make
       |                                                                        |
       |                                                                        YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:19:32: note: expected ‘A_ID *’ {aka ‘struct s_id *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-   19 | A_ID *setDeclaratorElementType(A_ID *,A_TYPE *);
+support.h:21:32: note: expected ‘A_ID *’ {aka ‘struct s_id *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+   21 | A_ID *setDeclaratorElementType(A_ID *,A_TYPE *);
       |                                ^~~~~~
 lee.y:137:82: warning: passing argument 2 of ‘setDeclaratorElementType’ makes pointer from integer without a cast [-Wint-conversion]
   137 |     : pointer direct_declarator {$$ = setDeclaratorElementType($2, $1);}
@@ -536,8 +1463,8 @@ lee.y:137:82: warning: passing argument 2 of ‘setDeclaratorElementType’ make
       |                                                                                  |
       |                                                                                  YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:19:39: note: expected ‘A_TYPE *’ {aka ‘struct s_type *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-   19 | A_ID *setDeclaratorElementType(A_ID *,A_TYPE *);
+support.h:21:39: note: expected ‘A_TYPE *’ {aka ‘struct s_type *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+   21 | A_ID *setDeclaratorElementType(A_ID *,A_TYPE *);
       |                                       ^~~~~~~~
 lee.y:137:40: warning: assignment to ‘YYSTYPE’ {aka ‘long int’} from ‘A_ID *’ {aka ‘struct s_id *’} makes integer from pointer without a cast [-Wint-conversion]
   137 |     : pointer direct_declarator {$$ = setDeclaratorElementType($2, $1);}
@@ -551,8 +1478,8 @@ lee.y:142:72: warning: passing argument 1 of ‘setTypeElementType’ makes poin
       |                                                                        |
       |                                                                        YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:27:28: note: expected ‘A_TYPE *’ {aka ‘struct s_type *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-   27 | A_TYPE *setTypeElementType(A_TYPE *, A_TYPE *);
+support.h:29:28: note: expected ‘A_TYPE *’ {aka ‘struct s_type *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+   29 | A_TYPE *setTypeElementType(A_TYPE *, A_TYPE *);
       |                            ^~~~~~~~
 lee.y:142:46: warning: assignment to ‘YYSTYPE’ {aka ‘long int’} from ‘A_TYPE *’ {aka ‘struct s_type *’} makes integer from pointer without a cast [-Wint-conversion]
   142 |     | STAR type_qualifier_opt pointer {$$ = setTypeElementType($2, makeType(T_POINTER));}
@@ -563,8 +1490,8 @@ lee.y:146:47: warning: passing argument 1 of ‘makeIdentifier’ makes pointer 
       |                                               |
       |                                               YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:3:22: note: expected ‘char *’ but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-    3 | A_ID *makeIdentifier(char *);
+support.h:5:22: note: expected ‘char *’ but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+    5 | A_ID *makeIdentifier(char *);
       |                      ^~~~~~
 lee.y:146:25: warning: assignment to ‘YYSTYPE’ {aka ‘long int’} from ‘A_ID *’ {aka ‘struct s_id *’} makes integer from pointer without a cast [-Wint-conversion]
   146 |     : IDENTIFIER {$$ = makeIdentifier($1);}
@@ -575,8 +1502,8 @@ lee.y:149:86: warning: passing argument 2 of ‘setTypeExpr’ makes pointer fro
       |                                                                                      |
       |                                                                                      YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:29:31: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-   29 | A_TYPE *setTypeExpr(A_TYPE *, A_NODE *);
+support.h:31:31: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+   31 | A_TYPE *setTypeExpr(A_TYPE *, A_NODE *);
       |                               ^~~~~~~~
 lee.y:149:44: warning: passing argument 1 of ‘setDeclaratorElementType’ makes pointer from integer without a cast [-Wint-conversion]
   149 |     {$$ = setDeclaratorElementType($1, setTypeExpr(makeType(T_ARRAY), $3));}
@@ -584,8 +1511,8 @@ lee.y:149:44: warning: passing argument 1 of ‘setDeclaratorElementType’ make
       |                                            |
       |                                            YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:19:32: note: expected ‘A_ID *’ {aka ‘struct s_id *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-   19 | A_ID *setDeclaratorElementType(A_ID *,A_TYPE *);
+support.h:21:32: note: expected ‘A_ID *’ {aka ‘struct s_id *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+   21 | A_ID *setDeclaratorElementType(A_ID *,A_TYPE *);
       |                                ^~~~~~
 lee.y:149:12: warning: assignment to ‘YYSTYPE’ {aka ‘long int’} from ‘A_ID *’ {aka ‘struct s_id *’} makes integer from pointer without a cast [-Wint-conversion]
   149 |     {$$ = setDeclaratorElementType($1, setTypeExpr(makeType(T_ARRAY), $3));}
@@ -602,8 +1529,8 @@ lee.y:153:85: warning: passing argument 2 of ‘setTypeField’ makes pointer fr
       |                                                                                     |
       |                                                                                     YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:28:31: note: expected ‘A_ID *’ {aka ‘struct s_id *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-   28 | A_TYPE *setTypeField(A_TYPE *,A_ID *);
+support.h:30:31: note: expected ‘A_ID *’ {aka ‘struct s_id *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+   30 | A_TYPE *setTypeField(A_TYPE *,A_ID *);
       |                               ^~~~~~
 lee.y:153:43: warning: passing argument 1 of ‘setDeclaratorElementType’ makes pointer from integer without a cast [-Wint-conversion]
   153 |     $$ = setDeclaratorElementType($1, setTypeField(makeType(T_FUNC), $4));}
@@ -611,8 +1538,8 @@ lee.y:153:43: warning: passing argument 1 of ‘setDeclaratorElementType’ make
       |                                           |
       |                                           YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:19:32: note: expected ‘A_ID *’ {aka ‘struct s_id *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-   19 | A_ID *setDeclaratorElementType(A_ID *,A_TYPE *);
+support.h:21:32: note: expected ‘A_ID *’ {aka ‘struct s_id *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+   21 | A_ID *setDeclaratorElementType(A_ID *,A_TYPE *);
       |                                ^~~~~~
 lee.y:153:11: warning: assignment to ‘YYSTYPE’ {aka ‘long int’} from ‘A_ID *’ {aka ‘struct s_id *’} makes integer from pointer without a cast [-Wint-conversion]
   153 |     $$ = setDeclaratorElementType($1, setTypeField(makeType(T_FUNC), $4));}
@@ -623,8 +1550,8 @@ lee.y:165:71: warning: passing argument 1 of ‘linkDeclaratorList’ makes poin
       |                                                                       |
       |                                                                       YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:13:26: note: expected ‘A_ID *’ {aka ‘struct s_id *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-   13 | A_ID *linkDeclaratorList(A_ID *,A_ID *);
+support.h:15:26: note: expected ‘A_ID *’ {aka ‘struct s_id *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+   15 | A_ID *linkDeclaratorList(A_ID *,A_ID *);
       |                          ^~~~~~
 lee.y:165:45: warning: assignment to ‘YYSTYPE’ {aka ‘long int’} from ‘A_ID *’ {aka ‘struct s_id *’} makes integer from pointer without a cast [-Wint-conversion]
   165 |     | parameter_list COMMA DOTDOTDOT {$$ = linkDeclaratorList($1, setDeclaratorKind(makeDummyIdentifier(), ID_PARM));}
@@ -635,8 +1562,8 @@ lee.y:169:83: warning: passing argument 1 of ‘linkDeclaratorList’ makes poin
       |                                                                                   |
       |                                                                                   YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:13:26: note: expected ‘A_ID *’ {aka ‘struct s_id *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-   13 | A_ID *linkDeclaratorList(A_ID *,A_ID *);
+support.h:15:26: note: expected ‘A_ID *’ {aka ‘struct s_id *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+   15 | A_ID *linkDeclaratorList(A_ID *,A_ID *);
       |                          ^~~~~~
 lee.y:169:94: warning: passing argument 2 of ‘linkDeclaratorList’ makes pointer from integer without a cast [-Wint-conversion]
   169 |     | parameter_list COMMA parameter_declaration {$$ = linkDeclaratorList($1, $3);}
@@ -644,8 +1571,8 @@ lee.y:169:94: warning: passing argument 2 of ‘linkDeclaratorList’ makes poin
       |                                                                                              |
       |                                                                                              YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:13:33: note: expected ‘A_ID *’ {aka ‘struct s_id *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-   13 | A_ID *linkDeclaratorList(A_ID *,A_ID *);
+support.h:15:33: note: expected ‘A_ID *’ {aka ‘struct s_id *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+   15 | A_ID *linkDeclaratorList(A_ID *,A_ID *);
       |                                 ^~~~~~
 lee.y:169:57: warning: assignment to ‘YYSTYPE’ {aka ‘long int’} from ‘A_ID *’ {aka ‘struct s_id *’} makes integer from pointer without a cast [-Wint-conversion]
   169 |     | parameter_list COMMA parameter_declaration {$$ = linkDeclaratorList($1, $3);}
@@ -656,8 +1583,8 @@ lee.y:173:52: warning: passing argument 1 of ‘setParameterDeclaratorSpecifier�
       |                                                    |
       |                                                    YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:24:39: note: expected ‘A_ID *’ {aka ‘struct s_id *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-   24 | A_ID *setParameterDeclaratorSpecifier(A_ID *, A_SPECIFIER *);
+support.h:26:39: note: expected ‘A_ID *’ {aka ‘struct s_id *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+   26 | A_ID *setParameterDeclaratorSpecifier(A_ID *, A_SPECIFIER *);
       |                                       ^~~~~~
 lee.y:173:62: warning: passing argument 2 of ‘setParameterDeclaratorSpecifier’ makes pointer from integer without a cast [-Wint-conversion]
   173 |      {$$ = setParameterDeclaratorSpecifier($2, $1);}
@@ -665,8 +1592,8 @@ lee.y:173:62: warning: passing argument 2 of ‘setParameterDeclaratorSpecifier�
       |                                                              |
       |                                                              YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:24:47: note: expected ‘A_SPECIFIER *’ but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-   24 | A_ID *setParameterDeclaratorSpecifier(A_ID *, A_SPECIFIER *);
+support.h:26:47: note: expected ‘A_SPECIFIER *’ but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+   26 | A_ID *setParameterDeclaratorSpecifier(A_ID *, A_SPECIFIER *);
       |                                               ^~~~~~~~~~~~~
 lee.y:173:13: warning: assignment to ‘YYSTYPE’ {aka ‘long int’} from ‘A_ID *’ {aka ‘struct s_id *’} makes integer from pointer without a cast [-Wint-conversion]
   173 |      {$$ = setParameterDeclaratorSpecifier($2, $1);}
@@ -677,8 +1604,8 @@ lee.y:175:93: warning: passing argument 2 of ‘setDeclaratorType’ makes point
       |                                                                                             |
       |                                                                                             YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:18:33: note: expected ‘A_TYPE *’ {aka ‘struct s_type *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-   18 | A_ID *setDeclaratorType(A_ID *, A_TYPE *);
+support.h:20:33: note: expected ‘A_TYPE *’ {aka ‘struct s_type *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+   20 | A_ID *setDeclaratorType(A_ID *, A_TYPE *);
       |                                 ^~~~~~~~
 lee.y:175:104: warning: passing argument 2 of ‘setParameterDeclaratorSpecifier’ makes pointer from integer without a cast [-Wint-conversion]
   175 |      {$$ = setParameterDeclaratorSpecifier(setDeclaratorType(makeDummyIdentifier(), $2), $1);}
@@ -686,8 +1613,8 @@ lee.y:175:104: warning: passing argument 2 of ‘setParameterDeclaratorSpecifier
       |                                                                                                        |
       |                                                                                                        YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:24:47: note: expected ‘A_SPECIFIER *’ but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-   24 | A_ID *setParameterDeclaratorSpecifier(A_ID *, A_SPECIFIER *);
+support.h:26:47: note: expected ‘A_SPECIFIER *’ but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+   26 | A_ID *setParameterDeclaratorSpecifier(A_ID *, A_SPECIFIER *);
       |                                               ^~~~~~~~~~~~~
 lee.y:175:13: warning: assignment to ‘YYSTYPE’ {aka ‘long int’} from ‘A_ID *’ {aka ‘struct s_id *’} makes integer from pointer without a cast [-Wint-conversion]
   175 |      {$$ = setParameterDeclaratorSpecifier(setDeclaratorType(makeDummyIdentifier(), $2), $1);}
@@ -701,8 +1628,8 @@ lee.y:184:75: warning: passing argument 1 of ‘setTypeElementType’ makes poin
       |                                                                           |
       |                                                                           YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:27:28: note: expected ‘A_TYPE *’ {aka ‘struct s_type *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-   27 | A_TYPE *setTypeElementType(A_TYPE *, A_TYPE *);
+support.h:29:28: note: expected ‘A_TYPE *’ {aka ‘struct s_type *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+   29 | A_TYPE *setTypeElementType(A_TYPE *, A_TYPE *);
       |                            ^~~~~~~~
 lee.y:184:49: warning: assignment to ‘YYSTYPE’ {aka ‘long int’} from ‘A_TYPE *’ {aka ‘struct s_type *’} makes integer from pointer without a cast [-Wint-conversion]
   184 |     | pointer direct_abstract_declarator {$$ = setTypeElementType($2, makeType(T_POINTER));}
@@ -713,8 +1640,8 @@ lee.y:189:51: warning: passing argument 2 of ‘setTypeExpr’ makes pointer fro
       |                                                   |
       |                                                   YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:29:31: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-   29 | A_TYPE *setTypeExpr(A_TYPE *, A_NODE *);
+support.h:31:31: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+   31 | A_TYPE *setTypeExpr(A_TYPE *, A_NODE *);
       |                               ^~~~~~~~
 lee.y:189:13: warning: assignment to ‘YYSTYPE’ {aka ‘long int’} from ‘A_TYPE *’ {aka ‘struct s_type *’} makes integer from pointer without a cast [-Wint-conversion]
   189 |      {$$ = setTypeExpr(makeType(T_ARRAY), $2);}
@@ -725,8 +1652,8 @@ lee.y:191:50: warning: passing argument 2 of ‘setTypeExpr’ makes pointer fro
       |                                                  |
       |                                                  YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:29:31: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-   29 | A_TYPE *setTypeExpr(A_TYPE *, A_NODE *);
+support.h:31:31: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+   31 | A_TYPE *setTypeExpr(A_TYPE *, A_NODE *);
       |                               ^~~~~~~~
 lee.y:191:13: warning: assignment to ‘YYSTYPE’ {aka ‘long int’} from ‘A_TYPE *’ {aka ‘struct s_type *’} makes integer from pointer without a cast [-Wint-conversion]
   191 |      {$$ = setTypeExpr(makeType(T_FUNC), $2);}
@@ -737,8 +1664,8 @@ lee.y:193:81: warning: passing argument 2 of ‘setTypeExpr’ makes pointer fro
       |                                                                                 |
       |                                                                                 YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:29:31: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-   29 | A_TYPE *setTypeExpr(A_TYPE *, A_NODE *);
+support.h:31:31: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+   31 | A_TYPE *setTypeExpr(A_TYPE *, A_NODE *);
       |                               ^~~~~~~~
 lee.y:193:39: warning: passing argument 1 of ‘setTypeElementType’ makes pointer from integer without a cast [-Wint-conversion]
   193 |      {$$ = setTypeElementType($1, setTypeExpr(makeType(T_ARRAY), $3));}
@@ -746,8 +1673,8 @@ lee.y:193:39: warning: passing argument 1 of ‘setTypeElementType’ makes poin
       |                                       |
       |                                       YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:27:28: note: expected ‘A_TYPE *’ {aka ‘struct s_type *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-   27 | A_TYPE *setTypeElementType(A_TYPE *, A_TYPE *);
+support.h:29:28: note: expected ‘A_TYPE *’ {aka ‘struct s_type *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+   29 | A_TYPE *setTypeElementType(A_TYPE *, A_TYPE *);
       |                            ^~~~~~~~
 lee.y:193:13: warning: assignment to ‘YYSTYPE’ {aka ‘long int’} from ‘A_TYPE *’ {aka ‘struct s_type *’} makes integer from pointer without a cast [-Wint-conversion]
   193 |      {$$ = setTypeElementType($1, setTypeExpr(makeType(T_ARRAY), $3));}
@@ -758,8 +1685,8 @@ lee.y:195:80: warning: passing argument 2 of ‘setTypeExpr’ makes pointer fro
       |                                                                                |
       |                                                                                YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:29:31: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-   29 | A_TYPE *setTypeExpr(A_TYPE *, A_NODE *);
+support.h:31:31: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+   31 | A_TYPE *setTypeExpr(A_TYPE *, A_NODE *);
       |                               ^~~~~~~~
 lee.y:195:39: warning: passing argument 1 of ‘setTypeElementType’ makes pointer from integer without a cast [-Wint-conversion]
   195 |      {$$ = setTypeElementType($1, setTypeExpr(makeType(T_FUNC), $3));}
@@ -767,8 +1694,8 @@ lee.y:195:39: warning: passing argument 1 of ‘setTypeElementType’ makes poin
       |                                       |
       |                                       YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:27:28: note: expected ‘A_TYPE *’ {aka ‘struct s_type *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-   27 | A_TYPE *setTypeElementType(A_TYPE *, A_TYPE *);
+support.h:29:28: note: expected ‘A_TYPE *’ {aka ‘struct s_type *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+   29 | A_TYPE *setTypeElementType(A_TYPE *, A_TYPE *);
       |                            ^~~~~~~~
 lee.y:195:13: warning: assignment to ‘YYSTYPE’ {aka ‘long int’} from ‘A_TYPE *’ {aka ‘struct s_type *’} makes integer from pointer without a cast [-Wint-conversion]
   195 |      {$$ = setTypeElementType($1, setTypeExpr(makeType(T_FUNC), $3));}
@@ -779,8 +1706,8 @@ lee.y:198:72: warning: passing argument 3 of ‘makeNode’ makes pointer from i
       |                                                                        |
       |                                                                        YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:1:39: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-    1 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
+support.h:3:39: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+    3 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
       |                                       ^~~~~~~~
 lee.y:198:34: warning: assignment to ‘YYSTYPE’ {aka ‘long int’} from ‘A_NODE *’ {aka ‘struct s_node *’} makes integer from pointer without a cast [-Wint-conversion]
   198 |     : constant_expression {$$ = makeNode(N_INIT_LIST_ONE, NIL, $1, NIL);}
@@ -791,8 +1718,8 @@ lee.y:202:55: warning: passing argument 2 of ‘makeNode’ makes pointer from i
       |                                                       |
       |                                                       YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:1:29: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-    1 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
+support.h:3:29: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+    3 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
       |                             ^~~~~~~~
 lee.y:202:26: warning: assignment to ‘YYSTYPE’ {aka ‘long int’} from ‘A_NODE *’ {aka ‘struct s_node *’} makes integer from pointer without a cast [-Wint-conversion]
   202 |     : initializer {$$ = makeNode(N_INIT_LIST, $1, NIL, makeNode(N_INIT_LIST_NIL, NIL, NIL, NIL));}
@@ -803,8 +1730,8 @@ lee.y:203:82: warning: passing argument 2 of ‘makeNodeList’ makes pointer fr
       |                                                                                  |
       |                                                                                  YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:2:33: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-    2 | A_NODE *makeNodeList(NODE_NAME, A_NODE *, A_NODE *);
+support.h:4:33: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+    4 | A_NODE *makeNodeList(NODE_NAME, A_NODE *, A_NODE *);
       |                                 ^~~~~~~~
 lee.y:203:93: warning: passing argument 3 of ‘makeNodeList’ makes pointer from integer without a cast [-Wint-conversion]
   203 |     | initializer_list COMMA initializer {$$ = makeNodeList(N_INIT_LIST, $1, $3);}
@@ -812,8 +1739,8 @@ lee.y:203:93: warning: passing argument 3 of ‘makeNodeList’ makes pointer fr
       |                                                                                             |
       |                                                                                             YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:2:43: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-    2 | A_NODE *makeNodeList(NODE_NAME, A_NODE *, A_NODE *);
+support.h:4:43: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+    4 | A_NODE *makeNodeList(NODE_NAME, A_NODE *, A_NODE *);
       |                                           ^~~~~~~~
 lee.y:203:49: warning: assignment to ‘YYSTYPE’ {aka ‘long int’} from ‘A_NODE *’ {aka ‘struct s_node *’} makes integer from pointer without a cast [-Wint-conversion]
   203 |     | initializer_list COMMA initializer {$$ = makeNodeList(N_INIT_LIST, $1, $3);}
@@ -827,8 +1754,8 @@ lee.y:210:53: warning: passing argument 2 of ‘makeNode’ makes pointer from i
       |                                                     |
       |                                                     YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:1:29: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-    1 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
+support.h:3:29: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+    3 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
       |                             ^~~~~~~~
 lee.y:210:24: warning: assignment to ‘YYSTYPE’ {aka ‘long int’} from ‘A_NODE *’ {aka ‘struct s_node *’} makes integer from pointer without a cast [-Wint-conversion]
   210 |     : statement {$$ = makeNode(N_STMT_LIST, $1, NIL, makeNode(N_STMT_LIST_NIL, NIL ,NIL, NIL));}
@@ -839,8 +1766,8 @@ lee.y:211:72: warning: passing argument 2 of ‘makeNodeList’ makes pointer fr
       |                                                                        |
       |                                                                        YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:2:33: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-    2 | A_NODE *makeNodeList(NODE_NAME, A_NODE *, A_NODE *);
+support.h:4:33: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+    4 | A_NODE *makeNodeList(NODE_NAME, A_NODE *, A_NODE *);
       |                                 ^~~~~~~~
 lee.y:211:83: warning: passing argument 3 of ‘makeNodeList’ makes pointer from integer without a cast [-Wint-conversion]
   211 |     | statement_list statement {$$ = makeNodeList(N_STMT_LIST, $1, $2);}
@@ -848,8 +1775,8 @@ lee.y:211:83: warning: passing argument 3 of ‘makeNodeList’ makes pointer fr
       |                                                                                   |
       |                                                                                   YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:2:43: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-    2 | A_NODE *makeNodeList(NODE_NAME, A_NODE *, A_NODE *);
+support.h:4:43: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+    4 | A_NODE *makeNodeList(NODE_NAME, A_NODE *, A_NODE *);
       |                                           ^~~~~~~~
 lee.y:211:39: warning: assignment to ‘YYSTYPE’ {aka ‘long int’} from ‘A_NODE *’ {aka ‘struct s_node *’} makes integer from pointer without a cast [-Wint-conversion]
   211 |     | statement_list statement {$$ = makeNodeList(N_STMT_LIST, $1, $2);}
@@ -860,8 +1787,8 @@ lee.y:224:48: warning: passing argument 2 of ‘makeNode’ makes pointer from i
       |                                                |
       |                                                YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:1:29: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-    1 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
+support.h:3:29: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+    3 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
       |                             ^~~~~~~~
 lee.y:224:64: warning: passing argument 4 of ‘makeNode’ makes pointer from integer without a cast [-Wint-conversion]
   224 |      {$$ = makeNode(N_STMT_LABEL_CASE, $2, NIL, $4);}
@@ -869,8 +1796,8 @@ lee.y:224:64: warning: passing argument 4 of ‘makeNode’ makes pointer from i
       |                                                                |
       |                                                                YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:1:49: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-    1 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
+support.h:3:49: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+    3 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
       |                                                 ^~~~~~~~
 lee.y:224:13: warning: assignment to ‘YYSTYPE’ {aka ‘long int’} from ‘A_NODE *’ {aka ‘struct s_node *’} makes integer from pointer without a cast [-Wint-conversion]
   224 |      {$$ = makeNode(N_STMT_LABEL_CASE, $2, NIL, $4);}
@@ -881,8 +1808,8 @@ lee.y:226:56: warning: passing argument 3 of ‘makeNode’ makes pointer from i
       |                                                        |
       |                                                        YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:1:39: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-    1 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
+support.h:3:39: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+    3 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
       |                                       ^~~~~~~~
 lee.y:226:13: warning: assignment to ‘YYSTYPE’ {aka ‘long int’} from ‘A_NODE *’ {aka ‘struct s_node *’} makes integer from pointer without a cast [-Wint-conversion]
   226 |      {$$ = makeNode(N_STMT_LABEL_DEFAULT, NIL, $3, NIL);}
@@ -896,8 +1823,8 @@ lee.y:231:71: warning: passing argument 2 of ‘makeNode’ makes pointer from i
       |                                                                       |
       |                                                                       YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:1:29: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-    1 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
+support.h:3:29: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+    3 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
       |                             ^~~~~~~~
 lee.y:231:87: warning: passing argument 4 of ‘makeNode’ makes pointer from integer without a cast [-Wint-conversion]
   231 |      {checkForwardReference(); $$ = makeNode(N_STMT_COMPOUND, $3, NIL, $4); current_id = $2; current_level--;}
@@ -905,8 +1832,8 @@ lee.y:231:87: warning: passing argument 4 of ‘makeNode’ makes pointer from i
       |                                                                                       |
       |                                                                                       YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:1:49: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-    1 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
+support.h:3:49: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+    3 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
       |                                                 ^~~~~~~~
 lee.y:231:38: warning: assignment to ‘YYSTYPE’ {aka ‘long int’} from ‘A_NODE *’ {aka ‘struct s_node *’} makes integer from pointer without a cast [-Wint-conversion]
   231 |      {checkForwardReference(); $$ = makeNode(N_STMT_COMPOUND, $3, NIL, $4); current_id = $2; current_level--;}
@@ -923,8 +1850,8 @@ lee.y:236:75: warning: passing argument 3 of ‘makeNode’ makes pointer from i
       |                                                                           |
       |                                                                           YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:1:39: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-    1 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
+support.h:3:39: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+    3 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
       |                                       ^~~~~~~~
 lee.y:236:35: warning: assignment to ‘YYSTYPE’ {aka ‘long int’} from ‘A_NODE *’ {aka ‘struct s_node *’} makes integer from pointer without a cast [-Wint-conversion]
   236 |     | expression SEMICOLON {$$ = makeNode(N_STMT_EXPRESSION, NIL, $1, NIL);}
@@ -935,8 +1862,8 @@ lee.y:241:40: warning: passing argument 2 of ‘makeNode’ makes pointer from i
       |                                        |
       |                                        YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:1:29: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-    1 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
+support.h:3:29: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+    3 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
       |                             ^~~~~~~~
 lee.y:241:56: warning: passing argument 4 of ‘makeNode’ makes pointer from integer without a cast [-Wint-conversion]
   241 |      {$$ = makeNode(N_STMT_IF, $3, NIL, $5);}
@@ -944,8 +1871,8 @@ lee.y:241:56: warning: passing argument 4 of ‘makeNode’ makes pointer from i
       |                                                        |
       |                                                        YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:1:49: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-    1 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
+support.h:3:49: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+    3 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
       |                                                 ^~~~~~~~
 lee.y:241:13: warning: assignment to ‘YYSTYPE’ {aka ‘long int’} from ‘A_NODE *’ {aka ‘struct s_node *’} makes integer from pointer without a cast [-Wint-conversion]
   241 |      {$$ = makeNode(N_STMT_IF, $3, NIL, $5);}
@@ -956,8 +1883,8 @@ lee.y:243:45: warning: passing argument 2 of ‘makeNode’ makes pointer from i
       |                                             |
       |                                             YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:1:29: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-    1 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
+support.h:3:29: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+    3 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
       |                             ^~~~~~~~
 lee.y:243:56: warning: passing argument 3 of ‘makeNode’ makes pointer from integer without a cast [-Wint-conversion]
   243 |      {$$ = makeNode(N_STMT_IF_ELSE, $3, $5, $7);}
@@ -965,8 +1892,8 @@ lee.y:243:56: warning: passing argument 3 of ‘makeNode’ makes pointer from i
       |                                                        |
       |                                                        YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:1:39: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-    1 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
+support.h:3:39: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+    3 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
       |                                       ^~~~~~~~
 lee.y:243:67: warning: passing argument 4 of ‘makeNode’ makes pointer from integer without a cast [-Wint-conversion]
   243 |      {$$ = makeNode(N_STMT_IF_ELSE, $3, $5, $7);}
@@ -974,8 +1901,8 @@ lee.y:243:67: warning: passing argument 4 of ‘makeNode’ makes pointer from i
       |                                                                   |
       |                                                                   YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:1:49: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-    1 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
+support.h:3:49: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+    3 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
       |                                                 ^~~~~~~~
 lee.y:243:13: warning: assignment to ‘YYSTYPE’ {aka ‘long int’} from ‘A_NODE *’ {aka ‘struct s_node *’} makes integer from pointer without a cast [-Wint-conversion]
   243 |      {$$ = makeNode(N_STMT_IF_ELSE, $3, $5, $7);}
@@ -986,8 +1913,8 @@ lee.y:245:44: warning: passing argument 2 of ‘makeNode’ makes pointer from i
       |                                            |
       |                                            YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:1:29: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-    1 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
+support.h:3:29: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+    3 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
       |                             ^~~~~~~~
 lee.y:245:60: warning: passing argument 4 of ‘makeNode’ makes pointer from integer without a cast [-Wint-conversion]
   245 |      {$$ = makeNode(N_STMT_SWITCH, $3, NIL, $5);}
@@ -995,8 +1922,8 @@ lee.y:245:60: warning: passing argument 4 of ‘makeNode’ makes pointer from i
       |                                                            |
       |                                                            YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:1:49: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-    1 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
+support.h:3:49: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+    3 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
       |                                                 ^~~~~~~~
 lee.y:245:13: warning: assignment to ‘YYSTYPE’ {aka ‘long int’} from ‘A_NODE *’ {aka ‘struct s_node *’} makes integer from pointer without a cast [-Wint-conversion]
   245 |      {$$ = makeNode(N_STMT_SWITCH, $3, NIL, $5);}
@@ -1007,8 +1934,8 @@ lee.y:249:43: warning: passing argument 2 of ‘makeNode’ makes pointer from i
       |                                           |
       |                                           YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:1:29: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-    1 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
+support.h:3:29: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+    3 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
       |                             ^~~~~~~~
 lee.y:249:59: warning: passing argument 4 of ‘makeNode’ makes pointer from integer without a cast [-Wint-conversion]
   249 |      {$$ = makeNode(N_STMT_WHILE, $3, NIL, $5);}
@@ -1016,8 +1943,8 @@ lee.y:249:59: warning: passing argument 4 of ‘makeNode’ makes pointer from i
       |                                                           |
       |                                                           YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:1:49: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-    1 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
+support.h:3:49: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+    3 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
       |                                                 ^~~~~~~~
 lee.y:249:13: warning: assignment to ‘YYSTYPE’ {aka ‘long int’} from ‘A_NODE *’ {aka ‘struct s_node *’} makes integer from pointer without a cast [-Wint-conversion]
   249 |      {$$ = makeNode(N_STMT_WHILE, $3, NIL, $5);}
@@ -1028,8 +1955,8 @@ lee.y:251:40: warning: passing argument 2 of ‘makeNode’ makes pointer from i
       |                                        |
       |                                        YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:1:29: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-    1 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
+support.h:3:29: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+    3 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
       |                             ^~~~~~~~
 lee.y:251:56: warning: passing argument 4 of ‘makeNode’ makes pointer from integer without a cast [-Wint-conversion]
   251 |      {$$ = makeNode(N_STMT_DO, $2, NIL, $5);}
@@ -1037,8 +1964,8 @@ lee.y:251:56: warning: passing argument 4 of ‘makeNode’ makes pointer from i
       |                                                        |
       |                                                        YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:1:49: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-    1 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
+support.h:3:49: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+    3 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
       |                                                 ^~~~~~~~
 lee.y:251:13: warning: assignment to ‘YYSTYPE’ {aka ‘long int’} from ‘A_NODE *’ {aka ‘struct s_node *’} makes integer from pointer without a cast [-Wint-conversion]
   251 |      {$$ = makeNode(N_STMT_DO, $2, NIL, $5);}
@@ -1049,8 +1976,8 @@ lee.y:253:41: warning: passing argument 2 of ‘makeNode’ makes pointer from i
       |                                         |
       |                                         YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:1:29: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-    1 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
+support.h:3:29: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+    3 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
       |                             ^~~~~~~~
 lee.y:253:57: warning: passing argument 4 of ‘makeNode’ makes pointer from integer without a cast [-Wint-conversion]
   253 |      {$$ = makeNode(N_STMT_FOR, $3, NIL, $5);}
@@ -1058,41 +1985,41 @@ lee.y:253:57: warning: passing argument 4 of ‘makeNode’ makes pointer from i
       |                                                         |
       |                                                         YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:1:49: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-    1 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
+support.h:3:49: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+    3 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
       |                                                 ^~~~~~~~
 lee.y:253:13: warning: assignment to ‘YYSTYPE’ {aka ‘long int’} from ‘A_NODE *’ {aka ‘struct s_node *’} makes integer from pointer without a cast [-Wint-conversion]
   253 |      {$$ = makeNode(N_STMT_FOR, $3, NIL, $5);}
       |             ^
 lee.y:257:40: warning: passing argument 2 of ‘makeNode’ makes pointer from integer without a cast [-Wint-conversion]
-  257 |      {$$ = makeNode(N_FOR_EXP, $1, $2, $3);}
+  257 |      {$$ = makeNode(N_FOR_EXP, $1, $3, $5);}
       |                                   ~~~~~^~~~
       |                                        |
       |                                        YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:1:29: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-    1 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
+support.h:3:29: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+    3 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
       |                             ^~~~~~~~
 lee.y:257:51: warning: passing argument 3 of ‘makeNode’ makes pointer from integer without a cast [-Wint-conversion]
-  257 |      {$$ = makeNode(N_FOR_EXP, $1, $2, $3);}
+  257 |      {$$ = makeNode(N_FOR_EXP, $1, $3, $5);}
       |                                                   ^   
       |                                                   |
       |                                                   YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:1:39: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-    1 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
+support.h:3:39: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+    3 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
       |                                       ^~~~~~~~
 lee.y:257:62: warning: passing argument 4 of ‘makeNode’ makes pointer from integer without a cast [-Wint-conversion]
-  257 |      {$$ = makeNode(N_FOR_EXP, $1, $2, $3);}
-      |                                                              ^   
+  257 |      {$$ = makeNode(N_FOR_EXP, $1, $3, $5);}
+      |                                                              ^  
       |                                                              |
       |                                                              YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:1:49: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-    1 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
+support.h:3:49: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+    3 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
       |                                                 ^~~~~~~~
 lee.y:257:13: warning: assignment to ‘YYSTYPE’ {aka ‘long int’} from ‘A_NODE *’ {aka ‘struct s_node *’} makes integer from pointer without a cast [-Wint-conversion]
-  257 |      {$$ = makeNode(N_FOR_EXP, $1, $2, $3);}
+  257 |      {$$ = makeNode(N_FOR_EXP, $1, $3, $5);}
       |             ^
 lee.y:265:49: warning: passing argument 3 of ‘makeNode’ makes pointer from integer without a cast [-Wint-conversion]
   265 |      {$$ = makeNode(N_STMT_RETURN, NIL, $2, NIL);}
@@ -1100,8 +2027,8 @@ lee.y:265:49: warning: passing argument 3 of ‘makeNode’ makes pointer from i
       |                                                 |
       |                                                 YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:1:39: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-    1 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
+support.h:3:39: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+    3 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
       |                                       ^~~~~~~~
 lee.y:265:13: warning: assignment to ‘YYSTYPE’ {aka ‘long int’} from ‘A_NODE *’ {aka ‘struct s_node *’} makes integer from pointer without a cast [-Wint-conversion]
   265 |      {$$ = makeNode(N_STMT_RETURN, NIL, $2, NIL);}
@@ -1118,8 +2045,8 @@ lee.y:273:69: warning: passing argument 1 of ‘getIdentifierDeclared’ makes p
       |                                                                     |
       |                                                                     YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:14:30: note: expected ‘char *’ but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-   14 | A_ID *getIdentifierDeclared (char *);
+support.h:16:30: note: expected ‘char *’ but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+   16 | A_ID *getIdentifierDeclared (char *);
       |                              ^~~~~~
 lee.y:273:42: warning: passing argument 3 of ‘makeNode’ from incompatible pointer type [-Wincompatible-pointer-types]
   273 |      {$$ = makeNode(N_EXP_IDENT, NIL, getIdentifierDeclared($1), NIL);}
@@ -1127,8 +2054,8 @@ lee.y:273:42: warning: passing argument 3 of ‘makeNode’ from incompatible po
       |                                          |
       |                                          A_ID * {aka struct s_id *}
 In file included from lee.y:3:
-support.h:1:39: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘A_ID *’ {aka ‘struct s_id *’}
-    1 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
+support.h:3:39: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘A_ID *’ {aka ‘struct s_id *’}
+    3 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
       |                                       ^~~~~~~~
 lee.y:273:13: warning: assignment to ‘YYSTYPE’ {aka ‘long int’} from ‘A_NODE *’ {aka ‘struct s_node *’} makes integer from pointer without a cast [-Wint-conversion]
   273 |      {$$ = makeNode(N_EXP_IDENT, NIL, getIdentifierDeclared($1), NIL);}
@@ -1139,8 +2066,8 @@ lee.y:274:69: warning: passing argument 3 of ‘makeNode’ makes pointer from i
       |                                                                     |
       |                                                                     YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:1:39: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-    1 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
+support.h:3:39: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+    3 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
       |                                       ^~~~~~~~
 lee.y:274:31: warning: assignment to ‘YYSTYPE’ {aka ‘long int’} from ‘A_NODE *’ {aka ‘struct s_node *’} makes integer from pointer without a cast [-Wint-conversion]
   274 |     | INTEGER_CONSTANT {$$ = makeNode(N_EXP_INT_CONST, NIL, $1, NIL);}
@@ -1151,8 +2078,8 @@ lee.y:275:69: warning: passing argument 3 of ‘makeNode’ makes pointer from i
       |                                                                     |
       |                                                                     YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:1:39: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-    1 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
+support.h:3:39: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+    3 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
       |                                       ^~~~~~~~
 lee.y:275:29: warning: assignment to ‘YYSTYPE’ {aka ‘long int’} from ‘A_NODE *’ {aka ‘struct s_node *’} makes integer from pointer without a cast [-Wint-conversion]
   275 |     | FLOAT_CONSTANT {$$ = makeNode(N_EXP_FLOAT_CONST, NIL, $1, NIL);}
@@ -1163,8 +2090,8 @@ lee.y:276:72: warning: passing argument 3 of ‘makeNode’ makes pointer from i
       |                                                                        |
       |                                                                        YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:1:39: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-    1 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
+support.h:3:39: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+    3 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
       |                                       ^~~~~~~~
 lee.y:276:33: warning: assignment to ‘YYSTYPE’ {aka ‘long int’} from ‘A_NODE *’ {aka ‘struct s_node *’} makes integer from pointer without a cast [-Wint-conversion]
   276 |     | CHARACTER_CONSTANT {$$ = makeNode(N_EXP_CHAR_CONST, NIL, $1, NIL);}
@@ -1175,8 +2102,8 @@ lee.y:277:72: warning: passing argument 3 of ‘makeNode’ makes pointer from i
       |                                                                        |
       |                                                                        YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:1:39: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-    1 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
+support.h:3:39: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+    3 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
       |                                       ^~~~~~~~
 lee.y:277:29: warning: assignment to ‘YYSTYPE’ {aka ‘long int’} from ‘A_NODE *’ {aka ‘struct s_node *’} makes integer from pointer without a cast [-Wint-conversion]
   277 |     | STRING_LITERAL {$$ = makeNode(N_EXP_STRING_LITERAL, NIL, $1, NIL);}
@@ -1187,8 +2114,8 @@ lee.y:283:42: warning: passing argument 2 of ‘makeNode’ makes pointer from i
       |                                          |
       |                                          YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:1:29: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-    1 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
+support.h:3:29: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+    3 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
       |                             ^~~~~~~~
 lee.y:283:58: warning: passing argument 4 of ‘makeNode’ makes pointer from integer without a cast [-Wint-conversion]
   283 |      {$$ = makeNode(N_EXP_ARRAY, $1, NIL, $3);}
@@ -1196,8 +2123,8 @@ lee.y:283:58: warning: passing argument 4 of ‘makeNode’ makes pointer from i
       |                                                          |
       |                                                          YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:1:49: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-    1 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
+support.h:3:49: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+    3 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
       |                                                 ^~~~~~~~
 lee.y:283:13: warning: assignment to ‘YYSTYPE’ {aka ‘long int’} from ‘A_NODE *’ {aka ‘struct s_node *’} makes integer from pointer without a cast [-Wint-conversion]
   283 |      {$$ = makeNode(N_EXP_ARRAY, $1, NIL, $3);}
@@ -1208,8 +2135,8 @@ lee.y:285:50: warning: passing argument 2 of ‘makeNode’ makes pointer from i
       |                                                  |
       |                                                  YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:1:29: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-    1 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
+support.h:3:29: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+    3 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
       |                             ^~~~~~~~
 lee.y:285:66: warning: passing argument 4 of ‘makeNode’ makes pointer from integer without a cast [-Wint-conversion]
   285 |      {$$ = makeNode(N_EXP_FUNCTION_CALL, $1, NIL, $3);}
@@ -1217,8 +2144,8 @@ lee.y:285:66: warning: passing argument 4 of ‘makeNode’ makes pointer from i
       |                                                                  |
       |                                                                  YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:1:49: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-    1 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
+support.h:3:49: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+    3 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
       |                                                 ^~~~~~~~
 lee.y:285:13: warning: assignment to ‘YYSTYPE’ {aka ‘long int’} from ‘A_NODE *’ {aka ‘struct s_node *’} makes integer from pointer without a cast [-Wint-conversion]
   285 |      {$$ = makeNode(N_EXP_FUNCTION_CALL, $1, NIL, $3);}
@@ -1229,8 +2156,8 @@ lee.y:287:43: warning: passing argument 2 of ‘makeNode’ makes pointer from i
       |                                           |
       |                                           YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:1:29: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-    1 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
+support.h:3:29: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+    3 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
       |                             ^~~~~~~~
 lee.y:287:59: warning: passing argument 4 of ‘makeNode’ makes pointer from integer without a cast [-Wint-conversion]
   287 |      {$$ = makeNode(N_EXP_STRUCT, $1, NIL, $3);}
@@ -1238,8 +2165,8 @@ lee.y:287:59: warning: passing argument 4 of ‘makeNode’ makes pointer from i
       |                                                           |
       |                                                           YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:1:49: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-    1 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
+support.h:3:49: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+    3 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
       |                                                 ^~~~~~~~
 lee.y:287:13: warning: assignment to ‘YYSTYPE’ {aka ‘long int’} from ‘A_NODE *’ {aka ‘struct s_node *’} makes integer from pointer without a cast [-Wint-conversion]
   287 |      {$$ = makeNode(N_EXP_STRUCT, $1, NIL, $3);}
@@ -1250,8 +2177,8 @@ lee.y:289:42: warning: passing argument 2 of ‘makeNode’ makes pointer from i
       |                                          |
       |                                          YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:1:29: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-    1 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
+support.h:3:29: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+    3 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
       |                             ^~~~~~~~
 lee.y:289:58: warning: passing argument 4 of ‘makeNode’ makes pointer from integer without a cast [-Wint-conversion]
   289 |      {$$ = makeNode(N_EXP_ARROW, $1, NIL, $3);}
@@ -1259,8 +2186,8 @@ lee.y:289:58: warning: passing argument 4 of ‘makeNode’ makes pointer from i
       |                                                          |
       |                                                          YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:1:49: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-    1 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
+support.h:3:49: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+    3 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
       |                                                 ^~~~~~~~
 lee.y:289:13: warning: assignment to ‘YYSTYPE’ {aka ‘long int’} from ‘A_NODE *’ {aka ‘struct s_node *’} makes integer from pointer without a cast [-Wint-conversion]
   289 |      {$$ = makeNode(N_EXP_ARROW, $1, NIL, $3);}
@@ -1271,8 +2198,8 @@ lee.y:291:50: warning: passing argument 3 of ‘makeNode’ makes pointer from i
       |                                                  |
       |                                                  YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:1:39: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-    1 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
+support.h:3:39: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+    3 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
       |                                       ^~~~~~~~
 lee.y:291:13: warning: assignment to ‘YYSTYPE’ {aka ‘long int’} from ‘A_NODE *’ {aka ‘struct s_node *’} makes integer from pointer without a cast [-Wint-conversion]
   291 |      {$$ = makeNode(N_EXP_POST_INC, NIL, $1, NIL);}
@@ -1283,8 +2210,8 @@ lee.y:293:50: warning: passing argument 3 of ‘makeNode’ makes pointer from i
       |                                                  |
       |                                                  YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:1:39: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-    1 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
+support.h:3:39: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+    3 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
       |                                       ^~~~~~~~
 lee.y:293:13: warning: assignment to ‘YYSTYPE’ {aka ‘long int’} from ‘A_NODE *’ {aka ‘struct s_node *’} makes integer from pointer without a cast [-Wint-conversion]
   293 |      {$$ = makeNode(N_EXP_POST_DEC, NIL, $1, NIL);}
@@ -1298,8 +2225,8 @@ lee.y:302:41: warning: passing argument 2 of ‘makeNode’ makes pointer from i
       |                                         |
       |                                         YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:1:29: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-    1 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
+support.h:3:29: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+    3 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
       |                             ^~~~~~~~
 lee.y:302:13: warning: assignment to ‘YYSTYPE’ {aka ‘long int’} from ‘A_NODE *’ {aka ‘struct s_node *’} makes integer from pointer without a cast [-Wint-conversion]
   302 |      {$$ = makeNode(N_ARG_LIST, $1, NIL, makeNode(N_ARG_LIST_NIL, NIL, NIL, NIL));}
@@ -1310,8 +2237,8 @@ lee.y:304:45: warning: passing argument 2 of ‘makeNodeList’ makes pointer fr
       |                                             |
       |                                             YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:2:33: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-    2 | A_NODE *makeNodeList(NODE_NAME, A_NODE *, A_NODE *);
+support.h:4:33: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+    4 | A_NODE *makeNodeList(NODE_NAME, A_NODE *, A_NODE *);
       |                                 ^~~~~~~~
 lee.y:304:56: warning: passing argument 3 of ‘makeNodeList’ makes pointer from integer without a cast [-Wint-conversion]
   304 |      {$$ = makeNodeList(N_ARG_LIST, $1, $3);}
@@ -1319,8 +2246,8 @@ lee.y:304:56: warning: passing argument 3 of ‘makeNodeList’ makes pointer fr
       |                                                        |
       |                                                        YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:2:43: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-    2 | A_NODE *makeNodeList(NODE_NAME, A_NODE *, A_NODE *);
+support.h:4:43: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+    4 | A_NODE *makeNodeList(NODE_NAME, A_NODE *, A_NODE *);
       |                                           ^~~~~~~~
 lee.y:304:13: warning: assignment to ‘YYSTYPE’ {aka ‘long int’} from ‘A_NODE *’ {aka ‘struct s_node *’} makes integer from pointer without a cast [-Wint-conversion]
   304 |      {$$ = makeNodeList(N_ARG_LIST, $1, $3);}
@@ -1331,8 +2258,8 @@ lee.y:310:49: warning: passing argument 3 of ‘makeNode’ makes pointer from i
       |                                                 |
       |                                                 YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:1:39: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-    1 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
+support.h:3:39: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+    3 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
       |                                       ^~~~~~~~
 lee.y:310:13: warning: assignment to ‘YYSTYPE’ {aka ‘long int’} from ‘A_NODE *’ {aka ‘struct s_node *’} makes integer from pointer without a cast [-Wint-conversion]
   310 |      {$$ = makeNode(N_EXP_PRE_INC, NIL, $2, NIL);}
@@ -1343,8 +2270,8 @@ lee.y:312:49: warning: passing argument 3 of ‘makeNode’ makes pointer from i
       |                                                 |
       |                                                 YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:1:39: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-    1 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
+support.h:3:39: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+    3 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
       |                                       ^~~~~~~~
 lee.y:312:13: warning: assignment to ‘YYSTYPE’ {aka ‘long int’} from ‘A_NODE *’ {aka ‘struct s_node *’} makes integer from pointer without a cast [-Wint-conversion]
   312 |      {$$ = makeNode(N_EXP_PRE_DEC, NIL, $2, NIL);}
@@ -1355,8 +2282,8 @@ lee.y:314:45: warning: passing argument 3 of ‘makeNode’ makes pointer from i
       |                                             |
       |                                             YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:1:39: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-    1 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
+support.h:3:39: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+    3 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
       |                                       ^~~~~~~~
 lee.y:314:13: warning: assignment to ‘YYSTYPE’ {aka ‘long int’} from ‘A_NODE *’ {aka ‘struct s_node *’} makes integer from pointer without a cast [-Wint-conversion]
   314 |      {$$ = makeNode(N_EXP_AMP, NIL, $2, NIL);}
@@ -1367,8 +2294,8 @@ lee.y:316:46: warning: passing argument 3 of ‘makeNode’ makes pointer from i
       |                                              |
       |                                              YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:1:39: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-    1 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
+support.h:3:39: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+    3 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
       |                                       ^~~~~~~~
 lee.y:316:13: warning: assignment to ‘YYSTYPE’ {aka ‘long int’} from ‘A_NODE *’ {aka ‘struct s_node *’} makes integer from pointer without a cast [-Wint-conversion]
   316 |      {$$ = makeNode(N_EXP_STAR, NIL, $2, NIL);}
@@ -1379,8 +2306,8 @@ lee.y:318:45: warning: passing argument 3 of ‘makeNode’ makes pointer from i
       |                                             |
       |                                             YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:1:39: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-    1 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
+support.h:3:39: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+    3 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
       |                                       ^~~~~~~~
 lee.y:318:13: warning: assignment to ‘YYSTYPE’ {aka ‘long int’} from ‘A_NODE *’ {aka ‘struct s_node *’} makes integer from pointer without a cast [-Wint-conversion]
   318 |      {$$ = makeNode(N_EXP_NOT, NIL, $2, NIL);}
@@ -1391,8 +2318,8 @@ lee.y:320:47: warning: passing argument 3 of ‘makeNode’ makes pointer from i
       |                                               |
       |                                               YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:1:39: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-    1 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
+support.h:3:39: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+    3 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
       |                                       ^~~~~~~~
 lee.y:320:13: warning: assignment to ‘YYSTYPE’ {aka ‘long int’} from ‘A_NODE *’ {aka ‘struct s_node *’} makes integer from pointer without a cast [-Wint-conversion]
   320 |      {$$ = makeNode(N_EXP_MINUS, NIL, $2, NIL);}
@@ -1403,8 +2330,8 @@ lee.y:322:46: warning: passing argument 3 of ‘makeNode’ makes pointer from i
       |                                              |
       |                                              YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:1:39: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-    1 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
+support.h:3:39: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+    3 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
       |                                       ^~~~~~~~
 lee.y:322:13: warning: assignment to ‘YYSTYPE’ {aka ‘long int’} from ‘A_NODE *’ {aka ‘struct s_node *’} makes integer from pointer without a cast [-Wint-conversion]
   322 |      {$$ = makeNode(N_EXP_PLUS, NIL, $2, NIL);}
@@ -1415,8 +2342,8 @@ lee.y:324:50: warning: passing argument 3 of ‘makeNode’ makes pointer from i
       |                                                  |
       |                                                  YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:1:39: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-    1 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
+support.h:3:39: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+    3 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
       |                                       ^~~~~~~~
 lee.y:324:13: warning: assignment to ‘YYSTYPE’ {aka ‘long int’} from ‘A_NODE *’ {aka ‘struct s_node *’} makes integer from pointer without a cast [-Wint-conversion]
   324 |      {$$ = makeNode(N_EXP_SIZE_EXP, NIL, $2, NIL);}
@@ -1427,8 +2354,8 @@ lee.y:326:51: warning: passing argument 3 of ‘makeNode’ makes pointer from i
       |                                                   |
       |                                                   YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:1:39: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-    1 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
+support.h:3:39: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+    3 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
       |                                       ^~~~~~~~
 lee.y:326:13: warning: assignment to ‘YYSTYPE’ {aka ‘long int’} from ‘A_NODE *’ {aka ‘struct s_node *’} makes integer from pointer without a cast [-Wint-conversion]
   326 |      {$$ = makeNode(N_EXP_SIZE_TYPE, NIL, $2, NIL);}
@@ -1439,8 +2366,8 @@ lee.y:332:41: warning: passing argument 2 of ‘makeNode’ makes pointer from i
       |                                         |
       |                                         YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:1:29: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-    1 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
+support.h:3:29: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+    3 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
       |                             ^~~~~~~~
 lee.y:332:57: warning: passing argument 4 of ‘makeNode’ makes pointer from integer without a cast [-Wint-conversion]
   332 |      {$$ = makeNode(N_EXP_CAST, $2, NIL, $4);}
@@ -1448,8 +2375,8 @@ lee.y:332:57: warning: passing argument 4 of ‘makeNode’ makes pointer from i
       |                                                         |
       |                                                         YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:1:49: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-    1 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
+support.h:3:49: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+    3 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
       |                                                 ^~~~~~~~
 lee.y:332:13: warning: assignment to ‘YYSTYPE’ {aka ‘long int’} from ‘A_NODE *’ {aka ‘struct s_node *’} makes integer from pointer without a cast [-Wint-conversion]
   332 |      {$$ = makeNode(N_EXP_CAST, $2, NIL, $4);}
@@ -1460,8 +2387,8 @@ lee.y:337:41: warning: passing argument 1 of ‘setTypeNameSpecifier’ makes po
       |                                         |
       |                                         YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:26:30: note: expected ‘A_TYPE *’ {aka ‘struct s_type *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-   26 | A_TYPE *setTypeNameSpecifier(A_TYPE *, A_SPECIFIER *);
+support.h:28:30: note: expected ‘A_TYPE *’ {aka ‘struct s_type *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+   28 | A_TYPE *setTypeNameSpecifier(A_TYPE *, A_SPECIFIER *);
       |                              ^~~~~~~~
 lee.y:337:51: warning: passing argument 2 of ‘setTypeNameSpecifier’ makes pointer from integer without a cast [-Wint-conversion]
   337 |      {$$ = setTypeNameSpecifier($2, $1);}
@@ -1469,8 +2396,8 @@ lee.y:337:51: warning: passing argument 2 of ‘setTypeNameSpecifier’ makes po
       |                                                   |
       |                                                   YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:26:40: note: expected ‘A_SPECIFIER *’ but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-   26 | A_TYPE *setTypeNameSpecifier(A_TYPE *, A_SPECIFIER *);
+support.h:28:40: note: expected ‘A_SPECIFIER *’ but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+   28 | A_TYPE *setTypeNameSpecifier(A_TYPE *, A_SPECIFIER *);
       |                                        ^~~~~~~~~~~~~
 lee.y:337:13: warning: assignment to ‘YYSTYPE’ {aka ‘long int’} from ‘A_TYPE *’ {aka ‘struct s_type *’} makes integer from pointer without a cast [-Wint-conversion]
   337 |      {$$ = setTypeNameSpecifier($2, $1);}
@@ -1481,8 +2408,8 @@ lee.y:343:40: warning: passing argument 2 of ‘makeNode’ makes pointer from i
       |                                        |
       |                                        YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:1:29: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-    1 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
+support.h:3:29: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+    3 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
       |                             ^~~~~~~~
 lee.y:343:56: warning: passing argument 4 of ‘makeNode’ makes pointer from integer without a cast [-Wint-conversion]
   343 |      {$$ = makeNode(N_EXP_MUL, $1, NIL, $3);}
@@ -1490,8 +2417,8 @@ lee.y:343:56: warning: passing argument 4 of ‘makeNode’ makes pointer from i
       |                                                        |
       |                                                        YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:1:49: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-    1 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
+support.h:3:49: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+    3 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
       |                                                 ^~~~~~~~
 lee.y:343:13: warning: assignment to ‘YYSTYPE’ {aka ‘long int’} from ‘A_NODE *’ {aka ‘struct s_node *’} makes integer from pointer without a cast [-Wint-conversion]
   343 |      {$$ = makeNode(N_EXP_MUL, $1, NIL, $3);}
@@ -1502,8 +2429,8 @@ lee.y:345:40: warning: passing argument 2 of ‘makeNode’ makes pointer from i
       |                                        |
       |                                        YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:1:29: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-    1 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
+support.h:3:29: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+    3 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
       |                             ^~~~~~~~
 lee.y:345:56: warning: passing argument 4 of ‘makeNode’ makes pointer from integer without a cast [-Wint-conversion]
   345 |      {$$ = makeNode(N_EXP_DIV, $1, NIL, $3);}
@@ -1511,8 +2438,8 @@ lee.y:345:56: warning: passing argument 4 of ‘makeNode’ makes pointer from i
       |                                                        |
       |                                                        YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:1:49: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-    1 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
+support.h:3:49: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+    3 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
       |                                                 ^~~~~~~~
 lee.y:345:13: warning: assignment to ‘YYSTYPE’ {aka ‘long int’} from ‘A_NODE *’ {aka ‘struct s_node *’} makes integer from pointer without a cast [-Wint-conversion]
   345 |      {$$ = makeNode(N_EXP_DIV, $1, NIL, $3);}
@@ -1523,8 +2450,8 @@ lee.y:347:40: warning: passing argument 2 of ‘makeNode’ makes pointer from i
       |                                        |
       |                                        YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:1:29: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-    1 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
+support.h:3:29: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+    3 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
       |                             ^~~~~~~~
 lee.y:347:56: warning: passing argument 4 of ‘makeNode’ makes pointer from integer without a cast [-Wint-conversion]
   347 |      {$$ = makeNode(N_EXP_MOD, $1, NIL, $3);}
@@ -1532,8 +2459,8 @@ lee.y:347:56: warning: passing argument 4 of ‘makeNode’ makes pointer from i
       |                                                        |
       |                                                        YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:1:49: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-    1 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
+support.h:3:49: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+    3 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
       |                                                 ^~~~~~~~
 lee.y:347:13: warning: assignment to ‘YYSTYPE’ {aka ‘long int’} from ‘A_NODE *’ {aka ‘struct s_node *’} makes integer from pointer without a cast [-Wint-conversion]
   347 |      {$$ = makeNode(N_EXP_MOD, $1, NIL, $3);}
@@ -1544,8 +2471,8 @@ lee.y:353:40: warning: passing argument 2 of ‘makeNode’ makes pointer from i
       |                                        |
       |                                        YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:1:29: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-    1 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
+support.h:3:29: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+    3 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
       |                             ^~~~~~~~
 lee.y:353:56: warning: passing argument 4 of ‘makeNode’ makes pointer from integer without a cast [-Wint-conversion]
   353 |      {$$ = makeNode(N_EXP_ADD, $1, NIL, $3);}
@@ -1553,8 +2480,8 @@ lee.y:353:56: warning: passing argument 4 of ‘makeNode’ makes pointer from i
       |                                                        |
       |                                                        YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:1:49: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-    1 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
+support.h:3:49: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+    3 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
       |                                                 ^~~~~~~~
 lee.y:353:13: warning: assignment to ‘YYSTYPE’ {aka ‘long int’} from ‘A_NODE *’ {aka ‘struct s_node *’} makes integer from pointer without a cast [-Wint-conversion]
   353 |      {$$ = makeNode(N_EXP_ADD, $1, NIL, $3);}
@@ -1565,8 +2492,8 @@ lee.y:355:40: warning: passing argument 2 of ‘makeNode’ makes pointer from i
       |                                        |
       |                                        YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:1:29: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-    1 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
+support.h:3:29: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+    3 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
       |                             ^~~~~~~~
 lee.y:355:56: warning: passing argument 4 of ‘makeNode’ makes pointer from integer without a cast [-Wint-conversion]
   355 |      {$$ = makeNode(N_EXP_SUB, $1, NIL, $3);}
@@ -1574,8 +2501,8 @@ lee.y:355:56: warning: passing argument 4 of ‘makeNode’ makes pointer from i
       |                                                        |
       |                                                        YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:1:49: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-    1 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
+support.h:3:49: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+    3 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
       |                                                 ^~~~~~~~
 lee.y:355:13: warning: assignment to ‘YYSTYPE’ {aka ‘long int’} from ‘A_NODE *’ {aka ‘struct s_node *’} makes integer from pointer without a cast [-Wint-conversion]
   355 |      {$$ = makeNode(N_EXP_SUB, $1, NIL, $3);}
@@ -1586,8 +2513,8 @@ lee.y:365:40: warning: passing argument 2 of ‘makeNode’ makes pointer from i
       |                                        |
       |                                        YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:1:29: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-    1 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
+support.h:3:29: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+    3 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
       |                             ^~~~~~~~
 lee.y:365:56: warning: passing argument 4 of ‘makeNode’ makes pointer from integer without a cast [-Wint-conversion]
   365 |      {$$ = makeNode(N_EXP_LSS, $1, NIL, $3);}
@@ -1595,8 +2522,8 @@ lee.y:365:56: warning: passing argument 4 of ‘makeNode’ makes pointer from i
       |                                                        |
       |                                                        YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:1:49: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-    1 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
+support.h:3:49: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+    3 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
       |                                                 ^~~~~~~~
 lee.y:365:13: warning: assignment to ‘YYSTYPE’ {aka ‘long int’} from ‘A_NODE *’ {aka ‘struct s_node *’} makes integer from pointer without a cast [-Wint-conversion]
   365 |      {$$ = makeNode(N_EXP_LSS, $1, NIL, $3);}
@@ -1607,8 +2534,8 @@ lee.y:367:40: warning: passing argument 2 of ‘makeNode’ makes pointer from i
       |                                        |
       |                                        YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:1:29: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-    1 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
+support.h:3:29: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+    3 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
       |                             ^~~~~~~~
 lee.y:367:56: warning: passing argument 4 of ‘makeNode’ makes pointer from integer without a cast [-Wint-conversion]
   367 |      {$$ = makeNode(N_EXP_GTR, $1, NIL, $3);}
@@ -1616,8 +2543,8 @@ lee.y:367:56: warning: passing argument 4 of ‘makeNode’ makes pointer from i
       |                                                        |
       |                                                        YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:1:49: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-    1 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
+support.h:3:49: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+    3 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
       |                                                 ^~~~~~~~
 lee.y:367:13: warning: assignment to ‘YYSTYPE’ {aka ‘long int’} from ‘A_NODE *’ {aka ‘struct s_node *’} makes integer from pointer without a cast [-Wint-conversion]
   367 |      {$$ = makeNode(N_EXP_GTR, $1, NIL, $3);}
@@ -1628,8 +2555,8 @@ lee.y:369:40: warning: passing argument 2 of ‘makeNode’ makes pointer from i
       |                                        |
       |                                        YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:1:29: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-    1 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
+support.h:3:29: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+    3 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
       |                             ^~~~~~~~
 lee.y:369:56: warning: passing argument 4 of ‘makeNode’ makes pointer from integer without a cast [-Wint-conversion]
   369 |      {$$ = makeNode(N_EXP_LEQ, $1, NIL, $3);}
@@ -1637,8 +2564,8 @@ lee.y:369:56: warning: passing argument 4 of ‘makeNode’ makes pointer from i
       |                                                        |
       |                                                        YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:1:49: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-    1 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
+support.h:3:49: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+    3 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
       |                                                 ^~~~~~~~
 lee.y:369:13: warning: assignment to ‘YYSTYPE’ {aka ‘long int’} from ‘A_NODE *’ {aka ‘struct s_node *’} makes integer from pointer without a cast [-Wint-conversion]
   369 |      {$$ = makeNode(N_EXP_LEQ, $1, NIL, $3);}
@@ -1649,8 +2576,8 @@ lee.y:371:40: warning: passing argument 2 of ‘makeNode’ makes pointer from i
       |                                        |
       |                                        YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:1:29: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-    1 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
+support.h:3:29: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+    3 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
       |                             ^~~~~~~~
 lee.y:371:56: warning: passing argument 4 of ‘makeNode’ makes pointer from integer without a cast [-Wint-conversion]
   371 |      {$$ = makeNode(N_EXP_GEQ, $1, NIL, $3);}
@@ -1658,8 +2585,8 @@ lee.y:371:56: warning: passing argument 4 of ‘makeNode’ makes pointer from i
       |                                                        |
       |                                                        YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:1:49: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-    1 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
+support.h:3:49: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+    3 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
       |                                                 ^~~~~~~~
 lee.y:371:13: warning: assignment to ‘YYSTYPE’ {aka ‘long int’} from ‘A_NODE *’ {aka ‘struct s_node *’} makes integer from pointer without a cast [-Wint-conversion]
   371 |      {$$ = makeNode(N_EXP_GEQ, $1, NIL, $3);}
@@ -1670,8 +2597,8 @@ lee.y:377:40: warning: passing argument 2 of ‘makeNode’ makes pointer from i
       |                                        |
       |                                        YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:1:29: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-    1 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
+support.h:3:29: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+    3 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
       |                             ^~~~~~~~
 lee.y:377:56: warning: passing argument 4 of ‘makeNode’ makes pointer from integer without a cast [-Wint-conversion]
   377 |      {$$ = makeNode(N_EXP_EQL, $1, NIL, $3);}
@@ -1679,8 +2606,8 @@ lee.y:377:56: warning: passing argument 4 of ‘makeNode’ makes pointer from i
       |                                                        |
       |                                                        YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:1:49: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-    1 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
+support.h:3:49: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+    3 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
       |                                                 ^~~~~~~~
 lee.y:377:13: warning: assignment to ‘YYSTYPE’ {aka ‘long int’} from ‘A_NODE *’ {aka ‘struct s_node *’} makes integer from pointer without a cast [-Wint-conversion]
   377 |      {$$ = makeNode(N_EXP_EQL, $1, NIL, $3);}
@@ -1691,8 +2618,8 @@ lee.y:379:40: warning: passing argument 2 of ‘makeNode’ makes pointer from i
       |                                        |
       |                                        YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:1:29: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-    1 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
+support.h:3:29: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+    3 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
       |                             ^~~~~~~~
 lee.y:379:56: warning: passing argument 4 of ‘makeNode’ makes pointer from integer without a cast [-Wint-conversion]
   379 |      {$$ = makeNode(N_EXP_NEQ, $1, NIL, $3);}
@@ -1700,8 +2627,8 @@ lee.y:379:56: warning: passing argument 4 of ‘makeNode’ makes pointer from i
       |                                                        |
       |                                                        YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:1:49: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-    1 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
+support.h:3:49: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+    3 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
       |                                                 ^~~~~~~~
 lee.y:379:13: warning: assignment to ‘YYSTYPE’ {aka ‘long int’} from ‘A_NODE *’ {aka ‘struct s_node *’} makes integer from pointer without a cast [-Wint-conversion]
   379 |      {$$ = makeNode(N_EXP_NEQ, $1, NIL, $3);}
@@ -1712,8 +2639,8 @@ lee.y:402:40: warning: passing argument 2 of ‘makeNode’ makes pointer from i
       |                                        |
       |                                        YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:1:29: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-    1 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
+support.h:3:29: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+    3 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
       |                             ^~~~~~~~
 lee.y:402:56: warning: passing argument 4 of ‘makeNode’ makes pointer from integer without a cast [-Wint-conversion]
   402 |      {$$ = makeNode(N_EXP_AND, $1, NIL, $3);}
@@ -1721,8 +2648,8 @@ lee.y:402:56: warning: passing argument 4 of ‘makeNode’ makes pointer from i
       |                                                        |
       |                                                        YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:1:49: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-    1 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
+support.h:3:49: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+    3 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
       |                                                 ^~~~~~~~
 lee.y:402:13: warning: assignment to ‘YYSTYPE’ {aka ‘long int’} from ‘A_NODE *’ {aka ‘struct s_node *’} makes integer from pointer without a cast [-Wint-conversion]
   402 |      {$$ = makeNode(N_EXP_AND, $1, NIL, $3);}
@@ -1733,8 +2660,8 @@ lee.y:408:39: warning: passing argument 2 of ‘makeNode’ makes pointer from i
       |                                       |
       |                                       YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:1:29: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-    1 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
+support.h:3:29: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+    3 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
       |                             ^~~~~~~~
 lee.y:408:55: warning: passing argument 4 of ‘makeNode’ makes pointer from integer without a cast [-Wint-conversion]
   408 |      {$$ = makeNode(N_EXP_OR, $1, NIL, $3);}
@@ -1742,8 +2669,8 @@ lee.y:408:55: warning: passing argument 4 of ‘makeNode’ makes pointer from i
       |                                                       |
       |                                                       YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:1:49: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-    1 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
+support.h:3:49: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+    3 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
       |                                                 ^~~~~~~~
 lee.y:408:13: warning: assignment to ‘YYSTYPE’ {aka ‘long int’} from ‘A_NODE *’ {aka ‘struct s_node *’} makes integer from pointer without a cast [-Wint-conversion]
   408 |      {$$ = makeNode(N_EXP_OR, $1, NIL, $3);}
@@ -1754,8 +2681,8 @@ lee.y:418:43: warning: passing argument 2 of ‘makeNode’ makes pointer from i
       |                                           |
       |                                           YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:1:29: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-    1 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
+support.h:3:29: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+    3 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
       |                             ^~~~~~~~
 lee.y:418:59: warning: passing argument 4 of ‘makeNode’ makes pointer from integer without a cast [-Wint-conversion]
   418 |      {$$ = makeNode(N_EXP_ASSIGN, $1, NIL, $3);}
@@ -1763,8 +2690,8 @@ lee.y:418:59: warning: passing argument 4 of ‘makeNode’ makes pointer from i
       |                                                           |
       |                                                           YYSTYPE {aka long int}
 In file included from lee.y:3:
-support.h:1:49: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
-    1 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
+support.h:3:49: note: expected ‘A_NODE *’ {aka ‘struct s_node *’} but argument is of type ‘YYSTYPE’ {aka ‘long int’}
+    3 | A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
       |                                                 ^~~~~~~~
 lee.y:418:13: warning: assignment to ‘YYSTYPE’ {aka ‘long int’} from ‘A_NODE *’ {aka ‘struct s_node *’} makes integer from pointer without a cast [-Wint-conversion]
   418 |      {$$ = makeNode(N_EXP_ASSIGN, $1, NIL, $3);}
@@ -1773,15 +2700,22 @@ y.tab.c:2757:7: warning: implicit declaration of function ‘yyerror’; did you
  2757 |       yyerror (YY_("syntax error"));
       |       ^~~~~~~
       |       yyerrok
+lee.l: In function ‘yylex’:
+lee.l:78:10: warning: assignment to ‘YYSTYPE’ {aka ‘int’} from ‘char *’ makes integer from pointer without a cast [-Wint-conversion]
+   78 | {digit}+\.{digit}+  { yylval = makeString(yytext); return(FLOAT_CONSTANT); }
+      |          ^
+lee.l:80:10: warning: assignment to ‘YYSTYPE’ {aka ‘int’} from ‘char *’ makes integer from pointer without a cast [-Wint-conversion]
+   80 | \"([^"\n]|\\["\n])*\"   { yylval = makeString(yytext); return(STRING_LITERAL); }
+      |          ^
 lee.l: In function ‘checkIdentifier’:
-lee.l:95:16: warning: assignment to ‘YYSTYPE’ {aka ‘long int’} from ‘char *’ makes integer from pointer without a cast [-Wint-conversion]
-   95 |         yylval = makeString(s);
+lee.l:96:16: warning: assignment to ‘YYSTYPE’ {aka ‘int’} from ‘char *’ makes integer from pointer without a cast [-Wint-conversion]
+   96 |         yylval = makeString(s);
       |                ^
-lee.l:98:16: warning: assignment to ‘YYSTYPE’ {aka ‘long int’} from ‘A_TYPE *’ {aka ‘struct s_type *’} makes integer from pointer without a cast [-Wint-conversion]
-   98 |         yylval = id -> type;
+lee.l:99:16: warning: assignment to ‘YYSTYPE’ {aka ‘int’} from ‘A_TYPE *’ {aka ‘struct s_type *’} makes integer from pointer without a cast [-Wint-conversion]
+   99 |         yylval = id -> type;
       |                ^
-lee.l:101:16: warning: assignment to ‘YYSTYPE’ {aka ‘long int’} from ‘char *’ makes integer from pointer without a cast [-Wint-conversion]
-  101 |         yylval = id -> name;
+lee.l:102:16: warning: assignment to ‘YYSTYPE’ {aka ‘int’} from ‘char *’ makes integer from pointer without a cast [-Wint-conversion]
+  102 |         yylval = id -> name;
       |                ^
 main.c: In function ‘main’:
 main.c:6:5: warning: implicit declaration of function ‘initialize’ [-Wimplicit-function-declaration]
