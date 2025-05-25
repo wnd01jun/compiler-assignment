@@ -22,8 +22,8 @@ A_NODE *convertUsualUnaryConversion(A_NODE *);
 A_NODE *convertUsualBinaryConversion(A_NODE *);
 A_NODE *convertCastingConversion(A_NODE *, A_TYPE *);
 
-BOOLEAN isAllowableAssignmentConversion(A_TYPE *, A_TYPE *);
-BOOLEAN isAllowableCastingConversion(A_TYPE *, A_TYPE *, A_NODE *);
+BOOLEAN isAllowableAssignmentConversion(A_TYPE *, A_TYPE *, A_NODE *);
+BOOLEAN isAllowableCastingConversion(A_TYPE *, A_TYPE *);
 BOOLEAN isModifiableLvalue(A_NODE *);
 BOOLEAN isConstantZeroExp(A_NODE *);
 
