@@ -2,6 +2,7 @@
 #include "type.h"
 int line_no = 1;
 extern A_NODE *root;
+extern int semantic_err;
 int main(void) {
     initialize();
     if(yyparse() == 0) {
@@ -11,7 +12,8 @@ int main(void) {
     else {
         printf("Parsing fail...\n");
     }
-    if (semantic_analysis(root)) {
+    semantic_analysis(root);
+    if (semantic_err) {
         exit(1);
     }
     print_sem_ast(root);

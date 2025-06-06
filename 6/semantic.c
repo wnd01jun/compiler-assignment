@@ -1,5 +1,6 @@
 #include "type.h"
 #include "semantic.h"
+#include "stdlib.h"
 #define LIT_MAX 100
 
 /*
@@ -27,7 +28,7 @@ void set_literal_address(A_NODE *node) {
     node -> value += literal_size;
 }
 
-void set_program(A_NODE *node) {
+void sem_program(A_NODE *node) {
     int i;
     switch(node -> name) { // 첫 시작은 N_PROGRAM부터
         case N_PROGRAM :
@@ -43,7 +44,7 @@ void set_program(A_NODE *node) {
 int put_literal(A_LITERAL lit, int ll) {
     float ff;
     if( literal_no >= LIT_MAX) { // literal 최대 개수가 LIT_MAX로 제한되어 있는듯
-        semnatic_error(93, ll);
+        semantic_error(93, ll, "");
     }
     else {
         literal_no++;
@@ -228,7 +229,7 @@ A_TYPE *sem_expression(A_NODE *node) {
                 result -> size = 4; // 포인터 사이즈
             }
             else {
-                semnatic_error(60, node -> line);
+                semantic_error(60, node -> line, "");
             }
         case N_EXP_STAR: // *a
             t = sem_expression(node -> clink);
@@ -338,7 +339,7 @@ A_TYPE *sem_expression(A_NODE *node) {
         case N_EXP_AND:
         case N_EXP_OR:
             t = sem_expression(node -> llink);
-            if (isScalarTypet(t)) {
+            if (isScalarType(t)) {
                 node -> llink = convertUsualUnaryConversion(node -> llink);
             }
             else {
@@ -468,8 +469,8 @@ int sem_statement(A_NODE *node, int addr, A_TYPE *ret, BOOLEAN sw, BOOLEAN brk, 
             break;
         case N_STMT_IF:
             t = sem_expression(node -> llink); // llink 수식
-            if (isSclarType(t)) { // 수식은 스칼라만 허용
-                node -> llink = convertSclarToInteger(node -> llink);    
+            if (isScalarType(t)) { // 수식은 스칼라만 허용
+                node -> llink = convertScalarToInteger(node -> llink);    
             }
             else {
                 semantic_error(50, node -> line, "");
@@ -478,8 +479,8 @@ int sem_statement(A_NODE *node, int addr, A_TYPE *ret, BOOLEAN sw, BOOLEAN brk, 
             break;
         case N_STMT_IF_ELSE:
             t = sem_expression(node -> llink);
-            if (isSclarType(t)) { // 수식은 스칼라만 허용
-                node -> llink = convertSclarToInteger(node -> llink);    
+            if (isScalarType(t)) { // 수식은 스칼라만 허용
+                node -> llink = convertScalarToInteger(node -> llink);    
             }
             else {
                 semantic_error(50, node -> line, "");
@@ -508,7 +509,7 @@ int sem_statement(A_NODE *node, int addr, A_TYPE *ret, BOOLEAN sw, BOOLEAN brk, 
             local_size = sem_statement(node -> rlink, addr, ret, FALSE, TRUE, TRUE);
             break;
         case N_STMT_DO:
-            local_size = sem_staement(node -> llink, addr, ret, FALSE, TRUE, TRUE);
+            local_size = sem_statement(node -> llink, addr, ret, FALSE, TRUE, TRUE);
             t = sem_expression(node -> rlink);
             if (isScalarType(t)) {
                 node -> rlink = convertScalarToInteger(node -> rlink);
@@ -674,7 +675,7 @@ int sem_A_TYPE(A_TYPE *t) {
             if (isArrayType(tt) || isFunctionType(tt)){ // return type check
                 semantic_error(85, t -> line, "");
             }
-            i = sem_declaraton_list(t -> field,12) + 12; // parameter check 12는 왜 더하지?
+            i = sem_declaration_list(t -> field,12) + 12; // parameter check 12는 왜 더하지?
             if (t -> expr) {
                 i = i + sem_statement(t -> expr, i, t -> element_type, FALSE, FALSE, FALSE); // statement내에서 변수 정의도 더함
             }
@@ -715,7 +716,7 @@ int sem_declaration(A_ID *id, int addr) {
         case ID_VAR:
             i = sem_A_TYPE(id -> type); // 사이즈 리턴!
             if (isArrayType(id -> type) && id -> type -> expr == NIL) {
-                seamntic_error(86, id -> line);
+                semantic_error(86, id -> line, "");
             }
             if (i % 4) {
                 i = i / 4 * 4 + 4; // word alignment
@@ -735,7 +736,7 @@ int sem_declaration(A_ID *id, int addr) {
         case ID_FIELD:
             i = sem_A_TYPE(id -> type);
             if (isFunctionType(id -> type) || isVoidType(id -> type)) {
-                semnatic_error(84, id -> line); // 함수랑 void는 field로 불가
+                semantic_error(84, id -> line, ""); // 함수랑 void는 field로 불가
             }
             if (i % 4) {
                 i = i/4 * 4 + 4;
@@ -956,14 +957,14 @@ BOOLEAN isAllowableAssignmentConversion(A_TYPE *t1, A_TYPE *t2, A_NODE *node) {
     }
 }
 
-A_TYPE *isAllowableCastingConversion(A_TYPE *t1, A_TYPE *t2) {
-    if (isAnyIntegerType(t1) && (isAnyIntegerType(t2) || isFloatTYpe(t2) || isPointerType(t2))) {
+BOOLEAN isAllowableCastingConversion(A_TYPE *t1, A_TYPE *t2) {
+    if (isAnyIntegerType(t1) && (isAnyIntegerType(t2) || isFloatType(t2) || isPointerType(t2))) {
         return TRUE;
     }
-    else if (isFloatTYpe(t1) && isArithmeticType(t2)) {
+    else if (isFloatType(t1) && isArithmeticType(t2)) {
         return TRUE;
     }
-    else if (isPointerType(t1) && (isAnyIntegerType(t2) || isPointerTYpe(t2))) {
+    else if (isPointerType(t1) && (isAnyIntegerType(t2) || isPointerType(t2))) {
         return TRUE;
     }
     else if (isVoidType(t1)) {
@@ -1027,12 +1028,6 @@ BOOLEAN isPointerType(A_TYPE *t) {
     return FALSE;
 }
 
-BOOLEAN isPointerOrArrayType(A_TYPE *t) {
-    if (t -> kind == T_POINTER || t -> kind == T_ARRAY) {
-        return TRUE;
-    }
-    return FALSE;
-}
 
 BOOLEAN isIntType(A_TYPE *t) {
     if(t && t == int_type) {

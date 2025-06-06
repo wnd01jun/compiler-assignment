@@ -1,4 +1,3 @@
-float atof(void);
 
 void semantic_analysis(A_NODE *);
 void set_literal_address(A_NODE *);
@@ -13,13 +12,13 @@ int sem_A_TYPE(A_TYPE *);
 int sem_declaration_list(A_ID *, int);
 int sem_declaration(A_ID *, int);
 void sem_arg_expr_list(A_NODE *, A_ID *);
-A_TYPE *getStructFieldIdentifier(A_TYPE *, char *);
+A_ID *getStructFieldIdentifier(A_TYPE *, char *);
 A_ID *getPointerFieldIdentifier(A_TYPE *, char *);
 
 A_NODE *convertScalarToInteger(A_NODE *);
 A_NODE *convertUsualAssignmentConversion(A_TYPE *, A_NODE *);
 A_NODE *convertUsualUnaryConversion(A_NODE *);
-A_NODE *convertUsualBinaryConversion(A_NODE *);
+A_TYPE *convertUsualBinaryConversion(A_NODE *);
 A_NODE *convertCastingConversion(A_NODE *, A_TYPE *);
 
 BOOLEAN isAllowableAssignmentConversion(A_TYPE *, A_TYPE *, A_NODE *);
@@ -46,7 +45,7 @@ BOOLEAN isArrayType(A_TYPE *);
 BOOLEAN isStringType(A_TYPE *);
 BOOLEAN isVoidType(A_TYPE *);
 
-BOOLEAN checkTypeAndConvertLiteral(A_LITERAL, A_TYPE *, int);
+A_LITERAL checkTypeAndConvertLiteral(A_LITERAL, A_TYPE *, int);
 A_LITERAL getTypeAndValueOfExpression(A_NODE *);
 A_TYPE *setTypeElementType(A_TYPE *, A_TYPE *);
 A_TYPE *makeType(T_KIND);
