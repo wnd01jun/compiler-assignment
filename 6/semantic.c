@@ -1028,5 +1028,392 @@ BOOLEAN isPointerType(A_TYPE *t) {
 }
 
 BOOLEAN isPointerOrArrayType(A_TYPE *t) {
-    return (isPointerType(t) || isArrayType(t));
+    if (t -> kind == T_POINTER || t -> kind == T_ARRAY) {
+        return TRUE;
+    }
+    return FALSE;
+}
+
+BOOLEAN isIntType(A_TYPE *t) {
+    if(t && t == int_type) {
+        return TRUE;
+    }
+    return FALSE;
+}
+
+BOOLEAN isVoidType(A_TYPE *t) {
+    if (t && t == void_type) {
+        return TRUE;
+    }
+    return FALSE;
+}
+
+BOOLEAN isArrayType(A_TYPE *t) {
+    if (t && t -> kind == T_ARRAY) {
+        return TRUE;
+    }
+    return FALSE;
+}
+
+BOOLEAN isStringType(A_TYPE *t) {
+    if (t && (t -> kind == T_POINTER || t -> kind == T_ARRAY) && t -> element_type == char_type) {
+        return TRUE;
+    }
+    return FALSE;
+}
+A_LITERAL checkTypeAndConvertLiteral(A_LITERAL result, A_TYPE *t, int ll) {
+    // 둘이 같으면 그냥 통과, 다를 경우 검사
+    if (result.type == int_type && t == int_type || result.type == char_type && t == char_type
+        || result.type == float_type && t == float_type);
+    else if (result.type == int_type && t == float_type) {
+        result.type = float_type;
+        result.value.f = result.value.i;
+    }
+    else if (result.type == int_type && t == char_type) {
+        result.type = char_type;
+        result.value.c = result.value.i;
+    }
+    else if (result.type == float_type && t == int_type) {
+        result.type = int_type;
+        result.value.i = result.value.f;
+    }
+    else if (result.type == char_type && t == int_type) {
+        result.type = int_type;
+        result.value.i = result.value.c;
+    }
+    else {
+        semantic_error(41, ll);
+    }
+    return result;
+}
+
+A_LITERAL getTypeAndValueOfExpression(A_NODE *node) {
+    A_TYPE *t;
+    A_ID *id;
+    A_LITERAL result, r;
+    result.type = NIL;
+    switch (node -> name) {
+        case N_EXP_IDENT :
+            if (id -> kind != ID_ENUM_LITERAL) {
+                semantic_error(19, node -> line, id -> name);
+            }
+            else {
+                result.type = int_type;
+                result.value.i = id -> init;
+            }
+            break;
+        case N_EXP_INT_CONST :
+            result.type = int_type;
+            result.value.i = (int)node -> clink;
+            break;
+        case N_EXP_CHAR_CONST :
+            result.type = char_type;
+            result.value.c = (char)node -> clink;
+            break;
+        case N_EXP_FLOAT_CONST :
+            result.type = float_type;
+            result.value.f = atof(node -> clink);
+            break;
+        case N_EXP_STRING_LITERAL:
+        case N_EXP_ARRAY:
+        case N_EXP_FUNCTION_CALL:
+        case N_EXP_STRUCT:
+        case N_EXP_ARROW:
+        case N_EXP_POST_INC:
+        case N_EXP_POST_DEC:
+        case N_EXP_PRE_DEC:
+        case N_EXP_PRE_INC:
+        case N_EXP_AMP:
+        case N_EXP_STAR:
+        case N_EXP_NOT:
+            semantic_error(18, node -> line);
+            break;
+        case N_EXP_MINUS:
+            result = getTypeAndValueOfExpression(node -> clink);
+            if (result.type == int_type) {
+                result.value.i = -result.value.i;
+            }
+            else if (result.type == float_type) {
+                result.value.f = -result.value.i;
+            } // 이 두개빼고 -안되는듯
+            else {
+                semantic_error(18, node -> line);
+            }
+            break;
+        case N_EXP_SIZE_EXP :
+            t = sem_expression(node -> clink);
+            result.type = int_type;
+            result.value.i = t -> size;
+            break;
+        case N_EXP_SIZE_TYPE :
+            result.type = int_type;
+            result.value.i = sem_A_TYPE(node -> clink);
+            break;
+        case N_EXP_CAST :
+            result = getTypeAndValueOfExpression(node -> rlink);
+            result = checkTypeAndConvertLiteral(result, (A_TYPE*)node -> llink, node -> line); 
+            // cast 가능한지 검사
+        case N_EXP_MUL :
+            result = getTypeAndValueOfExpression(node -> llink);
+            r = getTypeAndValueOfExpression(node -> rlink);
+            if (result.type == int_type && r.type == int_type) {
+                result.type = int_type;
+                result.value.i = result.value.i * r.value.i;
+            }
+            else if (result.type == int_type && r.type == float_type) {
+                result.type = float_type;
+                result.value.f = result.value.i * r.value.f;
+            }
+            else if (result.type == float_type && r.type == int_type) {
+                result.type = float_type;
+                result.value.f = result.value.f * r.value.i;
+            }
+            else if (result.type == float_type && r.type == float_type) {
+                result.type = float_type;
+                result.value.f = result.value.f * r.value.f;
+            }
+            else {
+                semantic_error(18, node -> line);
+            }
+            break;
+        case N_EXP_DIV :
+            result = getTypeAndValueOfExpression(node -> llink);
+            r = getTypeAndValueOfExpression(node -> rlink); // 0인거 주의?
+            if (result.type == int_type && r.type == int_type) {
+                result.type = int_type;
+                result.value.i = result.value.i / r.value.i;
+            }
+            else if (result.type == int_type && r.type == float_type) {
+                result.type = float_type;
+                result.value.f = result.value.i / r.value.f;
+            }
+            else if (result.type == float_type && r.type == int_type) {
+                result.type = float_type;
+                result.value.f = result.value.f / r.value.i;
+            }
+            else if (result.type == float_type && r.type == float_type) {
+                result.type = float_type;
+                result.value.f = result.value.f / r.value.f;
+            }
+            else {
+                semantic_error(18, node -> line);
+            }
+            break;
+        case N_EXP_MOD :
+            result = getTypeAndValueOfExpression(node -> llink);
+            r = getTypeAndValueOfExpression(node -> rlink);
+            if (result.type == int_type && r.type == int_type) {
+                result.value.i = result.value.i % r.value.i;
+            }
+            else {
+                semantic_error(18, node -> line);
+            }
+            break;
+        case N_EXP_ADD :
+            result = getTypeAndValueOfExpression(node -> llink);
+            r = getTypeAndValueOfExpression(node -> rlink); // 0인거 주의?
+            if (result.type == int_type && r.type == int_type) {
+                result.type = int_type;
+                result.value.i = result.value.i + r.value.i;
+            }
+            else if (result.type == int_type && r.type == float_type) {
+                result.type = float_type;
+                result.value.f = result.value.i + r.value.f;
+            }
+            else if (result.type == float_type && r.type == int_type) {
+                result.type = float_type;
+                result.value.f = result.value.f + r.value.i;
+            }
+            else if (result.type == float_type && r.type == float_type) {
+                result.type = float_type;
+                result.value.f = result.value.f + r.value.f;
+            }
+            else {
+                semantic_error(18, node -> line);
+            }
+            break;
+        case N_EXP_SUB:
+            result = getTypeAndValueOfExpression(node -> llink);
+            r = getTypeAndValueOfExpression(node -> rlink); // 0인거 주의?
+            if (result.type == int_type && r.type == int_type) {
+                result.type = int_type;
+                result.value.i = result.value.i - r.value.i;
+            }
+            else if (result.type == int_type && r.type == float_type) {
+                result.type = float_type;
+                result.value.f = result.value.i - r.value.f;
+            }
+            else if (result.type == float_type && r.type == int_type) {
+                result.type = float_type;
+                result.value.f = result.value.f - r.value.i;
+            }
+            else if (result.type == float_type && r.type == float_type) {
+                result.type = float_type;
+                result.value.f = result.value.f - r.value.f;
+            }
+            else {
+                semantic_error(18, node -> line);
+            }
+            break;
+        case N_EXP_LSS:
+        case N_EXP_GTR:
+        case N_EXP_LEQ:
+        case N_EXP_GEQ:
+        case N_EXP_NEQ:
+        case N_EXP_EQL:
+        case N_EXP_AND:
+        case N_EXP_OR:
+        case N_EXP_ASSIGN:
+            semantic_error(19, node -> line);
+            break;
+        default :
+            semantic_error(90, node -> line);
+            break;
+    }
+    return result;
+
+}
+
+void semantic_error(int i, int ll, char *s) {
+    semantic_err++;
+    printf("*** semantic error at line %d: ", ll);
+    
+    switch (i) {
+        case 13:
+            printf("arith type expr required in unary operation\n");
+            break;
+        case 18:
+            printf("illegal constant expression \n");
+            break;
+        case 19:
+            printf("illegal identifier %s in constant expression\n", s);
+            break;
+        case 21:
+            printf("illegal type in function call expression\n");
+            break;
+        case 24:
+            printf("incompatible type in additive expressoin\n");
+            break;
+        case 27:
+            printf("scalar type expr required in expression\n");
+            break;
+        case 28:
+            printf("arith type epxression required in binary operation\n");
+            break;
+        case 29:
+            printf("integral type expression required in expression\n");
+            break;
+        case 31:
+            printf("pointer type expr required in pointer operation\n");
+            break;
+        case 32:
+            printf("array type required in array expression\n");
+            break;
+        case 34:
+            printf("too many argument in furnction call\n");
+            break;
+        case 35:
+            printf("too few arguments in fuction call\n");
+            break;
+        case 37:
+            printf("illegal struct field identifier in struct reference expr\n");
+            break;
+        case 38:
+            printf("illegal kind of identifier in expression\n");
+            break;
+        case 39:
+            printf("illegal type size in sizeof operation\n");
+            break;
+        case 40:
+            printf("illegal expression type in relational operation\n");
+            break;
+        case 41:
+            printf("incompatible type in literal\n");
+            break;
+        // 문장 속 에러들
+        case 49:
+            printf("scalar type expr required in middle of for-expr\n");
+            break;
+        case 50:
+            printf("integral type expression required in statement\n");
+            break;
+        case 51:
+            printf("illegal expression type in case label\n");
+            break;
+        case 57:
+            printf("not permitted type convsersion in return expression\n");
+            break;
+        case 58:
+            printf("not permitted type casting in expression\n");
+            break;
+        case 59:
+            printf("not permitted type conversion in argument\n");
+            break;
+        case 60:
+            printf("expression is not an lvalue\n");
+            break;
+        case 71:
+            printf("case label not within a switch statement\n");
+            break;
+        case 72:
+            printf("default label not within a switch statement\n");
+            break;
+        case 73:
+            printf("break statement not within loop or switch stmt\n");
+            break;
+        case 74:
+            printf("continue statement not within a loop\n");
+            break;
+        case 80:
+            printf("undefined type\n");
+            break;
+        case 81:
+            printf("integer type expression required in enumerator\n");
+            break;
+        case 82:
+            printf("illegal array szie or type\n");
+            break;
+        case 83:
+            printf("illegal element type of array declarator\n");
+            break;
+        case 84:
+            printf("illegal type in struct or union field\n");
+            break;
+        case 85:
+            printf("invalid function return type\n");
+            break;
+        case 86:
+            printf("illegal array size or empty array\n");
+            break;
+        case 89:
+            printf("unknown identifier kind %s\n", s);
+            break;
+        // misc error
+        case 90:
+            printf("fatal compiler error in parse result\n");
+            break;
+        case 93:
+            printf("too many literals in source program\n");
+            break;
+        default :
+            printf("unknown \n");
+            break;
+    }
+}
+
+void semantic_warning(int i, int ll) {
+    printf("--- warning at line %d:", ll);
+    switch (i) {
+        case 11 :
+            printf("incompatible types in assignment expression\n");
+        case 12 :
+            printf("incompatible types in argument or return expr\n");
+        case 14 :
+            printf("incompatible types in binary expression\n");
+        case 16 :
+            printf("integer type expression is required\n");
+        default : 
+            printf("unknown\n");
+            break;
+    }
 }
