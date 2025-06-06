@@ -114,6 +114,7 @@ A_TYPE *sem_expression(A_NODE *node) {
         case N_EXP_ARRAY:
             t1 = sem_expression(node -> llink);
             t2 = sem_expression(node -> rlink);
+            
             t = convertUsualBinaryConversion(node); // 이항 연산자 변환 if float -> all float
             t1 = node -> llink -> type;
             t2 = node -> rlink -> type;
@@ -458,9 +459,10 @@ int sem_statement(A_NODE *node, int addr, A_TYPE *ret, BOOLEAN sw, BOOLEAN brk, 
         case N_STMT_COMPOUND: // 복합문
             if (node -> llink) {
                 local_size = sem_declaration_list(node -> llink, addr); // llink는 declaration_list
-                local_size += sem_statement_list(node -> rlink, local_size + addr, ret, sw, brk, cnt); // rlink는 statmement_list
-                
             }
+            local_size += sem_statement_list(node -> rlink, local_size + addr, ret, sw, brk, cnt); // rlink는 statmement_list
+                
+            
             break;
         case N_STMT_EMPTY:
             break;
@@ -1089,6 +1091,7 @@ A_LITERAL getTypeAndValueOfExpression(A_NODE *node) {
     result.type = NIL;
     switch (node -> name) {
         case N_EXP_IDENT :
+            id = node -> clink;
             if (id -> kind != ID_ENUM_LITERAL) {
                 semantic_error(19, node -> line, id -> name);
             }
@@ -1147,6 +1150,7 @@ A_LITERAL getTypeAndValueOfExpression(A_NODE *node) {
         case N_EXP_CAST :
             result = getTypeAndValueOfExpression(node -> rlink);
             result = checkTypeAndConvertLiteral(result, (A_TYPE*)node -> llink, node -> line); 
+            break;
             // cast 가능한지 검사
         case N_EXP_MUL :
             result = getTypeAndValueOfExpression(node -> llink);
