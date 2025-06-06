@@ -52,6 +52,6 @@ A_TYPE *setTypeElementType(A_TYPE *, A_TYPE *);
 A_TYPE *makeType(T_KIND);
 void setTypeSize(A_TYPE *, int);
 void semantic_warning(int, int);
-void semantic_error(int, int);
+void semantic_error(int, int, char *);
 
 A_NODE *makeNode(NODE_NAME, A_NODE *, A_NODE *, A_NODE *);
