@@ -139,12 +139,27 @@ A_TYPE *sem_expression(A_NODE *node) {
                 if (node -> llink -> value && !isArrayType(result)) {
                     lvalue = TRUE;
                 }
-                else {
+                
+            }
+            else {
                     semantic_error(37, node -> line, "");
                 }
-                node -> rlink = id;
-                break;
+            node -> rlink = id;
+            break;
+        case N_EXP_ARROW:
+            t = sem_expression(node -> llink);
+            id = getPointerFieldIdentifier(t, node -> rlink);
+            if (id) {
+                result = id -> type;
+                if (!isArrayType(result)) {
+                    lvalue = TRUE;
+                }
             }
+            else {
+                semantic_error(37, node -> line, "");
+            }
+            node -> rlink = id;
+            break;
         case N_EXP_FUNCTION_CALL:
             t = sem_expression(node -> llink);
 
@@ -1370,7 +1385,7 @@ void semantic_error(int i, int ll, char *s) {
             printf("integer type expression required in enumerator\n");
             break;
         case 82:
-            printf("illegal array szie or type\n");
+            printf("illegal array size or type\n");
             break;
         case 83:
             printf("illegal element type of array declarator\n");
