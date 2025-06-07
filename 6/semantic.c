@@ -894,7 +894,7 @@ A_NODE *convertUsualAssignmentConversion(A_TYPE *t1, A_NODE *node) {
     A_TYPE *t2;
     t2 = node -> type;
     if (!isCompatibleType(t1, t2)) {
-        semantic_warning(t1, node -> line); //t1? l1?
+        semantic_warning(11, node -> line); //t1? l1?
         node = makeNode(N_EXP_CAST,t1, NIL, node);
         node -> type = t1;
     }
@@ -1378,6 +1378,7 @@ void semantic_error(int i, int ll, char *s) {
         case 74:
             printf("continue statement not within a loop\n");
             break;
+        // errors in type & declarator
         case 80:
             printf("undefined type\n");
             break;
