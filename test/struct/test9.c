@@ -14,9 +14,11 @@ struct bank_address {
 int main(void) {
     struct bank_address test;
 
-    char *name = "lee";
-    char *bank_name = "woori";
     union fund f;
+    char *name;
+    char *bank_name;
+    name = "lee";
+    bank_name = "woori";
     f.won = 100;
     
     test.user_name = name;

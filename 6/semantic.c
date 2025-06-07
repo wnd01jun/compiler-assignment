@@ -681,7 +681,7 @@ int sem_A_TYPE(A_TYPE *t) {
             while (id) {
                 i = sem_declaration(id, 0);
                 if (i > result) {
-                    result = 0;
+                    result = i;
                 }
                 id = id -> link; // 제일 큰 값 지정
             }
