@@ -1421,12 +1421,16 @@ void semantic_warning(int i, int ll) {
     switch (i) {
         case 11 :
             printf("incompatible types in assignment expression\n");
+            break;
         case 12 :
             printf("incompatible types in argument or return expr\n");
+            break;
         case 14 :
             printf("incompatible types in binary expression\n");
+            break;
         case 16 :
             printf("integer type expression is required\n");
+            break;
         default : 
             printf("unknown\n");
             break;
