@@ -752,6 +752,9 @@ int sem_declaration(A_ID *id, int addr) {
             break;
         case ID_FIELD:
             i = sem_A_TYPE(id -> type);
+            if (i == 0) {
+                semantic_error(84, id -> line, ""); // self referecne 불가
+            }
             if (isFunctionType(id -> type) || isVoidType(id -> type)) {
                 semantic_error(84, id -> line, ""); // 함수랑 void는 field로 불가
             }
