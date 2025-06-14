@@ -1,4 +1,4 @@
-#include "type.h"
+#include "code_type.h"
 
 typedef enum {SW_VALUE, SW_DEFAULT} SW_KIND; // switch 문 사용하지 않음
 typedef struct sw {SW_KIND kind;
