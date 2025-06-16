@@ -51,7 +51,7 @@ void gen_program(A_NODE *node) {
             gen_declaration_list(node -> clink);
             break;
         default :
-            gen_error(100,node -> line);
+            gen_error(100,node -> line, "");
             break;
     }
 }
@@ -87,14 +87,14 @@ void gen_expression(A_NODE *node) {
                             gen_code_i(LDI, 0, i%4 ? i/4+1 : i/4);
                             break;
                         default :
-                            gen_error(11, id -> line);
+                            gen_error(11, id -> line, "");
                             break;
                     }
                 case ID_ENUM_LITERAL:
                     gen_code_i(LITI, 0, id -> init);
                     break;
                 default:
-                    gen_error(11, node -> line);
+                    gen_error(11, node -> line, "");
                     break;
             }
         case N_EXP_INT_CONST:
@@ -451,7 +451,7 @@ void gen_expression(A_NODE *node) {
             }
             break;
         default :
-            gen_error(100, node -> line);
+            gen_error(100, node -> line, "");
             break;
     }
 }
@@ -536,10 +536,10 @@ void gen_expression_left(A_NODE *node) {
         case N_EXP_AND:
         case N_EXP_OR:
         case N_EXP_ASSIGN:
-            gen_error(12, node -> line);
+            gen_error(12, node -> line, "");
             break;
         default:
-            gen_error(100, node -> line);
+            gen_error(100, node -> line, "");
             break;
     }
 }
@@ -553,7 +553,7 @@ void gen_arg_expression(A_NODE *node) {
         case N_ARG_LIST_NIL:
             break;
         default:
-            gen_error(100, node -> line);
+            gen_error(100, node -> line, "");
             break;
     }
 }
@@ -653,7 +653,7 @@ void gen_statement(A_NODE *node, int cont_label, int break_label, A_SWITCH sw[],
                 gen_code_l(JMP, 0, cont_label);
             }
             else {
-                gen_error(22, node -> line);
+                gen_error(22, node -> line, "");
             }
             break;
         case N_STMT_BREAK:
@@ -661,7 +661,7 @@ void gen_statement(A_NODE *node, int cont_label, int break_label, A_SWITCH sw[],
                 gen_code_l(JMP, 0, break_label);
             }
             else {
-                gen_error(23, node -> line);
+                gen_error(23, node -> line, "");
             }
             break;
         case N_STMT_RETURN:
@@ -676,8 +676,130 @@ void gen_statement(A_NODE *node, int cont_label, int break_label, A_SWITCH sw[],
             gen_code_i(RET, 0, 0);
             break;
         default:
-            gen_error(100, node -> line);
+            gen_error(100, node -> line, "");
             break;
 
     }
+}
+
+void gen_statement_list(A_NODE *node, int cont_label, int break_label, A_SWITCH sw[], int *sn) {
+    switch (node -> name) {
+        case N_STMT_LIST:
+            gen_statement(node -> llink, cont_label, break_label, sw, sn);
+            gen_statement_list(node -> rlink, cont_label, break_label, sw, sn);
+            break;
+        case N_STMT_LIST_NIL:
+            break;
+        default:
+            gen_error(100, node -> line, "");
+            break;
+    }
+}
+
+void gen_initializer_global(A_NODE *node, A_TYPE *t, int addr) {
+    return; // 초기화 x
+}
+
+void gen_initializer_local(A_NODE *node, A_TYPE *t, int addr) {
+    return;
+}
+
+void gen_declaration_list(A_ID *id){
+    while (id) {
+        gen_declaration(id);
+        id = id -> line;
+    }
+}
+
+void gen_declaration(A_ID *id) {
+    int i;
+    A_NODE *node;
+    switch (id -> kind) {
+        case ID_VAR:
+            if (id -> init) {
+                if (id -> level == 0) {
+                    gen_initializer_global(id -> init, id -> type, id -> address);
+                }
+                else {
+                    gen_initializer_local(id -> init, id -> type, id -> address);
+                }
+            }
+            break;
+        case ID_FUNC:
+            if (id -> type -> expr) {
+                gen_label_name(id -> name);
+                gen_code_i(INT, 0, id -> type -> local_var_size);
+                gen_statement(id -> type -> expr, 0, 0, 0, 0);
+                gen_code_i(RET, 0, 0);
+            }
+            break;
+        case ID_PARM:
+        case ID_TYPE:
+        case ID_ENUM:
+        case ID_STRUCT:
+        case ID_FIELD:
+        case ID_ENUM_LITERAL:
+        case ID_NULL:
+            break;
+        default:
+            gen_error(100, id -> line, "");
+            break;
+    }
+}
+
+void gen_error(int i, int ll, char *s) {
+    gen_err++;
+    printf("*** error at line %d: ", ll);
+    switch (i) {
+        case 11:
+            printf("illegal identifier in expression\n");
+            break;
+        case 12:
+            printf("illegal l-value expression\n");
+            break;
+        case 13:
+            printf("identifier %s identifier not l-value expression\n", s);
+            break;
+        case 20:
+            printf("illegal default label in switch statement\n");
+            break;
+        case 21:
+            printf("illegal case label in switch statement\n");
+        case 22:
+            printf("no destination for continue statmenet");
+            break;
+        case 23:
+            printf("no destination for break statmenet");
+            break;
+        case 100:
+            printf("fatal compiler error during code generation\n");
+            break;
+        default:
+            printf("unknown\n");
+            break;
+    }
+}
+
+void gen_code_i(OPCODE op, int l, int a) {
+    fprintf(fout, "\t%9s  %d, %d\n", opcode_name[op],l,a);
+}
+
+void gen_code_f(OPCODE op, int l, float a) {
+    fprintf(fout, "\t%9s  %d, %f\n", opcode_name[op], l, a);
+}
+
+void gen_code_s(OPCODE op, int l, char *a) {
+    fprintf(fout, "\t%9s  %d, %s\n", opcode_name[op], l, a);
+}
+
+void gen_code_l(OPCODE op, int l, int a) {
+    fprintf(fout, "\t%9s  %d, L%d\n", opcode_name[op], l, a);
+}
+
+void gen_label_number(int i) {
+    fprintf(fout, "L%d:\n", i);
+}
+
+void gen_label_name(char *s) {
+    fprintf(fout, "%s:\n", s);
 }
