@@ -1,10 +1,12 @@
 int main(void) {
-    int a = 5;
-
+    int a;
+    scanf("%d", &a);
     if(a < 5) {
-        return 0;
+        printf("pass\n");
     }
     else {
-        return a;
+        printf("fail\n");
     }
+
+    return 0;
 }

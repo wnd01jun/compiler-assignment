@@ -507,6 +507,7 @@ void gen_expression_left(A_NODE *node) {
                 gen_code_i(MULI, 0, 0);
             }
             gen_code_i(OFFSET, 0, 0);
+            break;
         case N_EXP_STAR:
             gen_expression(node -> clink);
             break;
@@ -676,7 +677,7 @@ void gen_statement(A_NODE *node, int cont_label, int break_label, A_SWITCH sw[],
                 gen_expression(n);
                 gen_code_i(STO, 0, 0);
             }
-            gen_code_i(RET, 0, 0);
+            // gen_code_i(RET, 0, 0);
             break;
         default:
             gen_error(100, node -> line, "");

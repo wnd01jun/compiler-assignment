@@ -8,9 +8,10 @@ int main(void){
     do {
         k = k + i;
         w = w + k;
+        i++;
     } while(i <= 10);
 
-    printf("%d", w);
+    printf("%d\n", w);
 
     return 0;
 }

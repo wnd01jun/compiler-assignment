@@ -247,6 +247,7 @@ A_TYPE *sem_expression(A_NODE *node) {
             else {
                 semantic_error(60, node -> line, "");
             }
+            break;
         case N_EXP_STAR: // *a
             t = sem_expression(node -> clink);
             node -> clink = convertUsualUnaryConversion(node -> clink);

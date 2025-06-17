@@ -8,6 +8,8 @@ int main(void) {
     e = 200;
     f = 300;
     k = a * b - c / e + f;
+
+    printf("%d\n", k);
     
-    return k;
+    return 0;
 }

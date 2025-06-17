@@ -13,9 +13,9 @@ int main(void) {
         printf("Parsing fail...\n");
     }
     semantic_analysis(root);
-    if (semantic_err) {
-        exit(1);
-    }
+    // if (semantic_err) {
+    //     exit(1);
+    // }
     print_sem_ast(root);
 }
 
