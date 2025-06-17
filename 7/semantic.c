@@ -32,7 +32,7 @@ void sem_program(A_NODE *node) {
     int i;
     switch(node -> name) { // 첫 시작은 N_PROGRAM부터
         case N_PROGRAM :
-            i - sem_declaration_list(node -> clink, 12);
+            i = sem_declaration_list(node -> clink, 12);
             node -> value = global_address;
             break;
         default :
@@ -921,7 +921,7 @@ A_NODE *convertUsualUnaryConversion(A_NODE *node) {
     }
     else if (isFunctionType(t)) {
         t = setTypeElementType(makeType(T_POINTER), t);
-        t -> size = t;
+        t -> size = 4;
         node = makeNode(N_EXP_AMP, NIL, node, NIL); // pointer로 만들고 & 연산자 적용
         node -> type = t;
     }
