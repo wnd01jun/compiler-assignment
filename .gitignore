@@ -5,6 +5,8 @@
 
 *.dSYM
 .DS_Store
+a.asm
+.gdb_history
 !README*
 !makefile
 !next_task

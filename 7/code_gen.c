@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include "type.h"
+#include "code_type.h"
 #include "code_gen.h"
 #include "semantic.h"
 
@@ -9,7 +10,7 @@ char *opcode_name[] = {"OP_NULL", "LOD", "LDX", "LDXB", "LDA", "LITI", "STO", "S
 "SUBF", "DIVI", "DIVF", "ADDI", "ADDF", "OFFSET", "MULI", "MULF", "MOD", "LSSI", "LSSF", "GTRI", "GTRF",
 "LEQI", "LEQF", "GEQI", "GEQF", "NEQI", "NEQF", "EQLI", "EQLF", "NOT", "OR", "AND", "CVTI", "CVTF", "JPC",
 "JPCR", "JMP", "JPT", "JPTR", "INT", "INCI", "INCF", "DECI", "DECF", "SUP", "CAL", "ADDR", "RET", "MINUSI", 
-"MINUSF", "CHK", "LDI", "LDIB", "SWITCH", "SWVALUE", "SWDEFAULT", "SWLABEL", "SWEND", "POP", "POPB"};
+"MINUSF", "LDI", "LDIB", "POP"};
 
 int label_no = 0;
 int gen_err = 0;
@@ -84,12 +85,13 @@ void gen_expression(A_NODE *node) {
                         case T_UNION:
                             gen_code_i(LDA, id -> level, id -> address);
                             i = id -> type -> size;
-                            gen_code_i(LDI, 0, i%4 ? i/4+1 : i/4);
+                            gen_code_i(LDI, 0, 0);
                             break;
                         default :
                             gen_error(11, id -> line, "");
                             break;
                     }
+                    break;
                 case ID_ENUM_LITERAL:
                     gen_code_i(LITI, 0, id -> init);
                     break;
@@ -97,6 +99,7 @@ void gen_expression(A_NODE *node) {
                     gen_error(11, node -> line, "");
                     break;
             }
+            break;
         case N_EXP_INT_CONST:
             gen_code_i(LITI, 0, node -> clink);
             break;
@@ -126,7 +129,7 @@ void gen_expression(A_NODE *node) {
                     gen_code_i(LDIB, 0, 0);
                 }
                 else {
-                    gen_code_i(LDI, 0, i%4 ? i / 4 + 1 : i / 4); 
+                    gen_code_i(LDI, 0, 0); 
                 }
             }
             break;
@@ -158,7 +161,7 @@ void gen_expression(A_NODE *node) {
             else {
                 gen_code_i(LDXB, 0, 0);
             }
-            if (isPoinerOrArrayype(node -> type)) {
+            if (isPointerOrArrayType(node -> type)) {
                 gen_code_i(LITI, 0, node -> type -> element_type -> size);
                 gen_code_i(ADDI, 0, 0);
             }
@@ -186,7 +189,7 @@ void gen_expression(A_NODE *node) {
             else {
                 gen_code_i(LDXB, 0, 0);
             }
-            if (isPoinerOrArrayype(node -> type)) {
+            if (isPointerOrArrayType(node -> type)) {
                 gen_code_i(LITI, 0, node -> type -> element_type -> size);
                 gen_code_i(SUBI, 0, 0);
             }
@@ -270,7 +273,7 @@ void gen_expression(A_NODE *node) {
         case N_EXP_MINUS:
             gen_expression(node -> clink);
             if (isFloatType(node -> type)) {
-                gen_node_i(MINUSF, 0, 0);
+                gen_code_i(MINUSF, 0, 0);
             }
             else {
                 gen_code_i(MINUSI, 0, 0);
@@ -286,7 +289,7 @@ void gen_expression(A_NODE *node) {
                 gen_code_i(LDIB, 0, 0);
             }
             else {
-                gen_code_i(LDI, 0, i % 4 ? i / 4 + 1 : i / 4);
+                gen_code_i(LDI, 0, 0);
             }
             break;
         case N_EXP_SIZE_EXP:
@@ -296,12 +299,12 @@ void gen_expression(A_NODE *node) {
             gen_code_i(LITI, 0, node -> clink);
             break;
         case N_EXP_CAST:
-            gen_expressoin(node -> rlink);
+            gen_expression(node -> rlink);
             if (node -> type != node -> rlink -> type) {
                 if (isFloatType(node -> type)) {
                     gen_code_i(CVTF, 0, 0);
                 }
-                else if (isFloatTYpe(node -> rlink -> type)) {
+                else if (isFloatType(node -> rlink -> type)) {
                     gen_code_i(CVTI, 0, 0);
                 }
             }
@@ -319,7 +322,7 @@ void gen_expression(A_NODE *node) {
         case N_EXP_DIV:
             gen_expression(node -> llink);
             gen_expression(node -> rlink);
-            if (isFloatTYpe(node -> type)) {
+            if (isFloatType(node -> type)) {
                 gen_code_i(DIVF, 0, 0);
             }
             else {
@@ -593,7 +596,7 @@ void gen_statement(A_NODE *node, int cont_label, int break_label, A_SWITCH sw[],
             break;
         case N_STMT_IF_ELSE:
             gen_expression(node -> llink);
-            gen_code_l(JPC, 0, l1 = get_lbael());
+            gen_code_l(JPC, 0, l1 = get_label());
             gen_statement(node -> clink, cont_label, break_label, 0, 0);
             gen_code_l(JMP, 0, l2 = get_label());
             gen_label_number(l1);
@@ -707,7 +710,7 @@ void gen_initializer_local(A_NODE *node, A_TYPE *t, int addr) {
 void gen_declaration_list(A_ID *id){
     while (id) {
         gen_declaration(id);
-        id = id -> line;
+        id = id -> link;
     }
 }
 

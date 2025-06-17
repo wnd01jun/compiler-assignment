@@ -1,11 +1,16 @@
 int main(void){
-    int i = 0;
+    int i;
+    int k;
+    int w;
+    i = 0;
+    k = 0;
+    w = 0;
     do {
-        int k = 0;
-        int w = k;
+        k = k + i;
+        w = w + k;
     } while(i <= 10);
 
-    printf("%d", i);
+    printf("%d", w);
 
     return 0;
 }
