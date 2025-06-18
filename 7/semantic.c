@@ -783,7 +783,7 @@ int sem_declaration(A_ID *id, int addr) {
                     t = makeType(T_POINTER);
                     t -> element_type = id -> type;
                     t -> size = 4;
-                    id -> type = 4;
+                    id -> type = t;
                 }
                 size = id -> type -> size;
                 if (size % 4) {

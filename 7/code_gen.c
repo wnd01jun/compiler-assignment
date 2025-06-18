@@ -159,7 +159,7 @@ void gen_expression(A_NODE *node) {
                 gen_code_i(LDXB, 0, 0);
             }
             else {
-                gen_code_i(LDXB, 0, 0);
+                gen_code_i(LDX, 0, 0);
             }
             if (isPointerOrArrayType(node -> type)) {
                 gen_code_i(LITI, 0, node -> type -> element_type -> size);
